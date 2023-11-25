@@ -1,6 +1,6 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="Base.Theme.LOCKer" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.LOCKer" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
@@ -11,11 +11,11 @@
 
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">56dp</item>
-        <item name="android:maxHeight">56dp</item>
         <item name="android:layout_alignParentBottom">true</item>
-        <item name="android:layout_gravity">bottom</item>
-        <item name="labelVisibilityMode">unlabeled</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="labelVisibilityMode">labeled</item>
         <item name="menu">@menu/bottom_nav_menu</item>
+        <item name="bottomNavigationStyle">@style/Widget.Material3.BottomNavigationView</item>
 
     </style>
 </resources>
