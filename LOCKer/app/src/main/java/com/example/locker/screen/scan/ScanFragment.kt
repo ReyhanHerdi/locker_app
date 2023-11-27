@@ -12,9 +12,6 @@ import com.example.locker.databinding.FragmentScanBinding
 class ScanFragment : Fragment() {
 
     private var _binding: FragmentScanBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -23,7 +20,7 @@ class ScanFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val scanViewModel =
-            ViewModelProvider(this).get(ScanViewModel::class.java)
+            ViewModelProvider(this)[ScanViewModel::class.java]
 
         _binding = FragmentScanBinding.inflate(inflater, container, false)
         val root: View = binding.root

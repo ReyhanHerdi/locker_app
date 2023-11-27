@@ -13,14 +13,24 @@
         android:theme="@style/Theme.LOCKer"
         tools:targetApi="31">
         <activity
-            android:name=".screen.MainActivity"
-            android:exported="true"
-            android:label="@string/title_activity_main">
+            android:name=".screen.welcome.WelcomeActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".screen.register.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".screen.login.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".screen.MainActivity"
+            android:exported="true"
+            android:label="@string/title_activity_main">
 
         </activity>
     </application>
