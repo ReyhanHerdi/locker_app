@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+
+    <!-- color text -->
+    <color name="color_text_edt">#FEFBF6</color>
+
+
+    <!-- color component -->
+    <color name="bg_custom_itl">#1B1A1B</color>
+
+</resources>
