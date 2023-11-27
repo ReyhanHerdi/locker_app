@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">LOCKer</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_search">Search</string>
+    <string name="title_scan">Scan</string>
+    <string name="title_bookmark">Bookmark</string>
+    <string name="title_profile">Profile</string>
+    <string name="search">Search</string>
+    <string name="scan">Scan</string>
+    <string name="profile">Profile</string>
+    <string name="bookmark">Bookmark</string>
+    <string name="welcome">Welcome</string>
+    <string name="register">Register</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="sign_in">Sign in</string>
+    <string name="already_have_an_account">Already have an Account?</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="back_to_welcome_page">Back to Welcome Page</string>
+    <string name="don_t_have_an_account">Don\'t have an Account?</string>
+    <string name="sign_up">Sign up</string>
+    <string name="or">OR</string>
 </resources>
