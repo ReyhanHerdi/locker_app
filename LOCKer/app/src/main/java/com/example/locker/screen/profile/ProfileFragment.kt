@@ -12,7 +12,6 @@ class ProfileFragment : Fragment() {
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
 
-
     private lateinit var viewModel: ProfileViewModel
 
     override fun onCreateView(
@@ -20,9 +19,6 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
-
-
-
 
         return binding.root
     }
