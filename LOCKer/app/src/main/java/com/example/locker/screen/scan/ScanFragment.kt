@@ -1,5 +1,6 @@
 package com.example.locker.screen.scan
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.locker.databinding.FragmentScanBinding
+import com.example.locker.screen.detail_news.ArticleDetailActivity
 
 class ScanFragment : Fragment() {
 
@@ -29,6 +31,11 @@ class ScanFragment : Fragment() {
         scanViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
+
+        binding.btnMove.setOnClickListener {
+            startActivity(Intent(requireActivity(), ArticleDetailActivity::class.java))
+        }
+
         return root
     }
 

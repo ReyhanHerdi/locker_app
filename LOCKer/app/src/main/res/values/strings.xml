@@ -22,4 +22,93 @@
     <string name="don_t_have_an_account">Don\'t have an Account?</string>
     <string name="sign_up">Sign up</string>
     <string name="or">OR</string>
+    <string name="company_image">Company Image</string>
+    <string name="requirements">Requirements</string>
+
+    <!--Dummy Job Details-->
+    <string name="dummy_requirement">- Minimum 2 years working in experience in programming
+        \n- Familiar with : HTML, CSS, PHP, Python, Java, Javascript
+        \n- Database skill(s) : SQL, SQL Server
+        \n- Ability to work under pressure
+        \n- Fast learner and willing to learn
+    </string>
+
+    <string name="dummy_job_description">- Develop new web application or customize existing application
+        \n- Learn new technology when required in the process
+        \n- Problem solving and working with team on a project
+        \n- Troubleshoot, fix bugs, and debug code-related issues
+    </string>
+
+    <string name="job_description">Job Description</string>
+    <string name="bookmark_this_job">Bookmark this Job</string>
+    <string name="icon">icon</string>
+    <string name="dummy_company">PT Telmiz Indonesia</string>
+    <string name="dummy_job_minimum_req">Minimum Qualification</string>
+    <string name="dummy_job_place">On-site</string>
+    <string name="dummy_job_position">Web Developer</string>
+    <string name="dummy_job_type">Full time</string>
+    <string name="dummy_job_location">Jakarta Barat</string>
+    <string name="dummy_salary">Rp 8.000.000</string>
+    <string name="apply_now">Apply Now</string>
+
+
+    <!--Theme -->
+    <string name="theme">Theme</string>
+    <string name="pref_dark_title">Dark mode</string>
+    <string name="pref_key_dark" translatable="false">key_dark_mode</string>
+    <string name="pref_dark_auto" translatable="false">auto</string>
+    <string name="pref_dark_on" translatable="false">on</string>
+    <string name="pref_dark_off" translatable="false">off</string>
+    <string name="dark_mode_auto">Automatic</string>
+    <string name="dark_mode_on">Dark mode</string>
+    <string name="dark_mode_off">Light mode</string>
+    <string name="delete_course">Delete Course</string>
+    <string name="title_activity_news_detail">NewsDetailActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="dummy_long_text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
+        volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
+        dui nec risus. Maecenas non sodales nisi, vel dictum dolor. Class aptent taciti sociosqu ad
+        litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse blandit eleifend
+        diam, vel rutrum tellus vulputate quis. Aliquam eget libero aliquet, imperdiet nisl a,
+        ornare ex. Sed rhoncus est ut libero porta lobortis. Fusce in dictum tellus.\n\n
+        Suspendisse interdum ornare ante. Aliquam nec cursus lorem. Morbi id magna felis. Vivamus
+        egestas, est a condimentum egestas, turpis nisl iaculis ipsum, in dictum tellus dolor sed
+        neque. Morbi tellus erat, dapibus ut sem a, iaculis tincidunt dui. Interdum et malesuada
+        fames ac ante ipsum primis in faucibus. Curabitur et eros porttitor, ultricies urna vitae,
+        molestie nibh. Phasellus at commodo eros, non aliquet metus. Sed maximus nisl nec dolor
+        bibendum, vel congue leo egestas.\n\n
+        Sed interdum tortor nibh, in sagittis risus mollis quis. Curabitur mi odio, condimentum sit
+        amet auctor at, mollis non turpis. Nullam pretium libero vestibulum, finibus orci vel,
+        molestie quam. Fusce blandit tincidunt nulla, quis sollicitudin libero facilisis et. Integer
+        interdum nunc ligula, et fermentum metus hendrerit id. Vestibulum lectus felis, dictum at
+        lacinia sit amet, tristique id quam. Cras eu consequat dui. Suspendisse sodales nunc ligula,
+        in lobortis sem porta sed. Integer id ultrices magna, in luctus elit. Sed a pellentesque
+        est.\n\n
+        Aenean nunc velit, lacinia sed dolor sed, ultrices viverra nulla. Etiam a venenatis nibh.
+        Morbi laoreet, tortor sed facilisis varius, nibh orci rhoncus nulla, id elementum leo dui
+        non lorem. Nam mollis ipsum quis auctor varius. Quisque elementum eu libero sed commodo. In
+        eros nisl, imperdiet vel imperdiet et, scelerisque a mauris. Pellentesque varius ex nunc,
+        quis imperdiet eros placerat ac. Duis finibus orci et est auctor tincidunt. Sed non viverra
+        ipsum. Nunc quis augue egestas, cursus lorem at, molestie sem. Morbi a consectetur ipsum, a
+        placerat diam. Etiam vulputate dignissim convallis. Integer faucibus mauris sit amet finibus
+        convallis.\n\n
+        Phasellus in aliquet mi. Pellentesque habitant morbi tristique senectus et netus et
+        malesuada fames ac turpis egestas. In volutpat arcu ut felis sagittis, in finibus massa
+        gravida. Pellentesque id tellus orci. Integer dictum, lorem sed efficitur ullamcorper,
+        libero justo consectetur ipsum, in mollis nisl ex sed nisl. Donec maximus ullamcorper
+        sodales. Praesent bibendum rhoncus tellus nec feugiat. In a ornare nulla. Donec rhoncus
+        libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
+        vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
+    </string>
+
+    <string name="dummy_news_title">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu quam magna.</string>
+    <string name="dummy_author">By Andi Wibowo</string>
+    <string name="content_desc_article_image">Article Image</string>
+
 </resources>
