@@ -39,4 +39,18 @@
         tanpa pernah mengambil nyawa manusia, mempertaruhkan hidupnya untuk melakukan tindakan penyelamatan yang penuh
         pengorbanan di tengah pertempuran yang brutal, yang akhirnya memenangkannya Medali Kehormatan Amerika Serikat.</string>
     <string name="view_all">View All</string>
+    <string name="user_name">Lorem Ipsum</string>
+    <string name="loremexample_mail_com">loremexample@mail.com</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="name">Name</string>
+    <string name="male">Male</string>
+    <string name="gender">Gender</string>
+    <string name="education">Education</string>
+    <string name="user_education">Cambridge University</string>
+    <string name="user_location">Indonesia</string>
+    <string name="location">Location</string>
+    <string name="city">City</string>
+    <string name="manchester">Manchester</string>
+    <string name="industry">Industry</string>
+    <string name="user_industry">Technology, Information, and Internet</string>
 </resources>
