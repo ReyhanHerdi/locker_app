@@ -11,13 +11,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <TextView
+            android:id="@+id/tv_welcomeUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="20sp"
+            android:text="@string/hi_user"/>
+
         <ImageView
             android:id="@+id/pic_highlight"
             android:layout_width="match_parent"
             android:layout_height="140dp"
+            android:layout_marginTop="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_welcomeUser"
             android:contentDescription="@string/image_highlight"
             android:scaleType="centerCrop"
             android:src="@drawable/example" />
@@ -32,6 +42,16 @@
             android:textSize="18sp"
             android:text="@string/recomendation"
             android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_view_all_recomendation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/tv_recomendation"
+            android:clickable="true"
+            android:text="@string/view_all"
+            android:focusable="true" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_recomendation"
@@ -54,11 +74,21 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_news"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             app:layout_constraintTop_toBottomOf="@id/tv_news"
             app:layout_constraintStart_toStartOf="@id/tv_news" />
+
+        <TextView
+            android:id="@+id/tv_view_all_news"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/tv_news"
+            android:clickable="true"
+            android:text="@string/view_all"
+            android:focusable="true" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

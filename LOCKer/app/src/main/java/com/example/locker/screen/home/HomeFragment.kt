@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.locker.data.Examples
 import com.example.locker.databinding.FragmentHomeBinding
 import com.example.locker.screen.ViewModelFactory
+import com.example.locker.ui.adapter.NewsAdapter
 import com.example.locker.ui.adapter.RecomendationAdaper
 
 class HomeFragment : Fragment() {
@@ -21,11 +22,12 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
     private lateinit var recomendationAdaper: RecomendationAdaper
-    //private var application: Application = Application()
+    private lateinit var newsAdapter: NewsAdapter
     private val homeViewModel by viewModels<HomeViewModel> {
         ViewModelFactory.getInstance()
     }
     private val listRecomendation = ArrayList<Examples>()
+    private val listNews = ArrayList<Examples>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,6 +46,7 @@ class HomeFragment : Fragment() {
         homeViewModel.getRecomendation()
         Log.d("Data", listOf<Examples>().toString())
         showRecomendation()
+        showNews()
         return root
     }
 
@@ -75,5 +78,32 @@ class HomeFragment : Fragment() {
 
         recomendationAdaper = RecomendationAdaper(listRecomendation)
         binding.rvRecomendation.adapter = recomendationAdaper
+    }
+
+    private fun getNews(): ArrayList<Examples> {
+        val examples: List<Examples> = homeViewModel.getRecomendation()
+        for (i in examples) {
+            listNews.add(
+                Examples(
+                    i.id,
+                    i.judul,
+                    i.sinopsis,
+                    i.tahunRilis,
+                    i.poster
+
+                )
+            )
+        }
+        return listNews
+    }
+
+    private fun showNews() {
+        getNews()
+        val layoutManager = LinearLayoutManager(context)
+        binding.rvNews.layoutManager = layoutManager
+        newsAdapter = NewsAdapter(listNews)
+        binding.rvNews.adapter = newsAdapter
+
+
     }
 }
