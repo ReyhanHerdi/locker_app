@@ -2,6 +2,7 @@ package com.example.locker.screen.welcome
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.locker.databinding.ActivityWelcomeBinding
 import com.example.locker.screen.login.LoginActivity

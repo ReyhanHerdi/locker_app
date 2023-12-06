@@ -7,12 +7,20 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.locker.di.Injection
 import com.example.locker.repositories.HomeRepository
 import com.example.locker.screen.home.HomeViewModel
+import com.example.locker.screen.news.NewsViewModel
+import com.example.locker.screen.recomendation.RecomendationViewModel
 
 class ViewModelFactory(private val repository: HomeRepository) : ViewModelProvider.NewInstanceFactory() {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return when {
             modelClass.isAssignableFrom(HomeViewModel::class.java) -> {
                 HomeViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(RecomendationViewModel::class.java) -> {
+                RecomendationViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(NewsViewModel::class.java) -> {
+                NewsViewModel(repository) as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel clss: " + modelClass.name)
         }

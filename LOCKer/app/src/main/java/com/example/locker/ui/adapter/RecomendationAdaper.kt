@@ -10,7 +10,7 @@ import com.example.locker.data.Examples
 import com.example.locker.data.ExamplesData
 import com.example.locker.databinding.JobListBinding
 
-class RecomendationAdaper(private val listRecomendation: ArrayList<Examples>) : RecyclerView.Adapter<RecomendationAdaper.RecomendationVewHolder>() {
+class RecomendationAdaper(private val listRecomendation: ArrayList<Examples>, var dataCount: Int) : RecyclerView.Adapter<RecomendationAdaper.RecomendationVewHolder>() {
 
     inner class RecomendationVewHolder(private val binding: JobListBinding) : RecyclerView.ViewHolder(binding.root) {
 
@@ -31,7 +31,7 @@ class RecomendationAdaper(private val listRecomendation: ArrayList<Examples>) : 
     }
 
     override fun getItemCount(): Int {
-        return 3
+        return dataCount
     }
 
     override fun onBindViewHolder(holder: RecomendationVewHolder, position: Int) {

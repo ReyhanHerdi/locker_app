@@ -7,7 +7,7 @@ import com.bumptech.glide.Glide
 import com.example.locker.data.Examples
 import com.example.locker.databinding.NewsListBinding
 
-class NewsAdapter(private val listNews: ArrayList<Examples>) : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
+class NewsAdapter(private val listNews: ArrayList<Examples>, var dataCount: Int) : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
     inner class NewsViewHolder(private val binding: NewsListBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(examples: Examples) {
             with(binding) {
@@ -26,7 +26,7 @@ class NewsAdapter(private val listNews: ArrayList<Examples>) : RecyclerView.Adap
     }
 
     override fun getItemCount(): Int {
-        return 3
+        return dataCount
     }
 
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
