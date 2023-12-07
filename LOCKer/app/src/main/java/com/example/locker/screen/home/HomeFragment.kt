@@ -1,25 +1,19 @@
 package com.example.locker.screen.home
 
-import android.app.Application
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.locker.R
+import com.example.locker.screen.ExploreActivity
 import com.example.locker.data.Examples
 import com.example.locker.databinding.FragmentHomeBinding
 import com.example.locker.screen.ViewModelFactory
-import com.example.locker.screen.news.NewsActivity
-import com.example.locker.screen.recomendation.RecomendationActivity
-import com.example.locker.screen.recomendation.RecomendationFragment
 import com.example.locker.ui.adapter.NewsAdapter
 import com.example.locker.ui.adapter.RecomendationAdaper
 
@@ -89,6 +83,13 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
         recomendationAdaper = RecomendationAdaper(listRecomendation, 3)
         binding.rvRecomendation.adapter = recomendationAdaper
+
+        recomendationAdaper.setOnItemCallback(object : RecomendationAdaper.OnItemClickCallback {
+            override fun onItemClicked(examples: Examples) {
+                Toast.makeText(context, "Not yet implemented", Toast.LENGTH_SHORT).show()
+            }
+
+        })
     }
 
     private fun getNews(): ArrayList<Examples> {
@@ -115,17 +116,26 @@ class HomeFragment : Fragment(), View.OnClickListener {
         newsAdapter = NewsAdapter(listNews, 3)
         binding.rvNews.adapter = newsAdapter
 
+        newsAdapter.setOnItemClickCallback(object : NewsAdapter.OnItemClickCallback {
+            override fun onItemClicked(examples: Examples) {
+                Toast.makeText(context, "Not yet implemented", Toast.LENGTH_SHORT).show()
+            }
+
+        })
+
 
     }
 
     override fun onClick(view: View?) {
         when(view) {
             binding.tvViewAllRecomendation -> {
-                val intent = Intent(requireActivity(), RecomendationActivity::class.java)
+                val intent = Intent(requireActivity(), ExploreActivity::class.java)
+                intent.putExtra(ExploreActivity.FRAGMENT, "recomendation")
                 startActivity(intent)
             }
             binding.tvViewAllNews -> {
-                val intent = Intent(requireActivity(), NewsActivity::class.java)
+                val intent = Intent(requireActivity(), ExploreActivity::class.java)
+                intent.putExtra(ExploreActivity.FRAGMENT, "news")
                 startActivity(intent)
             }
         }

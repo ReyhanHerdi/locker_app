@@ -3,14 +3,18 @@ package com.example.locker.ui.adapter
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.locker.data.Examples
-import com.example.locker.data.ExamplesData
 import com.example.locker.databinding.JobListBinding
 
 class RecomendationAdaper(private val listRecomendation: ArrayList<Examples>, var dataCount: Int) : RecyclerView.Adapter<RecomendationAdaper.RecomendationVewHolder>() {
+
+    private lateinit var onItemClickCallback: OnItemClickCallback
+
+    interface OnItemClickCallback {
+        fun onItemClicked(examples: Examples)
+    }
 
     inner class RecomendationVewHolder(private val binding: JobListBinding) : RecyclerView.ViewHolder(binding.root) {
 
@@ -37,5 +41,13 @@ class RecomendationAdaper(private val listRecomendation: ArrayList<Examples>, va
     override fun onBindViewHolder(holder: RecomendationVewHolder, position: Int) {
         holder.bind(listRecomendation[position])
 
+        holder.itemView.setOnClickListener {
+            onItemClickCallback.onItemClicked(listRecomendation[position])
+        }
+
+    }
+
+    fun setOnItemCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
     }
 }

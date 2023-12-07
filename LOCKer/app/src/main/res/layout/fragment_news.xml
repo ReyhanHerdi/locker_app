@@ -4,10 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context=".screen.recomendation.RecomendationFragment">
+    tools:context=".screen.news.NewsFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_recomendation_all"
+        android:id="@+id/rv_news_all"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

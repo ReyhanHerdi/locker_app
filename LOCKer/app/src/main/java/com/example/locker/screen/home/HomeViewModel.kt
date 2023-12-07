@@ -1,11 +1,7 @@
 package com.example.locker.screen.home
 
-import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.locker.data.Examples
-import com.example.locker.data.ExamplesData
 import com.example.locker.repositories.HomeRepository
 
 class HomeViewModel(private val homeRepository: HomeRepository) : ViewModel() {

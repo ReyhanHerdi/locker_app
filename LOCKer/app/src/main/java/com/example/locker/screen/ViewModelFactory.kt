@@ -1,7 +1,5 @@
 package com.example.locker.screen
 
-import android.app.Application
-import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.locker.di.Injection
