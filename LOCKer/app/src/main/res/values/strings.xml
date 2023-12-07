@@ -22,4 +22,37 @@
     <string name="don_t_have_an_account">Don\'t have an Account?</string>
     <string name="sign_up">Sign up</string>
     <string name="or">OR</string>
+    <string name="recomendation">Recomendation</string>
+    <string name="job_title">job title</string>
+    <string name="job_field">job field</string>
+    <string name="job_location">job location</string>
+    <string name="job_time">job time</string>
+    <string name="job_type">job type</string>
+    <string name="salary">Rp x.xxx.xxx-x.xxx.xxx</string>
+    <string name="image_highlight">Image Highlight</string>
+    <string name="news">News</string>
+    <string name="hi_user">Hi, Lorem</string>
+    <string name="news_title">News Title</string>
+    <string name="news_description">Hacksaw Ridge adalah film yang mengisahkan kisah nyata Desmond Doss (diperankan oleh
+        Andrew Garfield), seorang penentang bersumpah yang mendaftar ke dalam tentara Amerika selama Perang Dunia II tanpa
+        membawa senjata dan kemudian menjadi pahlawan medis lapangan di Pertempuran Okinawa, menyelamatkan puluhan nyawa
+        tanpa pernah mengambil nyawa manusia, mempertaruhkan hidupnya untuk melakukan tindakan penyelamatan yang penuh
+        pengorbanan di tengah pertempuran yang brutal, yang akhirnya memenangkannya Medali Kehormatan Amerika Serikat.</string>
+    <string name="view_all">View All</string>
+    <string name="user_name">Lorem Ipsum</string>
+    <string name="loremexample_mail_com">loremexample@mail.com</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="name">Name</string>
+    <string name="male">Male</string>
+    <string name="gender">Gender</string>
+    <string name="education">Education</string>
+    <string name="user_education">Cambridge University</string>
+    <string name="user_location">Indonesia</string>
+    <string name="location">Location</string>
+    <string name="city">City</string>
+    <string name="manchester">Manchester</string>
+    <string name="industry">Industry</string>
+    <string name="user_industry">Technology, Information, and Internet</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
