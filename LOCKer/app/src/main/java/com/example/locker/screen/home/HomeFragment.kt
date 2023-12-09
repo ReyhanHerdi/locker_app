@@ -10,23 +10,23 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.locker.screen.ExploreActivity
 import com.example.locker.data.Examples
 import com.example.locker.databinding.FragmentHomeBinding
+import com.example.locker.screen.ExploreActivity
 import com.example.locker.screen.ViewModelFactory
-import com.example.locker.ui.adapter.NewsAdapter
-import com.example.locker.ui.adapter.RecomendationAdaper
+import com.example.locker.screen.adapter.NewsAdapter
+import com.example.locker.screen.adapter.RecomendationAdaper
 
 class HomeFragment : Fragment(), View.OnClickListener {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
-    private lateinit var recomendationAdaper: RecomendationAdaper
+    private lateinit var recommendationAdaper: RecomendationAdaper
     private lateinit var newsAdapter: NewsAdapter
     private val homeViewModel by viewModels<HomeViewModel> {
         ViewModelFactory.getInstance()
     }
-    private val listRecomendation = ArrayList<Examples>()
+    private val listRecommendation = ArrayList<Examples>()
     private val listNews = ArrayList<Examples>()
 
     override fun onCreateView(
@@ -36,15 +36,8 @@ class HomeFragment : Fragment(), View.OnClickListener {
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
-        /*
-        val textView: TextView = binding.tvNews
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
 
-
-         */
-        homeViewModel.getRecomendation()
+        homeViewModel.getRecommendation()
         Log.d("Data", listOf<Examples>().toString())
         showRecomendation()
         showNews()
@@ -61,9 +54,9 @@ class HomeFragment : Fragment(), View.OnClickListener {
     }
 
     private fun getRecomendation(): ArrayList<Examples> {
-        val examples: List<Examples> = homeViewModel.getRecomendation()
+        val examples: List<Examples> = homeViewModel.getRecommendation()
         for (i in examples) {
-            listRecomendation.add(
+            listRecommendation.add(
                 Examples(
                     i.id,
                     i.judul,
@@ -73,7 +66,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
                 )
             )
         }
-        return listRecomendation
+        return listRecommendation
     }
 
     private fun showRecomendation() {
@@ -81,10 +74,10 @@ class HomeFragment : Fragment(), View.OnClickListener {
         val layoutManager = LinearLayoutManager(context)
         binding.rvRecomendation.layoutManager = layoutManager
 
-        recomendationAdaper = RecomendationAdaper(listRecomendation, 3)
-        binding.rvRecomendation.adapter = recomendationAdaper
+        recommendationAdaper = RecomendationAdaper(listRecommendation, 3)
+        binding.rvRecomendation.adapter = recommendationAdaper
 
-        recomendationAdaper.setOnItemCallback(object : RecomendationAdaper.OnItemClickCallback {
+        recommendationAdaper.setOnItemCallback(object : RecomendationAdaper.OnItemClickCallback {
             override fun onItemClicked(examples: Examples) {
                 Toast.makeText(context, "Not yet implemented", Toast.LENGTH_SHORT).show()
             }
@@ -93,7 +86,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
     }
 
     private fun getNews(): ArrayList<Examples> {
-        val examples: List<Examples> = homeViewModel.getRecomendation()
+        val examples: List<Examples> = homeViewModel.getRecommendation()
         for (i in examples) {
             listNews.add(
                 Examples(

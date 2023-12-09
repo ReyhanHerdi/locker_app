@@ -1,4 +1,4 @@
-package com.example.locker.screen.detail_news
+package com.example.locker.screen.article
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -20,9 +20,11 @@ class ArticleDetailActivity : AppCompatActivity() {
         supportActionBar?.setHomeAsUpIndicator(R.drawable.caret_left)
         supportActionBar?.title = "Article"
 
+        articleContent()
+
     }
 
-    private fun newsContent(){
+    private fun articleContent(){
         binding.apply {
             tvArticleTitle.text = ""
             tvArticleAuthor.text = ""

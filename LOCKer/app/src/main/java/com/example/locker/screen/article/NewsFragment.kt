@@ -1,17 +1,17 @@
-package com.example.locker.screen.news
+package com.example.locker.screen.article
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.locker.data.Examples
 import com.example.locker.databinding.FragmentNewsBinding
 import com.example.locker.screen.ViewModelFactory
-import com.example.locker.ui.adapter.NewsAdapter
+import com.example.locker.screen.adapter.NewsAdapter
 
 class NewsFragment : Fragment() {
 

@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.locker.data.Examples
 import com.example.locker.databinding.FragmentRecomendationBinding
 import com.example.locker.screen.ViewModelFactory
-import com.example.locker.ui.adapter.RecomendationAdaper
+import com.example.locker.screen.adapter.RecomendationAdaper
 
 class RecomendationFragment : Fragment() {
 

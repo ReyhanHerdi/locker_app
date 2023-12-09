@@ -1,9 +1,9 @@
 package com.example.locker.di
 
-import com.example.locker.repositories.HomeRepository
+import com.example.locker.data.repository.LockerRepository
 
 object Injection {
-        fun provideRepository(): HomeRepository {
-            return HomeRepository()
+        fun provideRepository(): LockerRepository {
+            return LockerRepository()
         }
 }

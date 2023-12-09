@@ -1,4 +1,4 @@
-package com.example.locker.ui.adapter
+package com.example.locker.screen.adapter
 
 import android.util.Log
 import android.view.LayoutInflater

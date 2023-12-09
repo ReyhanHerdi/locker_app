@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.example.locker.R
 import com.example.locker.databinding.ActivityExploreBinding
-import com.example.locker.screen.news.NewsFragment
+import com.example.locker.screen.article.NewsFragment
 import com.example.locker.screen.recomendation.RecomendationFragment
 
 class ExploreActivity : AppCompatActivity() {

@@ -3,12 +3,13 @@ package com.example.locker.screen
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.locker.di.Injection
-import com.example.locker.repositories.HomeRepository
+import com.example.locker.data.repository.LockerRepository
 import com.example.locker.screen.home.HomeViewModel
-import com.example.locker.screen.news.NewsViewModel
+import com.example.locker.screen.article.NewsViewModel
 import com.example.locker.screen.recomendation.RecomendationViewModel
 
-class ViewModelFactory(private val repository: HomeRepository) : ViewModelProvider.NewInstanceFactory() {
+@Suppress("UNCHECKED_CAST")
+class ViewModelFactory(private val repository: LockerRepository) : ViewModelProvider.NewInstanceFactory() {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return when {
             modelClass.isAssignableFrom(HomeViewModel::class.java) -> {
