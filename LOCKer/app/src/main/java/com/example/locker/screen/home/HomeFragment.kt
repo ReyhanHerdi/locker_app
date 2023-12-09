@@ -24,7 +24,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
     private lateinit var recommendationAdaper: RecomendationAdaper
     private lateinit var newsAdapter: NewsAdapter
     private val homeViewModel by viewModels<HomeViewModel> {
-        ViewModelFactory.getInstance()
+        ViewModelFactory.getInstance(requireContext())
     }
     private val listRecommendation = ArrayList<Examples>()
     private val listNews = ArrayList<Examples>()
@@ -39,7 +39,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
         homeViewModel.getRecommendation()
         Log.d("Data", listOf<Examples>().toString())
-        showRecomendation()
+        showRecommendation()
         showNews()
 
         binding.tvViewAllRecomendation.setOnClickListener(this)
@@ -69,7 +69,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
         return listRecommendation
     }
 
-    private fun showRecomendation() {
+    private fun showRecommendation() {
         getRecomendation()
         val layoutManager = LinearLayoutManager(context)
         binding.rvRecomendation.layoutManager = layoutManager
@@ -123,7 +123,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
         when(view) {
             binding.tvViewAllRecomendation -> {
                 val intent = Intent(requireActivity(), ExploreActivity::class.java)
-                intent.putExtra(ExploreActivity.FRAGMENT, "recomendation")
+                intent.putExtra(ExploreActivity.FRAGMENT, "recommendation")
                 startActivity(intent)
             }
             binding.tvViewAllNews -> {

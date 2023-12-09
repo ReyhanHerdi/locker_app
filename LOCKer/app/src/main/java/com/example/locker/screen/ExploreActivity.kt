@@ -1,7 +1,7 @@
 package com.example.locker.screen
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.locker.R
 import com.example.locker.databinding.ActivityExploreBinding
@@ -22,7 +22,7 @@ class ExploreActivity : AppCompatActivity() {
         val fragment = intent.getStringExtra(FRAGMENT)
         val fragmentManager = supportFragmentManager
 
-        if (fragment == "recomendation") {
+        if (fragment == "recommendation") {
             fragmentScreen = RecomendationFragment::class.java.simpleName
             binding.topBar.title = "Explore Jobs"
             screen =  RecomendationFragment()
