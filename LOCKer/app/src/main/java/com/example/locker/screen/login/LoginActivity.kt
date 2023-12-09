@@ -7,6 +7,7 @@ import com.example.locker.databinding.ActivityLoginBinding
 import com.example.locker.screen.MainActivity
 import com.example.locker.screen.register.RegisterActivity
 import com.example.locker.screen.welcome.WelcomeActivity
+import com.google.android.material.snackbar.Snackbar
 
 class LoginActivity : AppCompatActivity() {
 
@@ -27,8 +28,21 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.btnLogin.setOnClickListener {
+            val email = binding.etEmail.text.toString()
+            val password = binding.etPassword.text.toString()
+
+            if(email.isNotEmpty() && password.isNotEmpty()){
+
+            } else {
+                showSnackbar("Please Fill Everything")
+            }
+
             startActivity(Intent(applicationContext, MainActivity::class.java))
         }
 
+    }
+
+    private fun showSnackbar(message: String?) {
+        Snackbar.make(binding.root, message!!, Snackbar.LENGTH_SHORT).show()
     }
 }
