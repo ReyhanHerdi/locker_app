@@ -16,12 +16,15 @@
             android:name=".screen.detail_news.ArticleDetailActivity"
             android:exported="false"
             android:label="@string/title_activity_news_detail"
+            android:parentActivityName=".screen.MainActivity"
             android:theme="@style/Theme.LOCKer" />
         <activity
             android:name=".screen.setting.SettingActivity"
+            android:parentActivityName=".screen.MainActivity"
             android:exported="false" />
         <activity
             android:name=".screen.detail_job.JobDetailsActivity"
+            android:parentActivityName=".screen.MainActivity"
             android:exported="false" />
         <activity
             android:name=".screen.welcome.WelcomeActivity"
