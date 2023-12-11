@@ -1,11 +1,11 @@
 package com.example.locker.screen.recomendation
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.locker.data.Examples
@@ -18,7 +18,7 @@ class RecomendationFragment : Fragment() {
     private var _binding: FragmentRecomendationBinding? = null
     private val binding get() = _binding!!
     private val recomendationViewModel by viewModels<RecomendationViewModel> {
-        ViewModelFactory.getInstance()
+        ViewModelFactory.getInstance(requireContext())
     }
     private val listRecomendations = ArrayList<Examples>()
     private lateinit var recomendationAllAdapter: RecomendationAdaper

@@ -18,7 +18,7 @@ class NewsFragment : Fragment() {
     private var _binding: FragmentNewsBinding? = null
     private val binding get() = _binding!!
     private val newsViewModel by viewModels<NewsViewModel> {
-        ViewModelFactory.getInstance()
+        ViewModelFactory.getInstance(requireContext())
     }
     private lateinit var newsAllAdapter: NewsAdapter
     private val listNews = ArrayList<Examples>()
