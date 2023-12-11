@@ -16,7 +16,7 @@ class ViewModelFactory(private val repository: LockerRepository) : ViewModelProv
 
         HomeViewModel::class.java -> HomeViewModel(repository)
         RecomendationViewModel::class.java -> RecomendationViewModel(repository)
-        NewsViewModel::class.java -> HomeViewModel(repository)
+        NewsViewModel::class.java -> NewsViewModel(repository)
         AuthViewModel::class.java -> AuthViewModel(repository)
 
         else ->  throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
