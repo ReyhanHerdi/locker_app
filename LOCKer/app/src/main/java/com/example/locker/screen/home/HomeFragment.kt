@@ -10,18 +10,18 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.locker.data.Examples
+import com.example.locker.data.model.Examples
 import com.example.locker.databinding.FragmentHomeBinding
-import com.example.locker.screen.ExploreActivity
+import com.example.locker.screen.explore.ExploreActivity
 import com.example.locker.screen.ViewModelFactory
 import com.example.locker.screen.adapter.NewsAdapter
-import com.example.locker.screen.adapter.RecomendationAdaper
+import com.example.locker.screen.adapter.RecommendationAdaper
 
 class HomeFragment : Fragment(), View.OnClickListener {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
-    private lateinit var recommendationAdaper: RecomendationAdaper
+    private lateinit var recommendationAdaper: RecommendationAdaper
     private lateinit var newsAdapter: NewsAdapter
     private val homeViewModel by viewModels<HomeViewModel> {
         ViewModelFactory.getInstance(requireContext())
@@ -74,10 +74,10 @@ class HomeFragment : Fragment(), View.OnClickListener {
         val layoutManager = LinearLayoutManager(context)
         binding.rvRecomendation.layoutManager = layoutManager
 
-        recommendationAdaper = RecomendationAdaper(listRecommendation, 3)
+        recommendationAdaper = RecommendationAdaper(listRecommendation, 3)
         binding.rvRecomendation.adapter = recommendationAdaper
 
-        recommendationAdaper.setOnItemCallback(object : RecomendationAdaper.OnItemClickCallback {
+        recommendationAdaper.setOnItemCallback(object : RecommendationAdaper.OnItemClickCallback {
             override fun onItemClicked(examples: Examples) {
                 Toast.makeText(context, "Not yet implemented", Toast.LENGTH_SHORT).show()
             }

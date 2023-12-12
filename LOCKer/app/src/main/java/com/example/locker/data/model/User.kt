@@ -1,4 +1,4 @@
-package com.example.locker.data
+package com.example.locker.data.model
 
 data class User(
     var username: String,

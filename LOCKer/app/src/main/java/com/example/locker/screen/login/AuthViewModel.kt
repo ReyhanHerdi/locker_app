@@ -3,7 +3,7 @@ package com.example.locker.screen.login
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.locker.data.User
+import com.example.locker.data.model.User
 import com.example.locker.data.repository.LockerRepository
 
 class AuthViewModel(private val repository: LockerRepository) : ViewModel() {

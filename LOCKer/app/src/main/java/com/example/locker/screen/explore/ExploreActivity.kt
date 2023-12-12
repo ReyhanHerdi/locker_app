@@ -1,4 +1,4 @@
-package com.example.locker.screen
+package com.example.locker.screen.explore
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

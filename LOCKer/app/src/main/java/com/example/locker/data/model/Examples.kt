@@ -1,4 +1,4 @@
-package com.example.locker.data
+package com.example.locker.data.model
 
 data class Examples(
     val id: String,

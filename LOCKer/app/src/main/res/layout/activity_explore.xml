@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".screen.ExploreActivity"
+    tools:context=".screen.explore.ExploreActivity"
     android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -15,9 +15,7 @@
             android:layout_width="match_parent"
             app:titleCentered="true"
             android:layout_height="?attr/actionBarSize"
-            app:title="Explore"
-            app:titleTextColor="@color/white"
-            />
+            app:title="Explore" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <FrameLayout

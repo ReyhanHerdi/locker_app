@@ -5,10 +5,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.locker.data.Examples
+import com.example.locker.data.model.Examples
 import com.example.locker.databinding.JobListBinding
 
-class RecomendationAdaper(private val listRecomendation: ArrayList<Examples>, var dataCount: Int) : RecyclerView.Adapter<RecomendationAdaper.RecomendationVewHolder>() {
+class RecommendationAdaper(private val listRecommendation: ArrayList<Examples>, var dataCount: Int) : RecyclerView.Adapter<RecommendationAdaper.RecommendationVewHolder>() {
 
     private lateinit var onItemClickCallback: OnItemClickCallback
 
@@ -16,7 +16,7 @@ class RecomendationAdaper(private val listRecomendation: ArrayList<Examples>, va
         fun onItemClicked(examples: Examples)
     }
 
-    inner class RecomendationVewHolder(private val binding: JobListBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class RecommendationVewHolder(private val binding: JobListBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(examples: Examples) {
             with(binding) {
@@ -29,20 +29,20 @@ class RecomendationAdaper(private val listRecomendation: ArrayList<Examples>, va
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecomendationVewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecommendationVewHolder {
         val binding = JobListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return RecomendationVewHolder(binding)
+        return RecommendationVewHolder(binding)
     }
 
     override fun getItemCount(): Int {
         return dataCount
     }
 
-    override fun onBindViewHolder(holder: RecomendationVewHolder, position: Int) {
-        holder.bind(listRecomendation[position])
+    override fun onBindViewHolder(holder: RecommendationVewHolder, position: Int) {
+        holder.bind(listRecommendation[position])
 
         holder.itemView.setOnClickListener {
-            onItemClickCallback.onItemClicked(listRecomendation[position])
+            onItemClickCallback.onItemClicked(listRecommendation[position])
         }
 
     }

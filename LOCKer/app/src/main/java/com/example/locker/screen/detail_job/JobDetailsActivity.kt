@@ -13,10 +13,11 @@ class JobDetailsActivity : AppCompatActivity() {
 
         binding = ActivityJobDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        setJobDetails()
     }
 
     private fun setJobDetails(){
-
         binding.apply {
             tvJobPosition.text = ""
             tvCompany.text = ""

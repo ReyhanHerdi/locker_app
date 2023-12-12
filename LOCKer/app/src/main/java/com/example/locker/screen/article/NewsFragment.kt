@@ -8,7 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.locker.data.Examples
+import com.example.locker.data.model.Examples
 import com.example.locker.databinding.FragmentNewsBinding
 import com.example.locker.screen.ViewModelFactory
 import com.example.locker.screen.adapter.NewsAdapter
@@ -17,7 +17,7 @@ class NewsFragment : Fragment() {
 
     private var _binding: FragmentNewsBinding? = null
     private val binding get() = _binding!!
-    private val newsViewModel by viewModels<NewsViewModel> {
+    private val newsViewModel: NewsViewModel by viewModels {
         ViewModelFactory.getInstance(requireContext())
     }
     private lateinit var newsAllAdapter: NewsAdapter

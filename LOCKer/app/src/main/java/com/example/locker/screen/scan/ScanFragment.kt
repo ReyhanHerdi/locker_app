@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.locker.databinding.FragmentScanBinding
-import com.example.locker.screen.setting.SettingActivity
+import com.example.locker.screen.detail_job.JobDetailsActivity
 
 class ScanFragment : Fragment() {
 
@@ -33,7 +33,7 @@ class ScanFragment : Fragment() {
         }
 
         binding.btnMove.setOnClickListener {
-            startActivity(Intent(requireActivity(), SettingActivity::class.java))
+            startActivity(Intent(requireActivity(), JobDetailsActivity::class.java))
         }
 
         return root

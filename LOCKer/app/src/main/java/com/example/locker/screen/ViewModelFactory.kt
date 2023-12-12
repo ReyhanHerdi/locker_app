@@ -9,6 +9,7 @@ import com.example.locker.screen.article.NewsViewModel
 import com.example.locker.screen.home.HomeViewModel
 import com.example.locker.screen.login.AuthViewModel
 import com.example.locker.screen.recomendation.RecomendationViewModel
+import com.example.locker.screen.search.SearchViewModel
 
 @Suppress("UNCHECKED_CAST")
 class ViewModelFactory(private val repository: LockerRepository) : ViewModelProvider.NewInstanceFactory() {
@@ -18,6 +19,7 @@ class ViewModelFactory(private val repository: LockerRepository) : ViewModelProv
         RecomendationViewModel::class.java -> RecomendationViewModel(repository)
         NewsViewModel::class.java -> HomeViewModel(repository)
         AuthViewModel::class.java -> AuthViewModel(repository)
+        SearchViewModel::class.java -> SearchViewModel(repository)
 
         else ->  throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
 

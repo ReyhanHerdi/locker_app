@@ -29,7 +29,7 @@
             android:parentActivityName=".screen.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".screen.ExploreActivity"
+            android:name=".screen.explore.ExploreActivity"
             android:exported="false" />
         <activity
             android:name=".screen.welcome.WelcomeActivity"

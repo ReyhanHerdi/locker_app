@@ -1,5 +1,7 @@
 package com.example.locker.data
 
+import com.example.locker.data.model.Examples
+
 object ExamplesData {
     val examples = listOf(
         Examples(
