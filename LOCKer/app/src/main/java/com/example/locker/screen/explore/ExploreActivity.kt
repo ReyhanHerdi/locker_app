@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.locker.R
 import com.example.locker.databinding.ActivityExploreBinding
-import com.example.locker.screen.article.NewsFragment
+import com.example.locker.screen.article.ArticleFragment
 import com.example.locker.screen.recomendation.RecomendationFragment
 
 class ExploreActivity : AppCompatActivity() {
@@ -27,9 +27,9 @@ class ExploreActivity : AppCompatActivity() {
             binding.topBar.title = "Explore Jobs"
             screen =  RecomendationFragment()
         } else {
-            fragmentScreen = NewsFragment::class.java.simpleName
+            fragmentScreen = ArticleFragment::class.java.simpleName
             binding.topBar.title = "Explore News"
-            screen = NewsFragment()
+            screen = ArticleFragment()
         }
         //val screen = fragmentManager.findFragmentByTag(fragmentScreen)
         fragmentManager

@@ -14,7 +14,7 @@ import com.example.locker.data.model.Examples
 import com.example.locker.databinding.FragmentHomeBinding
 import com.example.locker.screen.explore.ExploreActivity
 import com.example.locker.screen.ViewModelFactory
-import com.example.locker.screen.adapter.NewsAdapter
+import com.example.locker.screen.adapter.ArticleAdapter
 import com.example.locker.screen.adapter.RecommendationAdaper
 
 class HomeFragment : Fragment(), View.OnClickListener {
@@ -22,7 +22,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
     private lateinit var recommendationAdaper: RecommendationAdaper
-    private lateinit var newsAdapter: NewsAdapter
+    private lateinit var articleAdapter: ArticleAdapter
     private val homeViewModel by viewModels<HomeViewModel> {
         ViewModelFactory.getInstance(requireContext())
     }
@@ -106,10 +106,10 @@ class HomeFragment : Fragment(), View.OnClickListener {
         getNews()
         val layoutManager = LinearLayoutManager(context)
         binding.rvNews.layoutManager = layoutManager
-        newsAdapter = NewsAdapter(listNews, 3)
-        binding.rvNews.adapter = newsAdapter
+        articleAdapter = ArticleAdapter(listNews, 3)
+        binding.rvNews.adapter = articleAdapter
 
-        newsAdapter.setOnItemClickCallback(object : NewsAdapter.OnItemClickCallback {
+        articleAdapter.setOnItemClickCallback(object : ArticleAdapter.OnItemClickCallback {
             override fun onItemClicked(examples: Examples) {
                 Toast.makeText(context, "Not yet implemented", Toast.LENGTH_SHORT).show()
             }

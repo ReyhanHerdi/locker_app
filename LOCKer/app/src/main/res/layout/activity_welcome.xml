@@ -11,11 +11,26 @@
         style="@style/TextAppearance.Material3.HeadlineLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="64dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="64dp"
         android:text="@string/welcome"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_teks_register"
+        style="@style/TextAppearance.Material3.BodyMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16sp"
+        android:text="Begin your journey with us!"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineHorizontal"
@@ -31,49 +46,37 @@
         android:layout_width="match_parent"
         android:layout_height="58dp"
         android:layout_margin="16dp"
+        android:backgroundTint="#101820"
         android:text="@string/register"
         app:cornerRadius="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guidelineHorizontal" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_google_welcome"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:layout_margin="12dp"
-        android:drawableLeft="@drawable/google_icon"
-        android:text="@string/sign_in_with_google"
-        app:cornerRadius="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_register_welcome" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="horizontal"
         android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_google_welcome">
+        app:layout_constraintTop_toBottomOf="@+id/btn_register_welcome">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Already have an Account?"
-            android:textColor="#757575"/>
+            android:textColor="#757575" />
 
         <TextView
             android:id="@+id/tv_move_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingStart="8dp"
-            android:textStyle="bold"
+            android:text="@string/sign_in"
             android:textColor="@color/purple_700"
-            android:text="@string/sign_in"/>
+            android:textStyle="bold" />
 
     </LinearLayout>
 

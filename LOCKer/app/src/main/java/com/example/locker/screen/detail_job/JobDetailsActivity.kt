@@ -14,7 +14,6 @@ class JobDetailsActivity : AppCompatActivity() {
         binding = ActivityJobDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setJobDetails()
     }
 
     private fun setJobDetails(){

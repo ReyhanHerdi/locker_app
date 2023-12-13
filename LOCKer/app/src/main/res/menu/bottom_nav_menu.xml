@@ -17,9 +17,9 @@
         android:title="@string/scan" />
 
     <item
-        android:id="@+id/navigation_bookmarked"
-        android:icon="@drawable/bookmarked_selector"
-        android:title="@string/bookmark" />
+        android:id="@+id/navigation_activity"
+        android:icon="@drawable/activity_selector"
+        android:title="@string/activity" />
 
     <item
         android:id="@+id/navigation_profile"

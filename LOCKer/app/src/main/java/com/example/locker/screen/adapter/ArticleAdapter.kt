@@ -7,7 +7,7 @@ import com.bumptech.glide.Glide
 import com.example.locker.data.model.Examples
 import com.example.locker.databinding.NewsListBinding
 
-class NewsAdapter(private val listNews: ArrayList<Examples>, var dataCount: Int) : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
+class ArticleAdapter(private val listNews: ArrayList<Examples>, var dataCount: Int) : RecyclerView.Adapter<ArticleAdapter.NewsViewHolder>() {
 
     private lateinit var onItemClickCallback: OnItemClickCallback
 

@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.locker.data.repository.LockerRepository
 import com.example.locker.di.Injection
-import com.example.locker.screen.article.NewsViewModel
+import com.example.locker.screen.article.ArticleViewModel
 import com.example.locker.screen.home.HomeViewModel
 import com.example.locker.screen.login.AuthViewModel
 import com.example.locker.screen.recomendation.RecomendationViewModel
@@ -17,7 +17,7 @@ class ViewModelFactory(private val repository: LockerRepository) : ViewModelProv
 
         HomeViewModel::class.java -> HomeViewModel(repository)
         RecomendationViewModel::class.java -> RecomendationViewModel(repository)
-        NewsViewModel::class.java -> HomeViewModel(repository)
+        ArticleViewModel::class.java -> HomeViewModel(repository)
         AuthViewModel::class.java -> AuthViewModel(repository)
         SearchViewModel::class.java -> SearchViewModel(repository)
 
