@@ -13,8 +13,11 @@
     <!-- color text -->
     <color name="color_text_edt">#22092C</color>
 
-
     <!-- color component -->
     <color name="bg_custom_itl">#F0F0F0</color>
+    <color name="card_color">#F5F5F5</color>
+
+    <!--color application-->
+    <color name="background">#FFFFFF</color>
 
 </resources>

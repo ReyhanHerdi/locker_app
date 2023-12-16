@@ -9,5 +9,10 @@
 
     <!-- color component -->
     <color name="bg_custom_itl">#2B2930</color>
+    <color name="card_color">#161515</color>
+
+
+    <!--color application-->
+    <color name="background">#05050A</color>
 
 </resources>

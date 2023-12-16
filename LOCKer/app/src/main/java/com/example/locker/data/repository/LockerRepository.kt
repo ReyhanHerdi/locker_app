@@ -1,17 +1,17 @@
 package com.example.locker.data.repository
 
-import com.example.locker.data.model.Examples
 import com.example.locker.data.ExamplesData
+import com.example.locker.data.model.Examples
+import com.example.locker.data.model.User
 import com.example.locker.util.Reference
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import com.example.locker.data.model.User
 
 
-class LockerRepository() {
+class LockerRepository {
 
     private val auth = FirebaseAuth.getInstance()
     private val db: FirebaseFirestore by lazy {

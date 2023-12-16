@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="10dp"
-    android:backgroundTint="#EEEFF1"
+    android:backgroundTint="@color/card_color"
     android:elevation="0dp"
     android:theme="@style/Widget.Material3.CardView.Elevated"
     app:cardCornerRadius="16dp"
@@ -30,7 +30,7 @@
                 android:id="@+id/img_job"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:contentDescription="@string/job_title"
+                android:contentDescription="@string/article_image"
                 android:scaleType="centerCrop"
                 android:src="@color/black" />
 
@@ -48,10 +48,10 @@
             app:layout_constraintTop_toTopOf="@+id/cardView">
 
             <TextView
-                android:id="@+id/tv_news_title"
+                android:id="@+id/tv_articleTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/news_title"
+                android:text="@string/article"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@id/tv_news_description"
@@ -65,12 +65,12 @@
                 android:maxLines="2"
                 android:text="@string/news_description"
                 android:textAlignment="textStart"
-                android:textColor="@color/grey"
+                android:textColor="#616161"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@id/img_job"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/tv_news_title"
-                app:layout_constraintTop_toBottomOf="@id/tv_news_title" />
+                app:layout_constraintStart_toStartOf="@+id/tv_articleTitle"
+                app:layout_constraintTop_toBottomOf="@id/tv_articleTitle" />
 
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
