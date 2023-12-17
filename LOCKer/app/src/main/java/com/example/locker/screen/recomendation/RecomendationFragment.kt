@@ -1,10 +1,10 @@
 package com.example.locker.screen.recomendation
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,6 +12,7 @@ import com.example.locker.data.model.Examples
 import com.example.locker.databinding.FragmentRecomendationBinding
 import com.example.locker.screen.ViewModelFactory
 import com.example.locker.screen.adapter.RecommendationAdaper
+import com.example.locker.screen.detail_job.JobDetailsActivity
 
 class RecomendationFragment : Fragment() {
 
@@ -61,9 +62,15 @@ class RecomendationFragment : Fragment() {
 
         recommendationAllAdapter.setOnItemCallback(object : RecommendationAdaper.OnItemClickCallback {
             override fun onItemClicked(examples: Examples) {
-                Toast.makeText(context, "Not yet implemented", Toast.LENGTH_SHORT).show()
+                showClickedJob(examples)
             }
 
         })
+    }
+
+    private fun showClickedJob(article: Examples) {
+        val intent = Intent(context, JobDetailsActivity::class.java )
+        intent.putExtra(JobDetailsActivity.IMAGE, article.poster)
+        startActivity(intent)
     }
 }

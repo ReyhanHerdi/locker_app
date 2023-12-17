@@ -1,5 +1,6 @@
 package com.example.locker.screen.article
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -60,9 +61,17 @@ class ArticleFragment : Fragment() {
 
         newsAllAdapter.setOnItemClickCallback(object: ArticleAdapter.OnItemClickCallback {
             override fun onItemClicked(examples: Examples) {
-                Toast.makeText(context, "Not Yet Implemented", Toast.LENGTH_SHORT).show()
+                showClickedArticle(examples)
             }
 
         })
+    }
+
+    private fun showClickedArticle(article: Examples) {
+        val intent = Intent(context, ArticleDetailActivity::class.java )
+        intent.putExtra(ArticleDetailActivity.TITLE, article.judul)
+        intent.putExtra(ArticleDetailActivity.IMAGE, article.poster)
+        intent.putExtra(ArticleDetailActivity.DESCRIPTION, article.sinopsis)
+        startActivity(intent)
     }
 }

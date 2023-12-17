@@ -28,8 +28,12 @@ class JobDetailsActivity : AppCompatActivity() {
             tvRequirements.text = ""
             jobDescription.text = ""
             Glide.with(root.context)
-                .load("")
+                .load(intent.getStringExtra(IMAGE))
                 .into(ivCompany)
         }
+    }
+
+    companion object {
+        const val IMAGE = "image"
     }
 }

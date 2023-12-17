@@ -1,5 +1,6 @@
 package com.example.locker.screen.article
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
@@ -26,12 +27,18 @@ class ArticleDetailActivity : AppCompatActivity() {
 
     private fun articleContent(){
         binding.apply {
-            tvArticleTitle.text = ""
+            tvArticleTitle.text = intent.getStringExtra(TITLE)
             tvArticleAuthor.text = ""
-            tvArticleContent.text = ""
+            tvArticleContent.text = intent.getStringExtra(DESCRIPTION)
             Glide.with(root.context)
-                .load("")
+                .load(intent.getStringExtra(IMAGE))
                 .into(ivArticle)
         }
+    }
+
+    companion object {
+        const val TITLE = "title"
+        const val IMAGE = "image"
+        const val DESCRIPTION = "description"
     }
 }

@@ -21,20 +21,27 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.makeramen.roundedimageview.RoundedImageView
-            android:id="@+id/pic_highlight"
+        <androidx.constraintlayout.motion.widget.MotionLayout
+            android:id="@+id/img_highlight_motion_layout"
             android:layout_width="match_parent"
-            android:layout_height="140dp"
-            app:riv_corner_radius="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:contentDescription="@string/image_highlight"
-            android:scaleType="centerCrop"
-            android:src="@drawable/example"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tv_welcomeUser"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_welcomeUser" />
+            app:layoutDescription="@xml/highlight_scene">
+
+            <ImageView
+                android:id="@+id/pic_highlight"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_marginBottom="244dp"
+                android:contentDescription="@string/image_highlight"
+                android:scaleType="centerCrop"
+                android:src="@drawable/example"
+                app:layout_constraintBottom_toBottomOf="@id/rv_recomendation"
+                app:riv_corner_radius="16dp"
+                tools:layout_editor_absoluteX="0dp" />
+
+        </androidx.constraintlayout.motion.widget.MotionLayout>
 
         <TextView
             android:id="@+id/tv_recomendation"
@@ -46,7 +53,7 @@
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/pic_highlight" />
+            app:layout_constraintTop_toBottomOf="@+id/img_highlight_motion_layout" />
 
         <TextView
             android:id="@+id/tv_view_all_recomendation"
@@ -59,7 +66,7 @@
             android:text="@string/view_all"
             android:textSize="13sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/pic_highlight"
+            app:layout_constraintTop_toBottomOf="@+id/img_highlight_motion_layout"
             tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
 
         <androidx.recyclerview.widget.RecyclerView

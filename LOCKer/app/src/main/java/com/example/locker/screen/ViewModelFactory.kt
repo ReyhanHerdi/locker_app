@@ -17,7 +17,7 @@ class ViewModelFactory(private val repository: LockerRepository) : ViewModelProv
 
         HomeViewModel::class.java -> HomeViewModel(repository)
         RecomendationViewModel::class.java -> RecomendationViewModel(repository)
-        ArticleViewModel::class.java -> HomeViewModel(repository)
+        ArticleViewModel::class.java -> ArticleViewModel(repository)
         AuthViewModel::class.java -> AuthViewModel(repository)
         SearchViewModel::class.java -> SearchViewModel(repository)
 
