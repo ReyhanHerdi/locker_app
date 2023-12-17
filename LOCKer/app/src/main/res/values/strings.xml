@@ -22,7 +22,9 @@
     <string name="don_t_have_an_account">Don\'t have an Account?</string>
     <string name="sign_up">Sign up</string>
     <string name="or">OR</string>
-
+    <string name="applied">Applied</string>
+    <string name="saved">Saved</string>
+    <string name="you_have_not">Look like you have not %1$s anything yet!</string>
     <string name="company_image">Company Image</string>
     <string name="requirements">Requirements</string>
 
