@@ -177,4 +177,5 @@
     <string name="fab_text">How to Scan</string>
     <string name="tutorial">Tutorial</string>
     <string name="start_scanning">Start Scanning</string>
+    <string name="continue_with_google">Continue with Google</string>
 </resources>

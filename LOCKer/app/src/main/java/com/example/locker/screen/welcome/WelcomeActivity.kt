@@ -18,13 +18,18 @@ class WelcomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        binding.btnRegisterWelcome.setOnClickListener {
-            startActivity(Intent(applicationContext, RegisterActivity::class.java))
+        binding.apply {
+            btnRegisterWelcome.setOnClickListener {
+                startActivity(Intent(applicationContext, RegisterActivity::class.java))
+            }
+            btnGoogle.setOnClickListener {
+                startActivity(Intent(applicationContext, LoginActivity::class.java))
+            }
+            binding.tvMoveSignIn.setOnClickListener {
+                startActivity(Intent(applicationContext, LoginActivity::class.java))
+            }
         }
 
-        binding.btnLogin.setOnClickListener {
-            startActivity(Intent(applicationContext, LoginActivity::class.java))
-        }
         setupView()
 
     }

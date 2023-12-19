@@ -55,11 +55,13 @@
 
     <style name="Button">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">58dp</item>
+        <item name="android:layout_height">56dp</item>
         <item name="android:radius">24dp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">14sp</item>
-        <item name="android:layout_margin">16sp</item>
+        <item name="android:layout_marginTop">12sp</item>
+        <item name="android:layout_marginStart">16sp</item>
+        <item name="android:layout_marginEnd">16sp</item>
         <item name="android:textColor">?attr/colorOnPrimary</item>
         <item name="android:backgroundTint">?attr/colorPrimary</item>
         <item name="android:maxWidth">360dp</item>

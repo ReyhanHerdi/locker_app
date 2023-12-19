@@ -17,6 +17,8 @@
     <color name="color_text">#0F0F0F</color>
     <color name="color_text2">#2D2B2B</color>
     <color name="color_sub_text">#808188</color>
+    <color name="text_accent">#FF7754</color>
+    <color name="text_auth_button">#001C2F</color>
 
     <!-- color component -->
     <color name="bg_custom_itl">#F0F0F0</color>
@@ -25,6 +27,7 @@
     <color name="color_icon_2">#0B0B0C</color>
     <color name="color_icon_active">#001C2F</color>
     <color name="color_icoon_disable">#5F5F5F</color>
+    <color name="color_hint">#83829A</color>
 
     <!--color application-->
     <color name="background">#FFFFFF</color>
