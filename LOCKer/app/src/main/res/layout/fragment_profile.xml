@@ -1,232 +1,207 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".screen.profile.ProfileFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appbar_layout"
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topBar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            style="@style/Widget.Material3.Toolbar"
+            android:layout_height="?attr/actionBarSize"
+            app:menu="@menu/menu_profile"
+            app:title="@string/profile"
+            app:titleCentered="true" />
 
-            <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/topBar"
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/img_profile"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/profile_dummy"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:riv_oval="true" />
+
+            <TextView
+                android:id="@+id/tv_userName"
+                style="@style/TextAppearance.Material3.TitleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/user_name"
+                app:layout_constraintBottom_toTopOf="@id/tv_userEmail"
+                app:layout_constraintStart_toEndOf="@id/img_profile"
+                app:layout_constraintTop_toTopOf="@id/img_profile" />
+
+            <TextView
+                android:id="@+id/tv_userEmail"
+                style="@style/TextAppearance.Material3.BodyMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/loremexample_mail_com"
+                app:layout_constraintBottom_toBottomOf="@id/img_profile"
+                app:layout_constraintStart_toEndOf="@id/img_profile"
+                app:layout_constraintTop_toBottomOf="@id/tv_userName" />
+
+            <Button
+                android:id="@+id/btn_edit_profile"
+                style="@style/Widget.Material3.Button.OutlinedButton"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:title="Profile"
-                app:titleCentered="true" />
-        </com.google.android.material.appbar.AppBarLayout>
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/edit_profile"
+                android:textAllCaps="false"
+                android:textSize="12sp"
+                app:cornerRadius="16dp"
+                app:layout_constraintEnd_toEndOf="@id/img_profile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_profile" />
 
-        <com.makeramen.roundedimageview.RoundedImageView
-            android:id="@+id/img_profile"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="12dp"
-            android:src="@drawable/user"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/appbar_layout"
-            app:riv_oval="true" />
+            <TextView
+                android:id="@+id/tv_name"
+                style="@style/TextBody.Medium"
+                android:layout_marginTop="16dp"
+                android:text="@string/name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_edit_profile" />
 
-        <TextView
-            android:id="@+id/tv_userName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/user_name"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@id/tv_userEmail"
-            app:layout_constraintStart_toEndOf="@id/img_profile"
-            app:layout_constraintTop_toTopOf="@id/img_profile" />
+            <TextView
+                android:id="@+id/tv_user_full_name"
+                style="@style/TextBody.Large"
+                android:text="@string/user_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_name" />
 
-        <TextView
-            android:id="@+id/tv_userEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="16dp"
-            android:text="@string/loremexample_mail_com"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@id/img_profile"
-            app:layout_constraintStart_toEndOf="@id/img_profile"
-            app:layout_constraintTop_toBottomOf="@id/tv_userName" />
+            <TextView
+                android:id="@+id/tv_gender"
+                style="@style/TextBody.Medium"
+                android:text="@string/gender"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_user_full_name" />
 
-        <Button
-            android:id="@+id/btn_edit_profile"
-            style="@style/Widget.MaterialComponents.Button"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:text="@string/edit_profile"
-            android:textAllCaps="false"
-            android:textSize="12sp"
-            app:cornerRadius="12dp"
-            app:layout_constraintEnd_toEndOf="@id/img_profile"
-            app:layout_constraintStart_toStartOf="@id/img_profile"
-            app:layout_constraintTop_toBottomOf="@id/img_profile" />
+            <TextView
+                android:id="@+id/tv_user_gender"
+                style="@style/TextBody.Large"
+                android:text="@string/male"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_gender" />
 
-        <TextView
-            android:id="@+id/tv_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
-            android:text="@string/name"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/img_profile"
-            app:layout_constraintTop_toBottomOf="@id/btn_edit_profile" />
+            <TextView
+                android:id="@+id/tv_education"
+                style="@style/TextBody.Medium"
+                android:text="@string/university_or_school"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_user_gender" />
 
-        <TextView
-            android:id="@+id/tv_user_full_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:paddingTop="4dp"
-            android:text="@string/user_name"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/tv_name"
-            app:layout_constraintTop_toBottomOf="@id/tv_name" />
+            <TextView
+                android:id="@+id/tv_user_education"
+                style="@style/TextBody.Large"
+                android:text="@string/user_education"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_education" />
 
-        <TextView
-            android:id="@+id/tv_gender"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="16dp"
-            android:text="@string/gender"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/img_profile"
-            app:layout_constraintTop_toBottomOf="@id/tv_user_full_name" />
+            <TextView
+                android:id="@+id/tv_location"
+                style="@style/TextBody.Medium"
+                android:text="@string/location"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_user_education" />
 
-        <TextView
-            android:id="@+id/tv_user_gender"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:paddingTop="4dp"
-            android:text="@string/male"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/tv_gender"
-            app:layout_constraintTop_toBottomOf="@id/tv_gender" />
+            <TextView
+                android:id="@+id/tv_user_location"
+                style="@style/TextBody.Large"
+                android:text="@string/user_location"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_location" />
 
-        <TextView
-            android:id="@+id/tv_education"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="16dp"
-            android:text="@string/education"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/img_profile"
-            app:layout_constraintTop_toBottomOf="@id/tv_user_gender" />
+            <TextView
+                android:id="@+id/tv_city"
+                style="@style/TextBody.Medium"
+                android:text="@string/city"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_user_location" />
 
-        <TextView
-            android:id="@+id/tv_user_education"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:paddingTop="4dp"
-            android:text="@string/user_education"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/tv_education"
-            app:layout_constraintTop_toBottomOf="@id/tv_education" />
+            <TextView
+                android:id="@+id/tv_user_city"
+                style="@style/TextBody.Large"
+                android:text="@string/manchester"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_city" />
 
-        <TextView
-            android:id="@+id/tv_location"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="16dp"
-            android:text="@string/location"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/img_profile"
-            app:layout_constraintTop_toBottomOf="@id/tv_user_education" />
+            <TextView
+                android:id="@+id/tv_industry"
+                style="@style/TextBody.Medium"
+                android:text="@string/major"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_user_city" />
 
-        <TextView
-            android:id="@+id/tv_user_location"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:paddingTop="4dp"
-            android:text="@string/user_location"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/tv_location"
-            app:layout_constraintTop_toBottomOf="@id/tv_location" />
+            <TextView
+                android:id="@+id/tv_user_industry"
+                style="@style/TextBody.Large"
+                android:text="@string/computer_science"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_industry" />
 
-        <TextView
-            android:id="@+id/tv_city"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="16dp"
-            android:text="@string/city"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/img_profile"
-            app:layout_constraintTop_toBottomOf="@id/tv_user_location" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_logout"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                app:iconPadding="16dp"
+                android:drawableLeft="@drawable/logout_circle_r"
+                android:letterSpacing="0.05"
+                android:text="@string/log_out"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:strokeColor="@color/transparent" />
 
-        <TextView
-            android:id="@+id/tv_user_city"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:paddingTop="4dp"
-            android:text="@string/manchester"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/tv_city"
-            app:layout_constraintTop_toBottomOf="@id/tv_city" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <TextView
-            android:id="@+id/tv_industry"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="16dp"
-            android:text="@string/industry"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/img_profile"
-            app:layout_constraintTop_toBottomOf="@id/tv_user_city" />
+    </androidx.core.widget.NestedScrollView>
 
-        <TextView
-            android:id="@+id/tv_user_industry"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:paddingTop="4dp"
-            android:text="@string/user_industry"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/tv_industry"
-            app:layout_constraintTop_toBottomOf="@id/tv_industry" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</FrameLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

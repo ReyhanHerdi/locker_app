@@ -6,15 +6,32 @@
     android:layout_height="match_parent"
     tools:context=".screen.welcome.WelcomeActivity">
 
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/welcomebackground"
+        android:contentDescription="@string/background"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
     <TextView
         android:id="@+id/textView"
         style="@style/TextAppearance.Material3.HeadlineLarge"
         android:layout_width="wrap_content"
+        android:textSize="26sp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="64dp"
-        android:text="@string/welcome"
+        android:textColor="#F0F0F0"
+        android:shadowDx="0.5"
+        android:shadowDy="0.5"
+        android:shadowColor="@color/black"
+        android:shadowRadius="8"
+        android:text="@string/welcome_to_locker"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,9 +43,17 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16sp"
-        android:text="Begin your journey with us!"
-        android:textSize="18sp"
+        android:shadowColor="@color/black"
+        android:shadowDx="0.5"
+        android:shadowDy="0.5"
+        android:shadowRadius="10"
+        android:text="@string/begin_your_journey_with_us"
+        android:textAlignment="center"
+        android:textColor="#FF7754"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -43,41 +68,27 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_register_welcome"
+        style="@style/Button"
+        android:text="@string/register"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidelineHorizontal"
+        tools:ignore="VisualLintButtonSize" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="58dp"
-        android:layout_margin="16dp"
-        android:backgroundTint="#101820"
-        android:text="@string/register"
-        app:cornerRadius="24dp"
+        android:layout_marginStart="16dp"
+        android:textStyle="bold"
+        android:text="@string/login"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/white"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guidelineHorizontal" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_register_welcome">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Already have an Account?"
-            android:textColor="#757575" />
-
-        <TextView
-            android:id="@+id/tv_move_login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingStart="8dp"
-            android:text="@string/sign_in"
-            android:textColor="@color/purple_700"
-            android:textStyle="bold" />
-
-    </LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/btn_register_welcome"
+        tools:ignore="VisualLintButtonSize" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

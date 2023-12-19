@@ -1,9 +1,12 @@
 package com.example.locker.screen.login
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.example.locker.R
 import com.example.locker.databinding.ActivityLoginBinding
 import com.example.locker.screen.MainActivity
 import com.example.locker.screen.ViewModelFactory
@@ -43,9 +46,12 @@ class LoginActivity : AppCompatActivity() {
                     binding.progressBar.visibility = View.VISIBLE
                 }
                 showSnackbar(authViewModel.message.toString())
-                startActivity(Intent(this, MainActivity::class.java))
-                finish()
-
+                showAlert(
+                    resources.getString(R.string.Success),
+                    resources.getString(R.string.SuccessMsg)
+                ){_, _ ->
+                    navigate()
+                }
             } else {
                 showSnackbar("Please Fill Everything")
             }
@@ -58,5 +64,25 @@ class LoginActivity : AppCompatActivity() {
 
     private fun showSnackbar(message: String?) {
         Snackbar.make(binding.root, message!!, Snackbar.LENGTH_SHORT).show()
+    }
+
+    private fun showAlert(
+        title: String,
+        message: String,
+        onPositiveClick: ((dialog: DialogInterface, which: Int) -> Unit)? = null
+    ) {
+        AlertDialog.Builder(this).apply {
+            setTitle(title)
+            setMessage(message)
+            setPositiveButton(resources.getString(R.string.next), onPositiveClick)
+            create()
+            show()
+        }
+    }
+
+    private fun navigate(){
+        val intent = Intent(applicationContext, MainActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+        startActivity(intent)
     }
 }

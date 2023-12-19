@@ -5,38 +5,63 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
+import com.example.locker.customview.ModalBottomSheet
 import com.example.locker.databinding.FragmentScanBinding
+import com.example.locker.screen.ViewModelFactory
 import com.example.locker.screen.detail_job.JobDetailsActivity
 
 class ScanFragment : Fragment() {
 
     private var _binding: FragmentScanBinding? = null
     private val binding get() = _binding!!
+    private val scanViewModel: ScanViewModel by viewModels {
+        ViewModelFactory.getInstance(requireContext())
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val scanViewModel =
-            ViewModelProvider(this)[ScanViewModel::class.java]
-
         _binding = FragmentScanBinding.inflate(inflater, container, false)
-        val root: View = binding.root
 
-        val textView: TextView = binding.textNotifications
-        scanViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.apply {
+            nestedScrollView.setOnScrollChangeListener(NestedScrollView.OnScrollChangeListener { _, _, scrollY, _, oldScrollY ->
+                if (scrollY > oldScrollY +10 && fabTutorial.isExtended){
+                    fabTutorial.shrink()
+                }
+
+                if (scrollY < oldScrollY -10 && fabTutorial.isExtended){
+                    fabTutorial.extend()
+                }
+
+                if (scrollY == 0){
+                    fabTutorial.extend()
+                }
+            })
+
         }
 
-        binding.btnMove.setOnClickListener {
-            startActivity(Intent(requireActivity(), JobDetailsActivity::class.java))
-        }
+        binding.apply {
 
-        return root
+            fabTutorial.setOnClickListener {
+                val modalBottomSheet = ModalBottomSheet()
+                childFragmentManager.let { modalBottomSheet.show(it, ModalBottomSheet.TAG) }
+            }
+
+            btnMove.setOnClickListener {
+                startActivity(Intent(requireActivity(), JobDetailsActivity::class.java))
+            }
+        }
     }
 
     override fun onDestroyView() {

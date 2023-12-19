@@ -18,7 +18,7 @@ class ArticleAdapter(private val listNews: ArrayList<Examples>, var dataCount: I
     inner class NewsViewHolder(private val binding: NewsListBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(examples: Examples) {
             with(binding) {
-                tvNewsTitle.text = examples.judul
+                tvArticleTitle.text = examples.judul
                 tvNewsDescription.text = examples.sinopsis
                 Glide.with(itemView.context)
                     .load(examples.poster)

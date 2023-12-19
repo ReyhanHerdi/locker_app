@@ -22,6 +22,9 @@
     <string name="don_t_have_an_account">Don\'t have an Account?</string>
     <string name="sign_up">Sign up</string>
     <string name="or">OR</string>
+    <string name="next">Next</string>
+    <string name="Success">Login Success</string>
+    <string name="SuccessMsg">Welcome to LOCKer!</string>
 
     <string name="company_image">Company Image</string>
     <string name="requirements">Requirements</string>
@@ -130,6 +133,7 @@
     <string name="edit_profile">Edit Profile</string>
     <string name="name">Name</string>
     <string name="male">Male</string>
+    <string name="female">Female</string>
     <string name="gender">Gender</string>
     <string name="education">Education</string>
     <string name="user_education">Cambridge University</string>
@@ -137,9 +141,40 @@
     <string name="location">Location</string>
     <string name="city">City</string>
     <string name="manchester">Manchester</string>
+
     <string name="industry">Industry</string>
     <string name="user_industry">Technology, Information, and Internet</string>
     <string name="username">Username</string>
     <string name="setting">Setting</string>
     <string name="activity">Activity</string>
+    <string name="hint_name">Full Name</string>
+    <string name="hint_email">Your active email</string>
+    <string name="hint_location">Confirm your location</string>
+    <string name="hint_city">Example: Bandung</string>
+    <string name="university_or_school">University or School</string>
+    <string name="hint_univ">Enter University or School</string>
+    <string name="major">Major</string>
+    <string name="hint_major">Example: Computer Science</string>
+    <string name="skill">Skill</string>
+    <string name="add_skill">Add Skill</string>
+    <string name="save">Save</string>
+    <string name="about_me">About Me</string>
+    <string name="computer_science">Computer Science</string>
+    <string name="login_image">Login Image</string>
+    <string name="register_image">register image</string>
+    <string name="register_account">Register Account</string>
+    <string name="let_s_create_your_account">Let\'s create your account!</string>
+    <string name="great_to_see_you_again">Great to see you again!</string>
+    <string name="login_account">Login Account</string>
+    <string name="log_out">Log Out</string>
+    <string name="article">Article</string>
+    <string name="save_this_job">Save this Job</string>
+    <string name="article_image">Article Image</string>
+    <string name="welcome_to_locker">Welcome to LOCKER</string>
+    <string name="background">background</string>
+    <string name="begin_your_journey_with_us">Begin your journey with us!</string>
+    <string name="navigate_up">Navigate Up</string>
+    <string name="fab_text">How to Scan</string>
+    <string name="tutorial">Tutorial</string>
+    <string name="start_scanning">Start Scanning</string>
 </resources>
