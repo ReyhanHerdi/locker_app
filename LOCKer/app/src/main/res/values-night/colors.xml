@@ -6,7 +6,7 @@
     <!-- color text -->
     <color name="color_text_edt">#FEFBF6</color>
     <color name="color_text">#F2F2F2</color>
-    <color name="color_text2">#F0F0F0</color>
+    <color name="color_text2">#EBEBEB</color>
     <color name="color_sub_text">#808188</color>
     <color name="text_auth_button">#FF7754</color>
 
