@@ -55,7 +55,7 @@
                 android:maxLines="2"
                 android:text="@string/news_description"
                 android:textAlignment="textStart"
-                android:textColor="#616161"
+                android:textColor="@color/color_text2"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@id/img_job"
                 app:layout_constraintEnd_toEndOf="parent"
