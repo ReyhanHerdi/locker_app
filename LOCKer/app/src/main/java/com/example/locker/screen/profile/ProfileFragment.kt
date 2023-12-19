@@ -3,14 +3,9 @@ package com.example.locker.screen.profile
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.view.MenuHost
-import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.locker.R
@@ -20,7 +15,7 @@ import com.example.locker.screen.data_user.DataInputActivity
 import com.example.locker.screen.login.AuthViewModel
 import com.example.locker.screen.setting.SettingActivity
 
-class ProfileFragment : Fragment(), View.OnClickListener, MenuProvider {
+class ProfileFragment : Fragment(), View.OnClickListener {
 
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
@@ -44,10 +39,16 @@ class ProfileFragment : Fragment(), View.OnClickListener, MenuProvider {
 
         binding.btnEditProfile.setOnClickListener(this)
 
-        val menuProfile: MenuHost = requireActivity()
-        menuProfile.addMenuProvider(this)
-
         binding.btnLogout.setOnClickListener(this)
+        binding.topBar.setOnMenuItemClickListener {menuItem ->
+            when(menuItem.itemId){
+                R.id.menu_setting -> {
+                    startActivity(Intent(requireContext(), SettingActivity::class.java))
+                    true
+                }
+                else -> false
+            }
+        }
 
     }
 
@@ -59,20 +60,5 @@ class ProfileFragment : Fragment(), View.OnClickListener, MenuProvider {
         }
     }
 
-    override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
-        menuInflater.inflate(R.menu.menu_profile, menu)
-    }
-
-    override fun onMenuItemSelected(menuItem: MenuItem): Boolean = when (menuItem.itemId) {
-        R.id.menu_setting -> {
-            startActivity(Intent(requireContext(), SettingActivity::class.java))
-            Toast.makeText(requireActivity(), "Berhasil", Toast.LENGTH_SHORT).show()
-
-            true
-        }
-
-        else -> false
-
-    }
 
 }

@@ -25,9 +25,9 @@
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:contentDescription="@string/login_image"
             android:src="@drawable/mobile_login_bro"
-            android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_teks_login" />
@@ -61,13 +61,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
             app:endIconMode="clear_text"
+            app:endIconTint="@color/color_icon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView"
-            app:startIconDrawable="@drawable/envelope">
+            app:startIconDrawable="@drawable/envelope"
+            app:startIconTint="@color/color_icon">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_email"
@@ -85,13 +87,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
             app:endIconMode="password_toggle"
+            app:endIconTint="@color/color_icon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/til_email"
-            app:startIconDrawable="@drawable/lock">
+            app:startIconDrawable="@drawable/lock"
+            app:startIconTint="@color/color_icon">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_password"
@@ -106,14 +110,9 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_login"
-            android:layout_width="match_parent"
-            android:layout_height="58dp"
-            android:layout_margin="16dp"
-            android:backgroundTint="#101820"
-            android:text="@string/login"
-            android:textColor="#F0F0F0"
+            style="@style/Button"
             android:contentDescription="@string/login_account"
-            app:cornerRadius="24dp"
+            android:text="@string/login"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/til_password"
@@ -123,10 +122,10 @@
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_marginTop="12dp"
-            android:paddingBottom="16dp"
+            android:gravity="center"
             android:orientation="horizontal"
+            android:paddingBottom="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_login">
@@ -135,13 +134,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/don_t_have_an_account"
-                android:textColor="#757575" />
+                android:textColor="@color/grey" />
 
             <TextView
                 android:id="@+id/tv_move_register"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="4dp"
                 android:text="@string/sign_up"
                 android:textColor="?attr/colorPrimary"
                 android:textStyle="bold" />

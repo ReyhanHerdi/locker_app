@@ -59,4 +59,30 @@ class LockerRepository {
         auth.signOut()
     }
 
+    fun getUserData(onResult: (User?, Exception?) -> Unit) {
+        db.collection(Reference.COLLECTION).document(auth.currentUser!!.uid)
+            .get()
+            .addOnSuccessListener { documentSnapshot ->
+                val user = documentSnapshot.toObject(User::class.java)
+                onResult(user, null)
+            }
+            .addOnFailureListener { e ->
+                onResult(null, e)
+            }
+    }
+
+    fun saveData(
+        user: User,
+        onResult: (Void?, Exception?) -> Unit,
+    ) {
+        db.collection(Reference.COLLECTION).document(auth.currentUser!!.uid)
+            .set(user)
+            .addOnSuccessListener { documentReference ->
+                onResult(documentReference, null)
+            }
+            .addOnFailureListener { e ->
+                onResult(null, e)
+            }
+    }
+
 }

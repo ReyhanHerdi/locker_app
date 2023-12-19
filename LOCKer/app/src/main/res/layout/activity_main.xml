@@ -7,7 +7,9 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
-        app:itemActiveIndicatorStyle="?attr/backgroundColor"
+        app:itemBackground="@color/background"
+        app:elevation="24dp"
+        android:backgroundTintMode="screen"
         style="@style/BottomNavigationStyle" />
 
     <fragment

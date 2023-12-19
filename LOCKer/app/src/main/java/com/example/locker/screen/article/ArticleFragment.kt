@@ -28,10 +28,14 @@ class ArticleFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentNewsBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-        // Inflate the layout for this fragment
+
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         showNewsAll()
-        return root
     }
 
     private fun getNewsAll(): ArrayList<Examples> {
