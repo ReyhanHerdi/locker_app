@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.example.locker.R
+import com.example.locker.data.model.User
 import com.example.locker.databinding.ActivityRegisterBinding
 import com.example.locker.screen.ViewModelFactory
 import com.example.locker.screen.login.AuthViewModel
@@ -33,7 +35,6 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         binding.btnRegister.setOnClickListener {
-/*
             val username = binding.etUsername.text.toString()
             val email = binding.etEmail.text.toString()
             val password = binding.etPassword.text.toString()
@@ -45,14 +46,12 @@ class RegisterActivity : AppCompatActivity() {
                     User(username = username, email = email)
                 )
                 showSnackbar(authViewModel.message.toString())
-                startActivity(Intent(this, LoginActivity::class.java))
                 finish()
             } else {
-                showSnackbar("Please Fill Everything")
+                showSnackbar(resources.getString(R.string.empty_field))
             }
-*/
 
-            startActivity(Intent(applicationContext, LoginActivity::class.java))
+        //    startActivity(Intent(applicationContext, LoginActivity::class.java))
         }
     }
 

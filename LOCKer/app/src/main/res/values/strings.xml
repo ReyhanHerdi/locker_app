@@ -196,4 +196,6 @@
     <string name="fake">FAKE</string>
     <string name="job_vacancy">Job Vacancy Text</string>
     <string name="verified_company_logo">verified company logo</string>
+
+    <string name="empty_field">Please Fill Everything</string>
 </resources>

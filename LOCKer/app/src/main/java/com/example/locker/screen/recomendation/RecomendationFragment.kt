@@ -8,7 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.locker.data.model.Examples
+import com.example.locker.data.model.Article
 import com.example.locker.databinding.FragmentRecomendationBinding
 import com.example.locker.screen.ViewModelFactory
 import com.example.locker.screen.adapter.RecommendationAdaper
@@ -20,7 +20,7 @@ class RecomendationFragment : Fragment() {
     private val recomendationViewModel by viewModels<RecomendationViewModel> {
         ViewModelFactory.getInstance(requireContext())
     }
-    private val listRecomendations = ArrayList<Examples>()
+    private val listRecomendations = ArrayList<Article>()
     private lateinit var recommendationAllAdapter: RecommendationAdaper
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,16 +35,16 @@ class RecomendationFragment : Fragment() {
         return root
     }
 
-    private fun getRecomendationAll(): ArrayList<Examples> {
-        val examples: List<Examples> = recomendationViewModel.getRecomendation()
+    private fun getRecomendationAll(): ArrayList<Article> {
+        val examples: List<Article> = recomendationViewModel.getRecomendation()
         for (i in examples) {
             listRecomendations.add(
-                Examples(
+                Article(
                     i.id,
-                    i.judul,
-                    i.sinopsis,
-                    i.tahunRilis,
-                    i.poster
+                    i.title,
+                    i.content,
+                    i.image,
+                    i.author
 
                 )
             )
@@ -60,7 +60,7 @@ class RecomendationFragment : Fragment() {
         binding.rvRecomendationAll.adapter = recommendationAllAdapter
 
         recommendationAllAdapter.setOnItemCallback(object : RecommendationAdaper.OnItemClickCallback {
-            override fun onItemClicked(examples: Examples) {
+            override fun onItemClicked(article: Article) {
                 Toast.makeText(context, "Not yet implemented", Toast.LENGTH_SHORT).show()
             }
 

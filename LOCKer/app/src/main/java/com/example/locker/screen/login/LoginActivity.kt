@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.locker.R
@@ -36,7 +37,6 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.btnLogin.setOnClickListener {
-/*
             val email = binding.etEmail.text.toString()
             val password = binding.etPassword.text.toString()
 
@@ -46,18 +46,18 @@ class LoginActivity : AppCompatActivity() {
                     binding.progressBar.visibility = View.VISIBLE
                 }
                 showSnackbar(authViewModel.message.toString())
-                showAlert(
+                navigate()
+/*                showAlert(
                     resources.getString(R.string.Success),
                     resources.getString(R.string.SuccessMsg)
                 ){_, _ ->
                     navigate()
-                }
+                }*/
             } else {
-                showSnackbar("Please Fill Everything")
+                showSnackbar(resources.getString(R.string.empty_field))
             }
-*/
 
-            startActivity(Intent(applicationContext, MainActivity::class.java))
+         //   startActivity(Intent(applicationContext, MainActivity::class.java))
         }
 
     }
