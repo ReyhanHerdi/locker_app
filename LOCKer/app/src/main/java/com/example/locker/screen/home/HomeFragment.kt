@@ -51,7 +51,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.topBar.title = "Hi Andi"
+        binding.topBar.title = "<b> Hi Andi </b>"
     }
 
     override fun onDestroyView() {
