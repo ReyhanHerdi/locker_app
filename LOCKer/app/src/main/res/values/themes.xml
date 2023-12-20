@@ -17,6 +17,10 @@
 
     <style name="Theme.LOCKer" parent="Base.Theme.LOCKer" />
 
+    <style name="Theme.LOCKer.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.LOCKer.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
     <style name="BottomNavigationStyle">
 
         <item name="android:layout_width">match_parent</item>

@@ -4,18 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".screen.explore.ExploreActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    tools:context=".screen.explore.ExploreActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/topBar"
             android:layout_width="match_parent"
-            app:titleCentered="true"
             android:layout_height="?attr/actionBarSize"
-            app:title="Explore" />
+            app:title="@string/explore"
+            android:backgroundTint="@color/background"
+            app:titleCentered="true" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <FrameLayout

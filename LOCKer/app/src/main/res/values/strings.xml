@@ -174,8 +174,26 @@
     <string name="background">background</string>
     <string name="begin_your_journey_with_us">Begin your journey with us!</string>
     <string name="navigate_up">Navigate Up</string>
-    <string name="fab_text">How to Scan</string>
+    <string name="fab_text">Tutorial</string>
     <string name="tutorial">Tutorial</string>
     <string name="start_scanning">Start Scanning</string>
     <string name="continue_with_google">Continue with Google</string>
+    <string name="explore">Explore</string>
+
+    <string name="step">
+        \n<b>Step 1: Copy Job Posting</b>
+        \nTap and hold on the text of the job posting you are interested in until the selection handles appear. Adjust the handles to highlight the entire content, then select \"Copy\".
+        \n
+        \n<b>Step 2: Open the App and Paste Text</b>
+        \nLaunch the application and navigate to the scanning section. Find the designated text input field and tap to activate the keyboard. Paste the copied job posting content by tapping and selecting \"Paste\".
+        \n
+        \n<b>Step 3: Initiate Scanning </b>
+        \nLook for the \"Start Scanning\" button and tap it to initiate the scanning process. Please wait while the system analyzes the job posting.
+        \n
+        \n<b>Step 4: Review Scanning Results</b>
+        \nAfter the scanning process is complete, the results will be displayed, indicating whether the job posting is categorized as \"FAKE\" or \"REAL\".</string>
+    <string name="result">Result</string>
+    <string name="fake">FAKE</string>
+    <string name="job_vacancy">Job Vacancy Text</string>
+    <string name="verified_company_logo">verified company logo</string>
 </resources>

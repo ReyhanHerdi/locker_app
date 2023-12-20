@@ -12,10 +12,10 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.locker.data.model.Examples
 import com.example.locker.databinding.FragmentHomeBinding
-import com.example.locker.screen.explore.ExploreActivity
 import com.example.locker.screen.ViewModelFactory
 import com.example.locker.screen.adapter.ArticleAdapter
 import com.example.locker.screen.adapter.RecommendationAdaper
+import com.example.locker.screen.explore.ExploreActivity
 
 class HomeFragment : Fragment(), View.OnClickListener {
 
@@ -46,6 +46,12 @@ class HomeFragment : Fragment(), View.OnClickListener {
         binding.tvViewAllNews.setOnClickListener(this)
         return root
 
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.topBar.title = "Hi Andi"
     }
 
     override fun onDestroyView() {
@@ -106,7 +112,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
         getNews()
         val layoutManager = LinearLayoutManager(context)
         binding.rvNews.layoutManager = layoutManager
-        articleAdapter = ArticleAdapter(listNews, 3)
+        articleAdapter = ArticleAdapter(listNews, 5)
         binding.rvNews.adapter = articleAdapter
 
         articleAdapter.setOnItemClickCallback(object : ArticleAdapter.OnItemClickCallback {
@@ -116,11 +122,10 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
         })
 
-
     }
 
     override fun onClick(view: View?) {
-        when(view) {
+        when (view) {
             binding.tvViewAllRecomendation -> {
                 val intent = Intent(requireActivity(), ExploreActivity::class.java)
                 intent.putExtra(ExploreActivity.FRAGMENT, "recommendation")
