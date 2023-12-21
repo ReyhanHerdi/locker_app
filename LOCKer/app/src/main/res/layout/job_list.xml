@@ -22,7 +22,7 @@
             android:layout_marginEnd="16dp"
             android:background="@color/transparent"
             android:contentDescription="@string/save_this_job"
-            android:src="@drawable/bookmark_list"
+            android:src="@drawable/bookmark"
             app:layout_constraintBottom_toBottomOf="@+id/img_job"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/img_job"
@@ -44,29 +44,32 @@
 
         <TextView
             android:id="@+id/tv_job_title"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:maxLines="1"
             android:fontFamily="@font/outfit_bold"
             android:text="@string/job_title"
             android:textColor="@color/color_text"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@id/tv_news_description"
+            app:layout_constraintEnd_toStartOf="@+id/imageButton"
             app:layout_constraintStart_toEndOf="@id/img_job"
             app:layout_constraintTop_toTopOf="@id/img_job" />
 
-            <TextView
-                android:id="@+id/tv_news_description"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/job_field"
-                android:textColor="@color/color_sub_text"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="@id/img_job"
-                app:layout_constraintStart_toStartOf="@id/tv_job_title"
-                app:layout_constraintTop_toBottomOf="@id/tv_job_title"
-                tools:ignore="TextContrastCheck" />
+        <TextView
+            android:id="@+id/tv_news_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/job_field"
+            android:layout_marginStart="8dp"
+            android:textColor="@color/color_sub_text"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/img_job"
+            app:layout_constraintStart_toEndOf="@+id/img_job"
+            app:layout_constraintTop_toBottomOf="@id/tv_job_title"
+            tools:ignore="TextContrastCheck" />
 
         <ImageView
             android:layout_width="wrap_content"

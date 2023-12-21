@@ -5,26 +5,26 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.locker.data.model.Examples
+import com.example.locker.data.model.Article
 import com.example.locker.databinding.JobListBinding
 
-class RecommendationAdaper(private val listRecommendation: ArrayList<Examples>, var dataCount: Int) : RecyclerView.Adapter<RecommendationAdaper.RecommendationVewHolder>() {
+class RecommendationAdaper(private val listRecommendation: ArrayList<Article>, var dataCount: Int) : RecyclerView.Adapter<RecommendationAdaper.RecommendationVewHolder>() {
 
     private lateinit var onItemClickCallback: OnItemClickCallback
 
     interface OnItemClickCallback {
-        fun onItemClicked(examples: Examples)
+        fun onItemClicked(article: Article)
     }
 
     inner class RecommendationVewHolder(private val binding: JobListBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(examples: Examples) {
+        fun bind(article: Article) {
             with(binding) {
-                tvJobTitle.text = examples.judul
+                tvJobTitle.text = article.title
                 Glide.with(itemView.context)
-                    .load(examples.poster)
+                    .load(article.image)
                     .into(imgJob)
-                Log.d("Title", examples.judul)
+                Log.d("Title", article.title)
             }
         }
     }

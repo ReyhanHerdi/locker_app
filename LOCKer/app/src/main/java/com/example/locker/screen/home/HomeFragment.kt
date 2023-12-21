@@ -10,7 +10,8 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.locker.data.model.Examples
+import com.example.locker.R
+import com.example.locker.data.model.Article
 import com.example.locker.databinding.FragmentHomeBinding
 import com.example.locker.screen.ViewModelFactory
 import com.example.locker.screen.adapter.ArticleAdapter
@@ -26,8 +27,8 @@ class HomeFragment : Fragment(), View.OnClickListener {
     private val homeViewModel by viewModels<HomeViewModel> {
         ViewModelFactory.getInstance(requireContext())
     }
-    private val listRecommendation = ArrayList<Examples>()
-    private val listNews = ArrayList<Examples>()
+    private val listRecommendation = ArrayList<Article>()
+    private val listNews = ArrayList<Article>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,23 +36,27 @@ class HomeFragment : Fragment(), View.OnClickListener {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        homeViewModel.getRecommendation()
-        Log.d("Data", listOf<Examples>().toString())
-        showRecommendation()
-        showNews()
-
-        binding.tvViewAllRecomendation.setOnClickListener(this)
-        binding.tvViewAllNews.setOnClickListener(this)
-        return root
-
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.topBar.title = "<b> Hi Andi </b>"
+        homeViewModel.getRecommendation()
+        Log.d("Data", listOf<Article>().toString())
+        showRecommendation()
+        showNews()
+
+        binding.tvViewAllRecomendation.setOnClickListener(this)
+        binding.tvViewAllNews.setOnClickListener(this)
+
+        homeViewModel.userData.observe(viewLifecycleOwner) { data ->
+            if (data != null && data.username!!.isNotEmpty()) {
+                binding.topBar.title = resources.getString(R.string.user, data.username)
+            } else {
+                binding.topBar.title = resources.getString(R.string.empty_name)
+            }
+        }
     }
 
     override fun onDestroyView() {
@@ -59,16 +64,21 @@ class HomeFragment : Fragment(), View.OnClickListener {
         _binding = null
     }
 
-    private fun getRecomendation(): ArrayList<Examples> {
-        val examples: List<Examples> = homeViewModel.getRecommendation()
+    override fun onResume() {
+        super.onResume()
+        homeViewModel.fetchData()
+    }
+
+    private fun getRecomendation(): ArrayList<Article> {
+        val examples: List<Article> = homeViewModel.getRecommendation()
         for (i in examples) {
             listRecommendation.add(
-                Examples(
+                Article(
                     i.id,
-                    i.judul,
-                    i.sinopsis,
-                    i.tahunRilis,
-                    i.poster
+                    i.title,
+                    i.content,
+                    i.image,
+                    i.author
                 )
             )
         }
@@ -84,23 +94,23 @@ class HomeFragment : Fragment(), View.OnClickListener {
         binding.rvRecomendation.adapter = recommendationAdaper
 
         recommendationAdaper.setOnItemCallback(object : RecommendationAdaper.OnItemClickCallback {
-            override fun onItemClicked(examples: Examples) {
+            override fun onItemClicked(article: Article) {
                 Toast.makeText(context, "Not yet implemented", Toast.LENGTH_SHORT).show()
             }
 
         })
     }
 
-    private fun getNews(): ArrayList<Examples> {
-        val examples: List<Examples> = homeViewModel.getRecommendation()
+    private fun getNews(): ArrayList<Article> {
+        val examples: List<Article> = homeViewModel.getRecommendation()
         for (i in examples) {
             listNews.add(
-                Examples(
+                Article(
                     i.id,
-                    i.judul,
-                    i.sinopsis,
-                    i.tahunRilis,
-                    i.poster
+                    i.title,
+                    i.content,
+                    i.image,
+                    i.author
 
                 )
             )
@@ -115,13 +125,6 @@ class HomeFragment : Fragment(), View.OnClickListener {
         articleAdapter = ArticleAdapter(listNews, 5)
         binding.rvNews.adapter = articleAdapter
 
-        articleAdapter.setOnItemClickCallback(object : ArticleAdapter.OnItemClickCallback {
-            override fun onItemClicked(examples: Examples) {
-                Toast.makeText(context, "Not yet implemented", Toast.LENGTH_SHORT).show()
-            }
-
-        })
-
     }
 
     override fun onClick(view: View?) {
@@ -131,6 +134,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
                 intent.putExtra(ExploreActivity.FRAGMENT, "recommendation")
                 startActivity(intent)
             }
+
             binding.tvViewAllNews -> {
                 val intent = Intent(requireActivity(), ExploreActivity::class.java)
                 intent.putExtra(ExploreActivity.FRAGMENT, "news")

@@ -1,7 +1,7 @@
 package com.example.locker.data.repository
 
 import com.example.locker.data.ExamplesData
-import com.example.locker.data.model.Examples
+import com.example.locker.data.model.Article
 import com.example.locker.data.model.User
 import com.example.locker.util.Reference
 import com.google.firebase.auth.AuthResult
@@ -18,7 +18,7 @@ class LockerRepository {
         Firebase.firestore
     }
 
-    fun getRecommendation(): List<Examples> {
+    fun getRecommendation(): List<Article> {
         return ExamplesData.examples
 
     }

@@ -44,7 +44,8 @@
                 android:src="@drawable/profile_dummy"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:riv_oval="true" />
+                app:riv_oval="true"
+                tools:ignore="ImageContrastCheck" />
 
             <TextView
                 android:id="@+id/tv_userName"
@@ -53,10 +54,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/user_name"
                 app:layout_constraintBottom_toTopOf="@id/tv_userEmail"
                 app:layout_constraintStart_toEndOf="@id/img_profile"
-                app:layout_constraintTop_toTopOf="@id/img_profile" />
+                app:layout_constraintTop_toTopOf="@id/img_profile"
+                tools:text="@string/user_name" />
 
             <TextView
                 android:id="@+id/tv_userEmail"
@@ -65,7 +66,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginBottom="16dp"
-                android:text="@string/loremexample_mail_com"
+                tools:text="@string/loremexample_mail_com"
                 app:layout_constraintBottom_toBottomOf="@id/img_profile"
                 app:layout_constraintStart_toEndOf="@id/img_profile"
                 app:layout_constraintTop_toBottomOf="@id/tv_userName" />
@@ -84,7 +85,8 @@
                 app:cornerRadius="16dp"
                 app:layout_constraintEnd_toEndOf="@id/img_profile"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/img_profile" />
+                app:layout_constraintTop_toBottomOf="@id/img_profile"
+                tools:ignore="VisualLintButtonSize" />
 
             <TextView
                 android:id="@+id/tv_name"
@@ -98,7 +100,7 @@
             <TextView
                 android:id="@+id/tv_user_full_name"
                 style="@style/TextBody.Large"
-                android:text="@string/user_name"
+                tools:text="@string/user_name"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_name" />
@@ -114,7 +116,7 @@
             <TextView
                 android:id="@+id/tv_user_gender"
                 style="@style/TextBody.Large"
-                android:text="@string/male"
+                tools:text="@string/male"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_gender" />
@@ -130,7 +132,7 @@
             <TextView
                 android:id="@+id/tv_user_education"
                 style="@style/TextBody.Large"
-                android:text="@string/user_education"
+                tools:text="@string/user_education"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_education" />
@@ -146,7 +148,7 @@
             <TextView
                 android:id="@+id/tv_user_location"
                 style="@style/TextBody.Large"
-                android:text="@string/user_location"
+                tools:text="@string/user_location"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_location" />
@@ -162,7 +164,7 @@
             <TextView
                 android:id="@+id/tv_user_city"
                 style="@style/TextBody.Large"
-                android:text="@string/manchester"
+                tools:text="@string/manchester"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_city" />
@@ -176,9 +178,9 @@
                 app:layout_constraintTop_toBottomOf="@id/tv_user_city" />
 
             <TextView
-                android:id="@+id/tv_user_industry"
+                android:id="@+id/tv_user_Major"
                 style="@style/TextBody.Large"
-                android:text="@string/computer_science"
+                tools:text="@string/computer_science"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_industry" />
@@ -197,7 +199,19 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:strokeColor="@color/transparent" />
+                app:strokeColor="@color/transparent"
+                tools:ignore="RtlHardcoded" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
