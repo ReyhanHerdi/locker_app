@@ -11,7 +11,7 @@ import com.example.locker.data.model.Article
 import com.example.locker.data.model.History
 import com.example.locker.data.model.RequestData
 import com.example.locker.data.model.User
-import com.example.locker.data.response.Response
+import com.example.locker.data.response.TestResponse
 import com.example.locker.util.Reference
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
@@ -121,7 +121,7 @@ class LockerRepository private constructor(
         }
     }
 
-    suspend fun predictJob(text: String): Result<Response> {
+    suspend fun predictJob(text: String): Result<TestResponse> {
         return withContext(Dispatchers.IO){
             try {
                 val requestData = RequestData(text)

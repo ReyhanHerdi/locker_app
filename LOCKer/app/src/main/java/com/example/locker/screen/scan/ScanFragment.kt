@@ -72,10 +72,6 @@ class ScanFragment : Fragment() {
                 childFragmentManager.let { modalBottomSheet.show(it, ModalBottomSheet.TAG) }
             }
 
-//            btnMove.setOnClickListener {
-//                //   startActivity(Intent(requireActivity(), JobDetailsActivity::class.java))
-//           //     findNavController().navigate(R.id.action_navigation_scan_to_resultFragment)
-//            }
         }
 
         binding.btnStartScanning.setOnClickListener{

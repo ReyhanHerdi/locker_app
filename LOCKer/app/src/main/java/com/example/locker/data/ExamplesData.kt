@@ -423,7 +423,7 @@ object ExamplesData {
                     "2.\tOn the other hand, your internet search may turn up some red flags, like other people complaining about scams or poor reviews. This is a sign that you should look elsewhere for a job!\n" +
                     "\n" +
                     "\n",
-            "https://raw.githubusercontent.com/cheftz/capstone/main/fake13.jpg",
+            "https://raw.githubusercontent.com/cheftz/capstone/main/fake14.png",
             "by Alyssa Schmitt"
         ),
     )

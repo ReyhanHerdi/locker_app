@@ -87,6 +87,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/start_scanning"
+                android:textStyle="bold"
                 app:cornerRadius="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -127,22 +128,18 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <ProgressBar
-                android:id="@+id/progressBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:indeterminateTint="#FF7754"
-                android:visibility="gone"
-                android:indeterminate="true"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
     </androidx.core.widget.NestedScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/text_accent"
+        android:layout_gravity="center"
+        android:indeterminate="true" />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/fab_tutorial"
@@ -150,8 +147,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
+        android:textColor="@color/text_fab"
+        android:textStyle="bold"
         android:backgroundTint="@color/primary"
         android:text="@string/fab_text"
+        app:iconTint="@color/text_fab"
         app:icon="@drawable/question" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
