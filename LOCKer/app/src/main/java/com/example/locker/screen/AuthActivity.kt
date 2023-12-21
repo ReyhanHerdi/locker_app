@@ -6,7 +6,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.locker.R
 import com.example.locker.screen.login.AuthViewModel
-import com.example.locker.screen.welcome.WelcomeActivity
+import com.example.locker.screen.login.LoginActivity
 
 class AuthActivity : AppCompatActivity() {
 
@@ -28,7 +28,7 @@ class AuthActivity : AppCompatActivity() {
                     )
                 })
             } else {
-                startActivity(Intent(this, WelcomeActivity::class.java).apply {
+                startActivity(Intent(this, LoginActivity::class.java).apply {
                     finish()
                 })
             }

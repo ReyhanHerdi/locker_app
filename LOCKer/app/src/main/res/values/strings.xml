@@ -166,7 +166,7 @@
     <string name="let_s_create_your_account">Let\'s create your account!</string>
     <string name="great_to_see_you_again">Great to see you again!</string>
     <string name="login_account">Login Account</string>
-    <string name="log_out">Log Out</string>
+    <string name="log_out">Logout</string>
     <string name="article">Article</string>
     <string name="save_this_job">Save this Job</string>
     <string name="article_image">Article Image</string>
@@ -179,6 +179,7 @@
     <string name="start_scanning">Start Scanning</string>
     <string name="continue_with_google">Continue with Google</string>
     <string name="explore">Explore</string>
+    <string name="default_web_client_id">219059724934-ko8lm8cmomukp8gibi0ssbcunt6ueoj1.apps.googleusercontent.com</string>
 
     <string name="step">
         \n<b>Step 1: Copy Job Posting</b>
@@ -198,4 +199,6 @@
     <string name="verified_company_logo">verified company logo</string>
 
     <string name="empty_field">Please Fill Everything</string>
+    <string name="user">Hi, %1$s</string>
+    <string name="empty_name">Please fill your profile</string>
 </resources>

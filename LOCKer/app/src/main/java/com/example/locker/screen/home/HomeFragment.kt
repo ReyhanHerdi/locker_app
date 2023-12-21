@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.locker.R
 import com.example.locker.data.model.Article
 import com.example.locker.databinding.FragmentHomeBinding
 import com.example.locker.screen.ViewModelFactory
@@ -49,12 +50,23 @@ class HomeFragment : Fragment(), View.OnClickListener {
         binding.tvViewAllRecomendation.setOnClickListener(this)
         binding.tvViewAllNews.setOnClickListener(this)
 
-        binding.topBar.title = "Hi Andi"
+        homeViewModel.userData.observe(viewLifecycleOwner) { data ->
+            if (data != null) {
+                binding.topBar.title = resources.getString(R.string.user, data.username)
+            } else {
+                binding.topBar.title = resources.getString(R.string.empty_name)
+            }
+        }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onResume() {
+        super.onResume()
+        homeViewModel.fetchData()
     }
 
     private fun getRecomendation(): ArrayList<Article> {
@@ -122,6 +134,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
                 intent.putExtra(ExploreActivity.FRAGMENT, "recommendation")
                 startActivity(intent)
             }
+
             binding.tvViewAllNews -> {
                 val intent = Intent(requireActivity(), ExploreActivity::class.java)
                 intent.putExtra(ExploreActivity.FRAGMENT, "news")

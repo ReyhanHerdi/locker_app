@@ -9,6 +9,7 @@ import com.example.locker.screen.article.ArticleViewModel
 import com.example.locker.screen.data_user.DataInputViewModel
 import com.example.locker.screen.home.HomeViewModel
 import com.example.locker.screen.login.AuthViewModel
+import com.example.locker.screen.profile.ProfileViewModel
 import com.example.locker.screen.recomendation.RecomendationViewModel
 import com.example.locker.screen.search.SearchViewModel
 
@@ -22,6 +23,7 @@ class ViewModelFactory(private val repository: LockerRepository) : ViewModelProv
         AuthViewModel::class.java -> AuthViewModel(repository)
         SearchViewModel::class.java -> SearchViewModel(repository)
         DataInputViewModel::class.java -> DataInputViewModel(repository)
+        ProfileViewModel::class.java -> ProfileViewModel(repository)
 
         else ->  throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
 

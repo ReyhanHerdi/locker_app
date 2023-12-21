@@ -14,6 +14,13 @@ class DataInputViewModel(private val repository: LockerRepository): ViewModel() 
     private val _loading = MutableLiveData<Boolean>()
     val loading: LiveData<Boolean> = _loading
 
+
+    private val _userData = MutableLiveData<User>()
+    val userData: LiveData<User> get() = _userData
+
+    private val _error = MutableLiveData<String>()
+    val error: LiveData<String> get() = _error
+
     fun save(userData: User){
         _loading.value = true
         repository.saveData(userData){_, it ->
@@ -23,6 +30,18 @@ class DataInputViewModel(private val repository: LockerRepository): ViewModel() 
             } else {
                 _loading.value = false
                 _message.value = it.cause?.message ?: it.message ?: "Failed Save data"
+            }
+        }
+    }
+
+    fun fetchData() {
+        repository.getUserData{ user, exception ->
+            if (exception != null) {
+                _error.value = "Failed to fetch data: ${exception.message}"
+                _loading.value = true
+            } else {
+                _userData.value = user
+                _loading.value = false
             }
         }
     }

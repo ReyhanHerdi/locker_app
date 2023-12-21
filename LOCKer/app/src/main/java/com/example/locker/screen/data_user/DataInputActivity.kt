@@ -1,6 +1,5 @@
 package com.example.locker.screen.data_user
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -11,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.locker.R
 import com.example.locker.data.model.User
 import com.example.locker.databinding.ActivityDataInputBinding
-import com.example.locker.screen.MainActivity
 import com.example.locker.screen.ViewModelFactory
 
 class DataInputActivity : AppCompatActivity() {
@@ -26,6 +24,28 @@ class DataInputActivity : AppCompatActivity() {
         setContentView(binding.root)
         setSupportActionBar(binding.topBar)
 
+        val genderIndex = resources.getStringArray(R.array.gender)
+
+        viewModel.userData.observe(this){user ->
+            if (user != null){
+                binding.edtName.setText(user.username)
+                binding.edtEmail.setText(user.email)
+                val savedGender = genderIndex.indexOf(user.gender)
+                binding.spinnerGender.setSelection(savedGender)
+                binding.edtLocation.setText(user.location)
+                binding.edtCity.setText(user.city)
+                binding.edtUnivOrSch.setText(user.univ)
+                binding.edtMajor.setText(user.major)
+                binding.edtSkill.setText(user.skills)
+            } else {
+                showToast(viewModel.error.toString())
+            }
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.fetchData()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -35,9 +55,7 @@ class DataInputActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean = when (item.itemId) {
         R.id.menu_save -> {
-            // saveData()
-            startActivity(Intent(this, MainActivity::class.java))
-            finish()
+            saveData()
             true
         }
 
