@@ -202,4 +202,6 @@
     <string name="empty_name">Please fill your profile</string>
     <string name="history">History</string>
     <string name="favorite_this_article">Favorite this Article</string>
+    <string name="password_warning">Password must be at least 6 characters!</string>
+    <string name="email_warning">Enter a valid email address!</string>
 </resources>

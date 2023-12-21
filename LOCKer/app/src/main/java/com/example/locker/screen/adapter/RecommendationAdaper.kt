@@ -23,7 +23,7 @@ class RecommendationAdaper(private val listRecommendation: ArrayList<Article>, v
                 tvJobTitle.text = article.title
                 Glide.with(itemView.context)
                     .load(article.image)
-                    .into(imgJob)
+                    .into(imgArticle)
                 Log.d("Title", article.title)
             }
         }
