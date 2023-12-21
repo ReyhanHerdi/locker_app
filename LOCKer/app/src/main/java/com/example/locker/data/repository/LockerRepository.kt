@@ -96,17 +96,21 @@ class LockerRepository private constructor(
         return bookmarkDao.getAllBookmark()
     }
 
-    fun setBookmark(bookmark: BookmarkEntity, bookmarkState: Boolean){
+    fun setBookmark(bookmark: BookmarkEntity){
         executorService.networkIO.execute {
-            bookmark.isBookmark = bookmarkState
+            //bookmark.isBookmark = bookmarkState
             bookmarkDao.insert(bookmark)
         }
     }
 
-    fun deleteBookmark(title: String){
+    fun deleteBookmark(id: Int){
         executorService.mainThread.execute {
-            bookmarkDao.delete(title)
+            bookmarkDao.delete(id)
         }
+    }
+
+    fun isBookmarked(id: Int): Boolean {
+        return bookmarkDao.isBookmark(id)
     }
 
     companion object {

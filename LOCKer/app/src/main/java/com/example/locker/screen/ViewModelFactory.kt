@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.locker.data.repository.LockerRepository
 import com.example.locker.di.Injection
 import com.example.locker.screen.article.ArticleViewModel
+import com.example.locker.screen.bookmark.BookmarkViewModel
 import com.example.locker.screen.data_user.DataInputViewModel
 import com.example.locker.screen.home.HomeViewModel
 import com.example.locker.screen.login.AuthViewModel
@@ -24,6 +25,7 @@ class ViewModelFactory(private val repository: LockerRepository) : ViewModelProv
         SearchViewModel::class.java -> SearchViewModel(repository)
         DataInputViewModel::class.java -> DataInputViewModel(repository)
         ProfileViewModel::class.java -> ProfileViewModel(repository)
+        BookmarkViewModel::class.java -> BookmarkViewModel(repository)
 
         else ->  throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
 

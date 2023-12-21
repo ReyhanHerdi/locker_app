@@ -11,8 +11,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.locker.R
+import com.example.locker.data.local.database.BookmarkEntity
 import com.example.locker.data.model.Article
 import com.example.locker.databinding.FragmentHomeBinding
+import com.example.locker.databinding.JobListBinding
 import com.example.locker.screen.ViewModelFactory
 import com.example.locker.screen.adapter.ArticleAdapter
 import com.example.locker.screen.adapter.RecommendationAdaper
@@ -29,6 +31,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
     }
     private val listRecommendation = ArrayList<Article>()
     private val listNews = ArrayList<Article>()
+    private lateinit var bookmarkEntity: BookmarkEntity
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -90,12 +93,29 @@ class HomeFragment : Fragment(), View.OnClickListener {
         val layoutManager = LinearLayoutManager(context)
         binding.rvRecomendation.layoutManager = layoutManager
 
-        recommendationAdaper = RecommendationAdaper(listRecommendation, 3)
+        recommendationAdaper = RecommendationAdaper(
+            listRecommendation,
+            3)
         binding.rvRecomendation.adapter = recommendationAdaper
 
         recommendationAdaper.setOnItemCallback(object : RecommendationAdaper.OnItemClickCallback {
             override fun onItemClicked(article: Article) {
-                Toast.makeText(context, "Not yet implemented", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, article.title, Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onBookmarkClicked(article: Article) {
+                if (!homeViewModel.isBookmarked(article.id.toInt())) {
+                    homeViewModel.insertBookmark(BookmarkEntity(
+                        article.id.toInt(),
+                        article.title,
+                        article.content,
+                        article.author,
+                        article.image,
+                        true
+                    ))
+                } else {
+                    homeViewModel.deleteBookmark(article.id.toInt())
+                }
             }
 
         })

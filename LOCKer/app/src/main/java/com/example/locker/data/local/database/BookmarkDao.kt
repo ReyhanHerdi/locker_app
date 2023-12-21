@@ -12,13 +12,13 @@ interface BookmarkDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(article: BookmarkEntity)
 
-    @Query("DELETE from bookmark where title = :title")
-    fun delete(title: String)
+    @Query("DELETE from bookmark where id = :id")
+    fun delete(id: Int)
 
     @Query("SELECT * FROM bookmark WHERE bookmark = 1")
     fun getAllBookmark(): LiveData<List<BookmarkEntity>>
 
-    @Query("SELECT EXISTS(SELECT * FROM bookmark WHERE title =:title)")
-    fun isBookmark(title: String): Boolean
+    @Query("SELECT EXISTS(SELECT * FROM bookmark WHERE id =:id)")
+    fun isBookmark(id: Int): Boolean
 
 }
