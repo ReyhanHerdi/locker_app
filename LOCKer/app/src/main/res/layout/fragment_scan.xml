@@ -35,7 +35,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:paddingBottom="60dp">
 
             <TextView
                 android:id="@+id/tv_instruction"
@@ -47,7 +48,7 @@
                 android:layout_marginEnd="16dp"
                 android:fontFamily="@font/outfit_medium"
                 android:textStyle="bold"
-                android:text="Please copy the job vacancy text below"
+                android:text="@string/please_copy_the_job_vacancy_text_below"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -74,7 +75,7 @@
                     android:id="@+id/edt_job_vacancy"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="type here"
+                    android:hint="@string/type_here"
                     android:textColorHint="@color/grey"
                     android:inputType="textMultiLine"
                     android:importantForAutofill="no" />
@@ -119,7 +120,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:letterSpacing="0.05"
-                    android:text="@string/fake"
+                    tools:text="@string/fake"
                     android:textColor="@color/primary"
                     android:textSize="24sp"
                     android:textStyle="bold" />
@@ -149,8 +150,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
-        android:textColor="@color/color_text"
-        app:iconTint="@color/color_text"
+        android:backgroundTint="@color/primary"
         android:text="@string/fab_text"
         app:icon="@drawable/question" />
 

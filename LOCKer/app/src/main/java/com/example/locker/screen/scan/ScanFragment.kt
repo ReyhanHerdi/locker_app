@@ -94,8 +94,10 @@ class ScanFragment : Fragment() {
                     }
                 }
                 is Result.Failure -> {
-                    val error = result.exception
-                    showToast(error.toString())
+                    val error = result.exception.toString()
+                    showToast(error)
+                    binding.textView.text = error
+                    Log.d("ScanFragment", error)
                 }
             }
         }
