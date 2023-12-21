@@ -53,7 +53,7 @@
     </fragment>
     <fragment
         android:id="@+id/historyScanFragment"
-        android:name="com.example.locker.screen.scan.HistoryScanFragment"
+        android:name="com.example.locker.screen.history.HistoryScanFragment"
         android:label="fragment_history_scan"
         tools:layout="@layout/fragment_history_scan" >
         <action

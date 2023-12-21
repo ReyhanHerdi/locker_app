@@ -8,6 +8,7 @@ import com.example.locker.R
 
 object Reference {
     const val COLLECTION = "capstone"
+    const val HISTORY = "history"
 
     fun isEmailValid(context: Context, email: String): Boolean {
         return if (TextUtils.isEmpty(email) || !Patterns.EMAIL_ADDRESS.matcher(email).matches()) {

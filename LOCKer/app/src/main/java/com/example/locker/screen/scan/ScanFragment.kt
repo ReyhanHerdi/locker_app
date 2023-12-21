@@ -1,15 +1,18 @@
 package com.example.locker.screen.scan
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.locker.R
 import com.example.locker.customview.ModalBottomSheet
+import com.example.locker.data.Result
 import com.example.locker.databinding.FragmentScanBinding
 import com.example.locker.screen.ViewModelFactory
 
@@ -69,15 +72,47 @@ class ScanFragment : Fragment() {
                 childFragmentManager.let { modalBottomSheet.show(it, ModalBottomSheet.TAG) }
             }
 
-            btnMove.setOnClickListener {
-                //   startActivity(Intent(requireActivity(), JobDetailsActivity::class.java))
-                findNavController().navigate(R.id.action_navigation_scan_to_resultFragment)
+//            btnMove.setOnClickListener {
+//                //   startActivity(Intent(requireActivity(), JobDetailsActivity::class.java))
+//           //     findNavController().navigate(R.id.action_navigation_scan_to_resultFragment)
+//            }
+        }
+
+        binding.btnStartScanning.setOnClickListener{
+            val text = binding.edtJobVacancy.text.toString()
+            scanViewModel.predictJob(text)
+        }
+
+        scanViewModel.result.observe(viewLifecycleOwner){ result ->
+            when(result){
+                is Result.Loading -> showLoading(true)
+                is Result.Success -> {
+                    val hasil = result.data.toString()
+                    if (hasil.isNotEmpty()){
+                        binding.tvResult.text = hasil
+                        Log.d("ScanFragment", hasil)
+                    }
+                }
+                is Result.Failure -> {
+                    val error = result.exception
+                    showToast(error.toString())
+                }
             }
         }
+
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
+    private fun showToast(message: String) {
+        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
+    }
+
 }

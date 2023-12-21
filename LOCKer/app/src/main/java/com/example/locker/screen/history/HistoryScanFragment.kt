@@ -1,4 +1,4 @@
-package com.example.locker.screen.scan
+package com.example.locker.screen.history
 
 import android.os.Bundle
 import android.view.LayoutInflater
