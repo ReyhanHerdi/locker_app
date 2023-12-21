@@ -51,7 +51,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
         binding.tvViewAllNews.setOnClickListener(this)
 
         homeViewModel.userData.observe(viewLifecycleOwner) { data ->
-            if (data != null) {
+            if (data != null && data.username!!.isNotEmpty()) {
                 binding.topBar.title = resources.getString(R.string.user, data.username)
             } else {
                 binding.topBar.title = resources.getString(R.string.empty_name)

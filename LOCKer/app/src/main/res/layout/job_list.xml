@@ -22,7 +22,7 @@
             android:layout_marginEnd="16dp"
             android:background="@color/transparent"
             android:contentDescription="@string/save_this_job"
-            android:src="@drawable/bookmark_list"
+            android:src="@drawable/bookmark"
             app:layout_constraintBottom_toBottomOf="@+id/img_job"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/img_job"

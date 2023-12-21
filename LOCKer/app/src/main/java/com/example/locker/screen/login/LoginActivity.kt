@@ -40,7 +40,7 @@ class LoginActivity : AppCompatActivity() {
 
             if(email.isNotEmpty() && password.isNotEmpty()){
                 authViewModel.loading.observe(this){
-                    binding.progressBar.visibility = View.VISIBLE
+                    showLoading(it)
                 }
                 authViewModel.login(email, password)
                 showToast(authViewModel.message.toString())
@@ -55,6 +55,10 @@ class LoginActivity : AppCompatActivity() {
 
     private fun showToast(message: String?) {
         Toast.makeText(this, message!!, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
     }
 
     private fun navigate(){

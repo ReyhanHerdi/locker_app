@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="10dp"
@@ -24,7 +25,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:riv_corner_radius="12dp" />
+            app:riv_corner_radius="16dp" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -55,10 +56,10 @@
                 android:id="@+id/tv_news_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:ellipsize="end"
                 android:maxLines="2"
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp"
-                android:ellipsize="end"
                 android:text="@string/news_description"
                 android:textAlignment="textStart"
                 android:textColor="@color/color_sub_text"
@@ -66,7 +67,8 @@
                 app:layout_constraintBottom_toBottomOf="@id/img_job"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/tv_articleTitle"
-                app:layout_constraintTop_toBottomOf="@id/tv_articleTitle" />
+                app:layout_constraintTop_toBottomOf="@id/tv_articleTitle"
+                tools:ignore="TextContrastCheck,VisualLintLongText" />
 
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

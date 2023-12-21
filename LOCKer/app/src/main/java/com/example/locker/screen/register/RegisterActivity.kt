@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
@@ -69,6 +70,9 @@ class RegisterActivity : AppCompatActivity() {
                     pass = password,
                     User(username = username, email = email)
                 )
+                authViewModel.loading.observe(this){
+                    showLoading(it)
+                }
                 showToast(authViewModel.message.toString())
                 finish()
             } else {
@@ -131,6 +135,10 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun showToast(messages: String?) {
         Toast.makeText(this, messages!!, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
     }
 
     companion object {
