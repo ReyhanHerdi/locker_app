@@ -21,7 +21,14 @@
         android:id="@+id/navigation_scan"
         android:name="com.example.locker.screen.scan.ScanFragment"
         android:label="@string/title_scan"
-        tools:layout="@layout/fragment_scan" />
+        tools:layout="@layout/fragment_scan" >
+        <action
+            android:id="@+id/action_navigation_scan_to_resultFragment"
+            app:destination="@id/resultFragment" />
+        <action
+            android:id="@+id/action_navigation_scan_to_historyScanFragment"
+            app:destination="@id/historyScanFragment" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_activity"
         android:name="com.example.locker.screen.bookmark.BookmarkFragment"
@@ -32,4 +39,28 @@
         android:name="com.example.locker.screen.profile.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.example.locker.screen.result.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result" >
+        <action
+            android:id="@+id/action_resultFragment_to_navigation_scan"
+            app:destination="@id/navigation_scan" />
+        <action
+            android:id="@+id/action_resultFragment_to_historyScanFragment"
+            app:destination="@id/historyScanFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/historyScanFragment"
+        android:name="com.example.locker.screen.scan.HistoryScanFragment"
+        android:label="fragment_history_scan"
+        tools:layout="@layout/fragment_history_scan" >
+        <action
+            android:id="@+id/action_historyScanFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+        <action
+            android:id="@+id/action_historyScanFragment_to_navigation_scan"
+            app:destination="@id/navigation_scan" />
+    </fragment>
 </navigation>

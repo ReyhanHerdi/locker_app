@@ -1,30 +1,49 @@
 package com.example.locker.screen.adapter
 
+import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.locker.data.model.Examples
+import com.example.locker.R
+import com.example.locker.data.local.database.BookmarkEntity
+import com.example.locker.data.model.Article
 import com.example.locker.databinding.JobListBinding
+import com.example.locker.screen.ViewModelFactory
+import com.example.locker.screen.bookmark.BookmarkViewModel
 
-class RecommendationAdaper(private val listRecommendation: ArrayList<Examples>, var dataCount: Int) : RecyclerView.Adapter<RecommendationAdaper.RecommendationVewHolder>() {
+class RecommendationAdaper(
+    private val listRecommendation: ArrayList<Article>,
+    var dataCount: Int,
+) : RecyclerView.Adapter<RecommendationAdaper.RecommendationVewHolder>() {
 
     private lateinit var onItemClickCallback: OnItemClickCallback
+    val bookmarkList: ArrayList<BookmarkEntity>? = null
 
     interface OnItemClickCallback {
-        fun onItemClicked(examples: Examples)
+        fun onItemClicked(article: Article)
+        fun onBookmarkClicked(article: Article)
     }
 
-    inner class RecommendationVewHolder(private val binding: JobListBinding) : RecyclerView.ViewHolder(binding.root) {
-
-        fun bind(examples: Examples) {
+    inner class RecommendationVewHolder(
+        private val binding: JobListBinding,
+    ) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(article: Article) {
             with(binding) {
-                tvJobTitle.text = examples.judul
+                tvJobTitle.text = article.title
                 Glide.with(itemView.context)
-                    .load(examples.poster)
+                    .load(article.image)
                     .into(imgJob)
-                Log.d("Title", examples.judul)
+
+                binding.imageButton.setOnClickListener {
+                    imageButton.setImageResource(R.drawable.bookmarked)
+                    onItemClickCallback.onBookmarkClicked(article)
+                    Log.d("ADAPTER BOOKMARK", bookmarkList.toString())
+                }
+
+                Log.d("LIST RECOMENDATION", listRecommendation.toString())
             }
         }
     }

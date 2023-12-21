@@ -7,6 +7,7 @@ import com.example.locker.data.model.User
 import com.example.locker.data.repository.LockerRepository
 
 class AuthViewModel(private val repository: LockerRepository) : ViewModel() {
+
     private val _message = MutableLiveData<String>()
     val message: LiveData<String> = _message
 
@@ -23,7 +24,6 @@ class AuthViewModel(private val repository: LockerRepository) : ViewModel() {
     private fun autoLogin() {
         _loggedInUser.value = repository.getUser()
     }
-
 
     fun login(email: String, pass: String) {
         _loading.value = true
@@ -54,8 +54,5 @@ class AuthViewModel(private val repository: LockerRepository) : ViewModel() {
             }
         }
     }
-
-    fun logout() = repository.logout()
-
 
 }

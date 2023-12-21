@@ -3,10 +3,23 @@
     <style name="Base.Theme.LOCKer" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+         <item name="colorPrimary">@color/primary</item>
+         <item name="colorOnPrimary">@color/onprimary</item>
+         <item name="colorSurface">@color/container</item>
+         <item name="colorPrimaryContainer">@color/primaryContainer</item>
+         <item name="colorOnPrimaryContainer">@color/onprimaryContainer</item>
+
+         <item name="colorOutlineVariant">@color/outline</item>
+
+         <item name="fontFamily">@font/outfit_regular</item>
 
     </style>
 
     <style name="Theme.LOCKer" parent="Base.Theme.LOCKer" />
+
+    <style name="Theme.LOCKer.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.LOCKer.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="BottomNavigationStyle">
 
@@ -14,6 +27,7 @@
         <item name="android:layout_height">62dp</item>
         <item name="itemActiveIndicatorStyle">?attr/background</item>
         <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:elevation">36dp</item>
         <item name="android:layout_gravity">center</item>
         <item name="labelVisibilityMode">labeled</item>
         <item name="menu">@menu/bottom_nav_menu</item>
@@ -31,6 +45,83 @@
         <item name="android:padding">20dp</item>
         <item name="android:layout_marginTop">5dp</item>
         <item name="android:textColor">@color/color_text_edt</item>
+    </style>
+
+    <style name="TextContent">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="TextBody">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:radius">24dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_marginTop">12sp</item>
+        <item name="android:layout_marginStart">16sp</item>
+        <item name="android:layout_marginEnd">16sp</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="android:backgroundTint">?attr/colorPrimary</item>
+        <item name="android:maxWidth">360dp</item>
+    </style>
+
+
+    <style name="TextDetail">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="TextContent.Headline">
+        <item name="android:textSize">28sp</item>
+        <item name="lineHeight">36sp</item>
+        <item name="fontFamily">@font/outfit_medium</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+    </style>
+
+    <style name="TextContent.BodyLarge">
+        <item name="android:textSize">16sp</item>
+        <item name="lineHeight">24sp</item>
+        <item name="fontFamily">@font/outfit_regular</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+    </style>
+
+    <style name="TextContent.Title">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextBody.Large">
+        <item name="android:textSize">14sp</item>
+        <item name="lineHeight">20sp</item>
+        <item name="android:letterSpacing">0.001</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:textColor">@color/color_text</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+    </style>
+
+    <style name="TextBody.Medium">
+        <item name="android:textSize">13sp</item>
+        <item name="lineHeight">16sp</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:textColor">@color/color_text2</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
     </style>
 
 </resources>

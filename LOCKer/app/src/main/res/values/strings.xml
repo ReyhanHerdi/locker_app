@@ -22,7 +22,12 @@
     <string name="don_t_have_an_account">Don\'t have an Account?</string>
     <string name="sign_up">Sign up</string>
     <string name="or">OR</string>
-
+    <string name="next">Next</string>
+    <string name="Success">Login Success</string>
+    <string name="SuccessMsg">Welcome to LOCKer!</string>
+    <string name="applied">Applied</string>
+    <string name="saved">Saved</string>
+    <string name="you_have_not">Look like you have not %1$s anything yet!</string>
     <string name="company_image">Company Image</string>
     <string name="requirements">Requirements</string>
 
@@ -105,7 +110,6 @@
     <string name="dummy_news_title">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu quam magna.</string>
     <string name="dummy_author">By Andi Wibowo</string>
     <string name="content_desc_article_image">Article Image</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="recomendation">Recommendation</string>
@@ -130,6 +134,7 @@
     <string name="edit_profile">Edit Profile</string>
     <string name="name">Name</string>
     <string name="male">Male</string>
+    <string name="female">Female</string>
     <string name="gender">Gender</string>
     <string name="education">Education</string>
     <string name="user_education">Cambridge University</string>
@@ -137,9 +142,66 @@
     <string name="location">Location</string>
     <string name="city">City</string>
     <string name="manchester">Manchester</string>
+
     <string name="industry">Industry</string>
     <string name="user_industry">Technology, Information, and Internet</string>
     <string name="username">Username</string>
     <string name="setting">Setting</string>
     <string name="activity">Activity</string>
+    <string name="hint_name">Full Name</string>
+    <string name="hint_email">Your active email</string>
+    <string name="hint_location">Confirm your location</string>
+    <string name="hint_city">Example: Bandung</string>
+    <string name="university_or_school">University or School</string>
+    <string name="hint_univ">Enter University or School</string>
+    <string name="major">Major</string>
+    <string name="hint_major">Example: Computer Science</string>
+    <string name="skill">Skill</string>
+    <string name="add_skill">Add Skill</string>
+    <string name="save">Save</string>
+    <string name="about_me">About Me</string>
+    <string name="computer_science">Computer Science</string>
+    <string name="login_image">Login Image</string>
+    <string name="register_image">register image</string>
+    <string name="register_account">Register Account</string>
+    <string name="let_s_create_your_account">Let\'s create your account!</string>
+    <string name="great_to_see_you_again">Great to see you again!</string>
+    <string name="login_account">Login Account</string>
+    <string name="log_out">Logout</string>
+    <string name="article">Article</string>
+    <string name="save_this_job">Save this Job</string>
+    <string name="article_image">Article Image</string>
+    <string name="welcome_to_locker">Welcome to LOCKER</string>
+    <string name="background">background</string>
+    <string name="begin_your_journey_with_us">Begin your journey with us!</string>
+    <string name="navigate_up">Navigate Up</string>
+    <string name="fab_text">Tutorial</string>
+    <string name="tutorial">Tutorial</string>
+    <string name="start_scanning">Start Scanning</string>
+    <string name="continue_with_google">Continue with Google</string>
+    <string name="explore">Explore</string>
+    <string name="default_web_client_id">219059724934-ko8lm8cmomukp8gibi0ssbcunt6ueoj1.apps.googleusercontent.com</string>
+
+    <string name="step">
+        \n<b>Step 1: Copy Job Posting</b>
+        \nTap and hold on the text of the job posting you are interested in until the selection handles appear. Adjust the handles to highlight the entire content, then select \"Copy\".
+        \n
+        \n<b>Step 2: Open the App and Paste Text</b>
+        \nLaunch the application and navigate to the scanning section. Find the designated text input field and tap to activate the keyboard. Paste the copied job posting content by tapping and selecting \"Paste\".
+        \n
+        \n<b>Step 3: Initiate Scanning </b>
+        \nLook for the \"Start Scanning\" button and tap it to initiate the scanning process. Please wait while the system analyzes the job posting.
+        \n
+        \n<b>Step 4: Review Scanning Results</b>
+        \nAfter the scanning process is complete, the results will be displayed, indicating whether the job posting is categorized as \"FAKE\" or \"REAL\".</string>
+    <string name="result">Result</string>
+    <string name="fake">FAKE</string>
+    <string name="job_vacancy">Job Vacancy Text</string>
+    <string name="verified_company_logo">verified company logo</string>
+
+    <string name="empty_field">Please Fill Everything</string>
+    <string name="user">Hi, %1$s</string>
+    <string name="empty_name">Please fill your profile</string>
+    <string name="history">History</string>
+    <string name="favorite_this_article">Favorite this Article</string>
 </resources>
