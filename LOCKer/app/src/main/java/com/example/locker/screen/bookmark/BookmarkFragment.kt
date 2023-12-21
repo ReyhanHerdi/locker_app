@@ -1,5 +1,6 @@
 package com.example.locker.screen.bookmark
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -46,29 +47,40 @@ class BookmarkFragment : Fragment() {
         return binding.root
     }
 
-    private fun setAdapter(): ArrayList<BookmarkEntity> {
+    private fun setAdapter() {
         bookmarkViewModel.getBookmark().observe(viewLifecycleOwner) { bookmarkList ->
+            listBookmark.clear()
             if (bookmarkList != null) {
                 listBookmark.addAll(bookmarkList)
                 adapter = BookmarkAdapter(listBookmark)
                 binding.rvBookmark.adapter = adapter
                 Log.d("BOOKMARK", listBookmark.toString())
+
+                adapter.setOnItemCallback(object : BookmarkAdapter.OnItemClickCallback {
+                    override fun onItemClicked(bookmark: BookmarkEntity) {
+                        Toast.makeText(context, bookmark.title, Toast.LENGTH_SHORT).show()
+                    }
+
+                    override fun onBookmarkClicked(bookmark: BookmarkEntity, position: Int) {
+                        listBookmark.remove(bookmark)
+                        adapter.notifyItemRemoved(position)
+                        adapter.notifyItemRangeChanged(position, listBookmark.size)
+                        bookmarkViewModel.deleteBookmark(bookmark.id)
+
+                        if (listBookmark.isEmpty()) {
+                            binding.ivNothinInActivity.visibility = View.VISIBLE
+                            binding.tvNothingBookmarked.visibility = View.VISIBLE
+                        }
+                    }
+
+                })
             }
 
-            adapter.setOnItemCallback(object : BookmarkAdapter.OnItemClickCallback {
-                override fun onItemClicked(bookmark: BookmarkEntity) {
-                    Toast.makeText(context, bookmark.title, Toast.LENGTH_SHORT).show()
-                }
-
-                override fun onBookmarkClicked(bookmark: BookmarkEntity) {
-                    bookmarkViewModel.deleteBookmark(bookmark.id)
-
-                }
-
-            })
+            if (bookmarkList.isNotEmpty()) {
+                binding.ivNothinInActivity.visibility = View.GONE
+                binding.tvNothingBookmarked.visibility = View.GONE
+            }
         }
-
-        return listBookmark
     }
 
 //    private fun showAdapter() {
