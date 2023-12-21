@@ -7,10 +7,12 @@ import com.example.locker.data.repository.LockerRepository
 import com.example.locker.di.Injection
 import com.example.locker.screen.article.ArticleViewModel
 import com.example.locker.screen.data_user.DataInputViewModel
+import com.example.locker.screen.history.HistoryViewModel
 import com.example.locker.screen.home.HomeViewModel
 import com.example.locker.screen.login.AuthViewModel
 import com.example.locker.screen.profile.ProfileViewModel
 import com.example.locker.screen.recomendation.RecomendationViewModel
+import com.example.locker.screen.scan.ScanViewModel
 import com.example.locker.screen.search.SearchViewModel
 
 @Suppress("UNCHECKED_CAST")
@@ -24,6 +26,8 @@ class ViewModelFactory(private val repository: LockerRepository) : ViewModelProv
         SearchViewModel::class.java -> SearchViewModel(repository)
         DataInputViewModel::class.java -> DataInputViewModel(repository)
         ProfileViewModel::class.java -> ProfileViewModel(repository)
+        HistoryViewModel::class.java -> HistoryViewModel(repository)
+        ScanViewModel::class.java -> ScanViewModel(repository)
 
         else ->  throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
 
