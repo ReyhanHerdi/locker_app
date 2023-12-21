@@ -16,7 +16,7 @@
         android:layout_height="wrap_content">
 
         <com.makeramen.roundedimageview.RoundedImageView
-            android:id="@+id/img_job"
+            android:id="@+id/img_article"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:contentDescription="@string/article_image"
@@ -31,10 +31,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="@+id/img_job"
+            app:layout_constraintBottom_toBottomOf="@+id/img_article"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/img_job"
-            app:layout_constraintTop_toTopOf="@+id/img_job">
+            app:layout_constraintStart_toEndOf="@+id/img_article"
+            app:layout_constraintTop_toTopOf="@+id/img_article">
 
             <TextView
                 android:id="@+id/tv_articleTitle"
@@ -49,8 +49,8 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@id/tv_news_description"
-                app:layout_constraintStart_toEndOf="@id/img_job"
-                app:layout_constraintTop_toTopOf="@id/img_job" />
+                app:layout_constraintStart_toEndOf="@id/img_article"
+                app:layout_constraintTop_toTopOf="@id/img_article" />
 
             <TextView
                 android:id="@+id/tv_news_description"
@@ -64,7 +64,7 @@
                 android:textAlignment="textStart"
                 android:textColor="@color/color_sub_text"
                 android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="@id/img_job"
+                app:layout_constraintBottom_toBottomOf="@id/img_article"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/tv_articleTitle"
                 app:layout_constraintTop_toBottomOf="@id/tv_articleTitle"

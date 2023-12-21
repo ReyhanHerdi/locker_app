@@ -18,7 +18,7 @@ class ArticleAdapter(private val listNews: ArrayList<Article>, private var dataC
                 tvNewsDescription.text = article.content
                 Glide.with(itemView.context)
                     .load(article.image)
-                    .into(imgJob)
+                    .into(imgArticle)
                     .clearOnDetach()
 
                 itemView.setOnClickListener {

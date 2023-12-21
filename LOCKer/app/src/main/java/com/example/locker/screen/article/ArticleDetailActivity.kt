@@ -2,6 +2,7 @@ package com.example.locker.screen.article
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.content.IntentCompat.getParcelableExtra
 import com.bumptech.glide.Glide
 import com.example.locker.R
@@ -11,6 +12,8 @@ import com.example.locker.databinding.ActivityArticleDetailBinding
 class ArticleDetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityArticleDetailBinding
+
+    private var image = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +34,28 @@ class ArticleDetailActivity : AppCompatActivity() {
             Glide.with(root.context)
                 .load(article?.image)
                 .into(ivArticle)
+
         }
+
+        binding.fabBookmark.setOnClickListener {
+
+        }
+    }
+
+    private fun bookmarkIcon(save: Boolean){
+        binding.fabBookmark.setImageDrawable(
+            if (save){
+                ContextCompat.getDrawable(
+                    applicationContext,
+                    R.drawable.bookmarked
+                )
+            } else {
+                ContextCompat.getDrawable(
+                    applicationContext,
+                    R.drawable.bookmark
+                )
+            }
+        )
     }
 
     companion object {
