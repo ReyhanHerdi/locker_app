@@ -36,18 +36,29 @@ class ScanFragment : Fragment() {
 
         binding.apply {
             nestedScrollView.setOnScrollChangeListener(NestedScrollView.OnScrollChangeListener { _, _, scrollY, _, oldScrollY ->
-                if (scrollY > oldScrollY +10 && fabTutorial.isExtended){
+                if (scrollY > oldScrollY + 10 && fabTutorial.isExtended) {
                     fabTutorial.shrink()
                 }
 
-                if (scrollY < oldScrollY -10 && fabTutorial.isExtended){
+                if (scrollY < oldScrollY - 10 && fabTutorial.isExtended) {
                     fabTutorial.extend()
                 }
 
-                if (scrollY == 0){
+                if (scrollY == 0) {
                     fabTutorial.extend()
                 }
             })
+
+            topBar.setOnMenuItemClickListener { menuItem ->
+                when (menuItem.itemId) {
+                    R.id.menu_history -> {
+                        findNavController().navigate(R.id.action_navigation_scan_to_historyScanFragment)
+                        true
+                    }
+
+                    else -> false
+                }
+            }
 
         }
 
@@ -59,7 +70,7 @@ class ScanFragment : Fragment() {
             }
 
             btnMove.setOnClickListener {
-             //   startActivity(Intent(requireActivity(), JobDetailsActivity::class.java))
+                //   startActivity(Intent(requireActivity(), JobDetailsActivity::class.java))
                 findNavController().navigate(R.id.action_navigation_scan_to_resultFragment)
             }
         }

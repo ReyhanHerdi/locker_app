@@ -58,7 +58,8 @@
                 android:textSize="13sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_article_title" />
+                app:layout_constraintTop_toBottomOf="@id/tv_article_title"
+                tools:ignore="TextContrastCheck" />
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardView"
@@ -98,7 +99,18 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/cardView" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_bookmark"
+        android:src="@drawable/bookmark"
+        android:contentDescription="@string/favorite_this_article"
+        android:layout_width="wrap_content"
+        android:backgroundTint="@color/primary"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_gravity="bottom|end"/>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

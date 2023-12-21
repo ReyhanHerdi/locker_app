@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_navigation_scan_to_resultFragment"
             app:destination="@id/resultFragment" />
+        <action
+            android:id="@+id/action_navigation_scan_to_historyScanFragment"
+            app:destination="@id/historyScanFragment" />
     </fragment>
     <fragment
         android:id="@+id/navigation_activity"
@@ -43,6 +46,21 @@
         tools:layout="@layout/fragment_result" >
         <action
             android:id="@+id/action_resultFragment_to_navigation_scan"
+            app:destination="@id/navigation_scan" />
+        <action
+            android:id="@+id/action_resultFragment_to_historyScanFragment"
+            app:destination="@id/historyScanFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/historyScanFragment"
+        android:name="com.example.locker.screen.scan.HistoryScanFragment"
+        android:label="fragment_history_scan"
+        tools:layout="@layout/fragment_history_scan" >
+        <action
+            android:id="@+id/action_historyScanFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+        <action
+            android:id="@+id/action_historyScanFragment_to_navigation_scan"
             app:destination="@id/navigation_scan" />
     </fragment>
 </navigation>

@@ -1,6 +1,10 @@
 package com.example.locker.data.repository
 
+import androidx.lifecycle.LiveData
+import com.example.locker.data.AppExecutors
 import com.example.locker.data.ExamplesData
+import com.example.locker.data.local.database.BookmarkDao
+import com.example.locker.data.local.database.BookmarkEntity
 import com.example.locker.data.model.Article
 import com.example.locker.data.model.User
 import com.example.locker.util.Reference
@@ -11,7 +15,10 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 
-class LockerRepository {
+class LockerRepository private constructor(
+    private val bookmarkDao: BookmarkDao,
+    private val executorService: AppExecutors
+){
 
     private val auth = FirebaseAuth.getInstance()
     private val db: FirebaseFirestore by lazy {
@@ -82,6 +89,36 @@ class LockerRepository {
             }
             .addOnFailureListener { e ->
                 onResult(null, e)
+            }
+    }
+
+    fun getBookmark(): LiveData<List<BookmarkEntity>> {
+        return bookmarkDao.getAllBookmark()
+    }
+
+    fun setBookmark(bookmark: BookmarkEntity, bookmarkState: Boolean){
+        executorService.networkIO.execute {
+            bookmark.isBookmark = bookmarkState
+            bookmarkDao.insert(bookmark)
+        }
+    }
+
+    fun deleteBookmark(title: String){
+        executorService.mainThread.execute {
+            bookmarkDao.delete(title)
+        }
+    }
+
+    companion object {
+        @Volatile
+        private var instances: LockerRepository? = null
+
+        fun getInstance(bookmarkDao: BookmarkDao, appExecutors: AppExecutors): LockerRepository =
+            instances ?: synchronized(this){
+                instances ?: LockerRepository(bookmarkDao, appExecutors)
+                    .also {
+                        instances = it
+                    }
             }
     }
 
