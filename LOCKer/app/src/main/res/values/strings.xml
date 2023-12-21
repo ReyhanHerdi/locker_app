@@ -204,4 +204,6 @@
     <string name="favorite_this_article">Favorite this Article</string>
     <string name="password_warning">Password must be at least 6 characters!</string>
     <string name="email_warning">Enter a valid email address!</string>
+    <string name="type_here">type here</string>
+    <string name="please_copy_the_job_vacancy_text_below">Please copy the job vacancy text below</string>
 </resources>
