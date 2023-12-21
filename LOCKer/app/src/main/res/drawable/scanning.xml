@@ -7,49 +7,49 @@
         android:fillColor="#00000000"
         android:pathData="M8,3H4a1,1 0,0 0,-1 1v4"
         android:strokeWidth="1.8"
-        android:strokeColor="#757575"
+        android:strokeColor="@color/color_icoon_disable"
         android:strokeLineCap="round"
         android:strokeLineJoin="round" />
     <path
         android:fillColor="#00000000"
         android:pathData="M8,21H4a1,1 0,0 1,-1 -1v-4"
         android:strokeWidth="1.8"
-        android:strokeColor="#757575"
+        android:strokeColor="@color/color_icoon_disable"
         android:strokeLineCap="round"
         android:strokeLineJoin="round" />
     <path
         android:fillColor="#00000000"
         android:pathData="M16,21h4a1,1 0,0 0,1 -1v-4"
         android:strokeWidth="1.8"
-        android:strokeColor="#757575"
+        android:strokeColor="@color/color_icoon_disable"
         android:strokeLineCap="round"
         android:strokeLineJoin="round" />
     <path
         android:fillColor="#00000000"
         android:pathData="M16,3h4a1,1 0,0 1,1 1v4"
         android:strokeWidth="1.8"
-        android:strokeColor="#757575"
+        android:strokeColor="@color/color_icoon_disable"
         android:strokeLineCap="round"
         android:strokeLineJoin="round" />
     <path
         android:fillColor="#00000000"
         android:pathData="M17,12H7"
         android:strokeWidth="1.8"
-        android:strokeColor="#757575"
+        android:strokeColor="@color/color_icoon_disable"
         android:strokeLineCap="round"
         android:strokeLineJoin="round" />
     <path
         android:fillColor="#00000000"
         android:pathData="M13.5,8h-3"
         android:strokeWidth="1.8"
-        android:strokeColor="#757575"
+        android:strokeColor="@color/color_icoon_disable"
         android:strokeLineCap="round"
         android:strokeLineJoin="round" />
     <path
         android:fillColor="#00000000"
         android:pathData="M13.5,16h-3"
         android:strokeWidth="1.8"
-        android:strokeColor="#757575"
+        android:strokeColor="@color/color_icoon_disable"
         android:strokeLineCap="round"
         android:strokeLineJoin="round" />
 </vector>

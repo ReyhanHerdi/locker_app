@@ -2,14 +2,16 @@ package com.example.locker.screen.login
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.example.locker.R
 import com.example.locker.databinding.ActivityLoginBinding
-import com.example.locker.screen.MainActivity
+import com.example.locker.screen.AuthActivity
 import com.example.locker.screen.ViewModelFactory
 import com.example.locker.screen.register.RegisterActivity
 import com.example.locker.screen.welcome.WelcomeActivity
-import com.google.android.material.snackbar.Snackbar
 
 class LoginActivity : AppCompatActivity() {
 
@@ -33,30 +35,35 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.btnLogin.setOnClickListener {
-/*
             val email = binding.etEmail.text.toString()
             val password = binding.etPassword.text.toString()
 
             if(email.isNotEmpty() && password.isNotEmpty()){
-                authViewModel.login(email, password)
                 authViewModel.loading.observe(this){
-                    binding.progressBar.visibility = View.VISIBLE
+                    showLoading(it)
                 }
-                showSnackbar(authViewModel.message.toString())
-                startActivity(Intent(this, MainActivity::class.java))
-                finish()
+                authViewModel.login(email, password)
+                showToast(authViewModel.message.toString())
+                navigate()
 
             } else {
-                showSnackbar("Please Fill Everything")
+                showToast(resources.getString(R.string.empty_field))
             }
-*/
-
-            startActivity(Intent(applicationContext, MainActivity::class.java))
         }
 
     }
 
-    private fun showSnackbar(message: String?) {
-        Snackbar.make(binding.root, message!!, Snackbar.LENGTH_SHORT).show()
+    private fun showToast(message: String?) {
+        Toast.makeText(this, message!!, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
+    }
+
+    private fun navigate(){
+        val intent = Intent(applicationContext, AuthActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+        startActivity(intent)
     }
 }
