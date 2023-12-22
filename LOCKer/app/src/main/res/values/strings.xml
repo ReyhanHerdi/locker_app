@@ -206,4 +206,9 @@
     <string name="email_warning">Enter a valid email address!</string>
     <string name="type_here">type here</string>
     <string name="please_copy_the_job_vacancy_text_below">Please copy the job vacancy text below</string>
+    <string name="resultScan">%1$s %</string>
+    <string name="percent">%</string>
+    <string name="fraud">FRAUD</string>
+    <string name="real">REAL</string>
+    <string name="empty_input">Input Text</string>
 </resources>

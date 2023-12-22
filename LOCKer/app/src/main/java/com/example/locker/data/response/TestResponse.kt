@@ -4,5 +4,5 @@ import com.google.gson.annotations.SerializedName
 
 data class TestResponse(
 	@field:SerializedName("prediction")
-	val prediction: List<List<Any?>?>? = null
+	val prediction: List<List<Double?>?>? = null
 )

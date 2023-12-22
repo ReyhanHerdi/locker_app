@@ -1,7 +1,6 @@
 package com.example.locker.screen.scan
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,9 +11,10 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.locker.R
 import com.example.locker.customview.ModalBottomSheet
-import com.example.locker.data.Result
+import com.example.locker.data.ResultState
 import com.example.locker.databinding.FragmentScanBinding
 import com.example.locker.screen.ViewModelFactory
+import kotlin.math.min
 
 class ScanFragment : Fragment() {
 
@@ -63,39 +63,49 @@ class ScanFragment : Fragment() {
                 }
             }
 
-        }
-
-        binding.apply {
-
             fabTutorial.setOnClickListener {
                 val modalBottomSheet = ModalBottomSheet()
                 childFragmentManager.let { modalBottomSheet.show(it, ModalBottomSheet.TAG) }
             }
 
-        }
+            btnStartScanning.setOnClickListener {
+                scan()
+            }
 
-        binding.btnStartScanning.setOnClickListener{
-            val text = binding.edtJobVacancy.text.toString()
-            scanViewModel.predictJob(text)
         }
+    }
 
-        scanViewModel.result.observe(viewLifecycleOwner){ result ->
-            when(result){
-                is Result.Loading -> showLoading(true)
-                is Result.Success -> {
-                    val hasil = result.data.toString()
-                    if (hasil.isNotEmpty()){
-                        binding.tvResult.text = hasil
-                        Log.d("ScanFragment", hasil)
+    private fun scan() {
+        val text = binding.edtJobVacancy.text.toString()
+        if (text.isNotEmpty()) {
+            scanViewModel.predictJob(text).observe(viewLifecycleOwner) { result ->
+                if (result != null) {
+                    when (result) {
+                        is ResultState.Error -> {
+                            showLoading(false)
+                            showToast("error ${result.error}")
+                            binding.textView.text = result.error
+                        }
+
+                        is ResultState.Success -> {
+                            val resultScan = result.data
+                            val getResult = resultScan.prediction?.get(0)?.get(0)
+                            val percentage = getResult?.times(100.0)?.let { min(it, 100.0) }
+                            val percentageFormat = String.format("%.2f", percentage)
+                            if (percentageFormat.toDouble() >= 90.0) {
+                                binding.tvResult.text = resources.getString(R.string.fraud)
+                            } else {
+                                binding.tvResult.text = resources.getString(R.string.real)
+                            }
+                            showLoading(false)
+                        }
+
+                        is ResultState.Loading -> showLoading(true)
                     }
                 }
-                is Result.Failure -> {
-                    val error = result.exception.toString()
-                    showToast(error)
-                    binding.textView.text = error
-                    Log.d("ScanFragment", error)
-                }
             }
+        } else {
+            showToast(resources.getString(R.string.empty_input))
         }
 
     }

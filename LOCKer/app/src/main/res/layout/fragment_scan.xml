@@ -107,8 +107,9 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_margin="16dp"
+                android:orientation="horizontal"
                 android:backgroundTint="@color/card_color"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -122,7 +123,8 @@
                     android:layout_gravity="center"
                     android:letterSpacing="0.05"
                     tools:text="@string/fake"
-                    android:textColor="@color/primary"
+                    android:layout_margin="8dp"
+                    android:textColor="@color/text_accent"
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
