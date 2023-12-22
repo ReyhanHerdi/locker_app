@@ -39,19 +39,6 @@ class ScanTextFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.apply {
-//            nestedScrollView.setOnScrollChangeListener(NestedScrollView.OnScrollChangeListener { _, _, scrollY, _, oldScrollY ->
-//                if (scrollY > oldScrollY + 10 && fabTutorial.isExtended) {
-//                    fabTutorial.shrink()
-//                }
-//
-//                if (scrollY < oldScrollY - 10 && fabTutorial.isExtended) {
-//                    fabTutorial.extend()
-//                }
-//
-//                if (scrollY == 0) {
-//                    fabTutorial.extend()
-//                }
-//            })
 
             btnStartScanning.setOnClickListener {
                 scan()

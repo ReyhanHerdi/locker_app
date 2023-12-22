@@ -1,5 +1,6 @@
 package com.example.locker.data.repository
 
+import android.provider.ContactsContract.RawContacts.Data
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
 import com.example.locker.data.AppExecutors
@@ -10,6 +11,7 @@ import com.example.locker.data.local.database.BookmarkDao
 import com.example.locker.data.local.database.BookmarkEntity
 import com.example.locker.data.model.Article
 import com.example.locker.data.model.History
+import com.example.locker.data.model.Job
 import com.example.locker.data.model.User
 import com.example.locker.data.response.RequestData
 import com.example.locker.data.response.Response
@@ -131,12 +133,14 @@ class LockerRepository private constructor(
                 emit(ResultState.Error(e.toString()))
             }
         }
-    fun multipleText(data: String): LiveData<ResultState<TestResponse>> =
+    fun multipleText(listData: String): LiveData<ResultState<Response>> =
         liveData {
             emit(ResultState.Loading)
             try {
-                val response = apiService.scanMultiple(Response(data))
-                emit(ResultState.Success(response))
+                listData.forEach {
+                    val response = apiService.scanMultiple(Response(listData))
+                    emit(ResultState.Success(response))
+                }
             }catch (e: Exception){
                 emit(ResultState.Error(e.toString()))
             }
