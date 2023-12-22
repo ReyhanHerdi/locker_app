@@ -12,6 +12,7 @@ import com.example.locker.data.model.Article
 import com.example.locker.data.model.History
 import com.example.locker.data.model.User
 import com.example.locker.data.response.RequestData
+import com.example.locker.data.response.Response
 import com.example.locker.data.response.TestResponse
 import com.example.locker.util.Reference
 import com.google.firebase.auth.AuthResult
@@ -125,6 +126,16 @@ class LockerRepository private constructor(
             emit(ResultState.Loading)
             try {
                 val response = apiService.scan(RequestData(text))
+                emit(ResultState.Success(response))
+            }catch (e: Exception){
+                emit(ResultState.Error(e.toString()))
+            }
+        }
+    fun multipleText(data: String): LiveData<ResultState<TestResponse>> =
+        liveData {
+            emit(ResultState.Loading)
+            try {
+                val response = apiService.scanMultiple(Response(data))
                 emit(ResultState.Success(response))
             }catch (e: Exception){
                 emit(ResultState.Error(e.toString()))

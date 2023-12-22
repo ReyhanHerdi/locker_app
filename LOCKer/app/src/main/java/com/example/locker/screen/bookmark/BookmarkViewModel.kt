@@ -6,9 +6,9 @@ import com.example.locker.data.local.database.BookmarkEntity
 import com.example.locker.data.repository.LockerRepository
 
 class BookmarkViewModel(private val repository: LockerRepository) : ViewModel() {
-        fun getBookmark() : LiveData<List<BookmarkEntity>> = repository.getBookmark()
+    fun getBookmark(): LiveData<List<BookmarkEntity>> = repository.getBookmark()
 
-        fun deleteBookmark(title: Int) {
-                repository.deleteBookmark(title)
-        }
+    fun deleteBookmark(title: Int) {
+        repository.deleteBookmark(title)
+    }
 }

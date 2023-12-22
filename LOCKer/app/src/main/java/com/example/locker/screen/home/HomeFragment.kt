@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import com.example.locker.R
 import com.example.locker.data.model.Article
 import com.example.locker.databinding.FragmentHomeBinding
@@ -37,6 +38,13 @@ class HomeFragment : Fragment() {
 
         homeViewModel.getRecommendation()
         showNews()
+
+        val url = "https://raw.githubusercontent.com/cheftz/capstone/main/Frame%2023-min%20(1).png"
+
+        Glide.with(requireContext())
+            .load(url)
+            .into(binding.picHighlight)
+            .clearOnDetach()
 
         homeViewModel.userData.observe(viewLifecycleOwner) { data ->
             if (data != null && data.username!!.isNotEmpty()) {
