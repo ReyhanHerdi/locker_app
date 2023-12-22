@@ -1,6 +1,7 @@
 package com.example.locker.data.api
 
 import com.example.locker.data.response.RequestData
+import com.example.locker.data.response.Response
 import com.example.locker.data.response.TestResponse
 import retrofit2.http.Body
 import retrofit2.http.Headers
@@ -12,6 +13,12 @@ interface ApiService {
     @Headers("Accept: application/jsonContent")
     suspend fun scan(
         @Body requestData: RequestData
+    ): TestResponse
+
+    @POST("predict")
+    @Headers("Accept: application/jsonContent")
+    suspend fun scanMultiple(
+        @Body requestData: Response
     ): TestResponse
 
 }
