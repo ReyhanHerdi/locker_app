@@ -56,7 +56,11 @@ class HistoryScanFragment : Fragment() {
         viewModel.getHistory()
         viewModel.scanHistory.observe(viewLifecycleOwner) { result ->
             showLoading(false)
-            adapter.updateData(result)
+            if (result.isEmpty()) {
+                binding.tvEmptyHistory.visibility = View.VISIBLE
+            } else {
+                adapter.updateData(result)
+            }
         }
     }
 

@@ -193,7 +193,7 @@
         \nLook for the \"Start Scanning\" button and tap it to initiate the scanning process. Please wait while the system analyzes the job posting.
         \n
         \n<b>Step 4: Review Scanning Results</b>
-        \nAfter the scanning process is complete, the results will be displayed, indicating whether the job posting is categorized as \"FAKE\" or \"REAL\".</string>
+        \nAfter the scanning process is complete, the results will be displayed, indicating whether the job posting is categorized as \"FRAUD\" or \"REAL\".</string>
     <string name="result">Result</string>
     <string name="fake">FAKE</string>
     <string name="job_vacancy">Job Vacancy Text</string>
