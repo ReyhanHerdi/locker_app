@@ -13,6 +13,7 @@ import com.example.locker.R
 import com.example.locker.customview.ModalBottomSheet
 import com.example.locker.data.ResultState
 import com.example.locker.data.model.History
+import com.example.locker.data.model.Job
 import com.example.locker.databinding.FragmentScanBinding
 import com.example.locker.databinding.FragmentScanLabelBinding
 import com.example.locker.screen.ViewModelFactory
@@ -24,6 +25,7 @@ class ScanLabelFragment : Fragment() {
     private val scanViewModel: ScanViewModel by viewModels {
         ViewModelFactory.getInstance(requireContext())
     }
+    private var listJob: List<Job> = emptyList()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -48,35 +50,53 @@ class ScanLabelFragment : Fragment() {
     }
 
     private fun scan() {
-        val text = binding.edtJobVacancy.text.toString()
-        if (text.isNotEmpty()) {
-            scanViewModel.predictJob(text).observe(viewLifecycleOwner) { result ->
-                if (result != null) {
-                    when (result) {
-                        is ResultState.Error -> {
-                            showLoading(false)
-                            showToast("error ${result.error}")
-                        }
-
-                        is ResultState.Success -> {
-                            val resultScan = result.data
-                            val getResult = resultScan.prediction?.get(0)?.get(0)
-                            val percentage = getResult?.times(100.0)?.let { min(it, 100.0) }
-                            val percentageFormat = String.format("%.2f", percentage)
-                            if (percentageFormat.toDouble() >= 90.0) {
-                                binding.tvResult.text = resources.getString(R.string.fraud)
-                            } else {
-                                binding.tvResult.text = resources.getString(R.string.real)
+        with(binding) {
+            listJob.forEach {
+                it.title = binding.edtJobVacancy.text.toString()
+                it.department = binding.edtJobDepartment.text.toString()
+                it.companyTitle = binding.edtJobCompanyProfile.text.toString()
+                it.requirement = binding.edtJobRequirements.text.toString()
+                it.telecomuting = binding.edtJobTecomuting.text.toString()
+                it.has_questions = binding.edtJobHasQuestions.text.toString()
+                it.required_experience = binding.edtJobReqExperience.text.toString()
+                it.industry = binding.edtJobIndustry.text.toString()
+                it.location = binding.edtJobLocation.text.toString()
+                it.salaryRange = binding.edtJobSalaryRange.text.toString()
+                it.description = binding.edtJobDescription.text.toString()
+                it.benefits = binding.edtJobBenefits.text.toString()
+                it.has_company_logo = binding.edtJobHasCompanyLogo.text.toString()
+                it.employmrnt_type = binding.edtJobEmploymenyType.text.toString()
+                it.requiredEducation = binding.edtJobReqEducation.text.toString()
+            }
+            if (edtJobVacancy.text.isNotEmpty()) {
+                scanViewModel.predictJob(listJob.toString()).observe(viewLifecycleOwner) { result ->
+                    if (result != null) {
+                        when (result) {
+                            is ResultState.Error -> {
+                                showLoading(false)
+                                showToast("error ${result.error}")
                             }
-                            showLoading(false)
-                        }
+                             is ResultState.Success -> {
+                                 val resultScan = result.data
+                                 val getResult = resultScan.prediction?.get(0)?.get(0)
+                                 val percentage = getResult?.times(100.0)?.let { min(it, 100.0) }
+                                 val percentageFormat = String.format("%.2f", percentage)
+                                 if (percentageFormat.toDouble() >= 90.0) {
+                                     binding.tvResult.text = resources.getString(R.string.fraud)
+                                 } else {
+                                     binding.tvResult.text = resources.getString(R.string.real)
+                                 }
+                                 showLoading(false)
+                             }
 
-                        is ResultState.Loading -> showLoading(true)
+                            is ResultState.Loading -> showLoading(true)
+                        }
                     }
                 }
-            }
-        } else {
-            showToast(resources.getString(R.string.empty_input))
+
+            } else {
+                showToast(resources.getString(R.string.empty_input))
+                }
         }
 
     }

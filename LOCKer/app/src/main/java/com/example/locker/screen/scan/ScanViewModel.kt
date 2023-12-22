@@ -3,6 +3,7 @@ package com.example.locker.screen.scan
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.locker.data.model.History
+import com.example.locker.data.model.Job
 import com.example.locker.data.repository.LockerRepository
 import kotlinx.coroutines.launch
 
