@@ -28,27 +28,45 @@ class ArticleDetailActivity : AppCompatActivity(), View.OnClickListener {
         supportActionBar?.setHomeAsUpIndicator(R.drawable.caret_left)
         supportActionBar?.title = "Article"
 
-        val article = getParcelableExtra(intent, KEY_DATA, Article::class.java)
-
-        binding.apply {
-            tvArticleTitle.text = article?.title
-            tvArticleAuthor.text = article?.author
-            tvArticleContent.text = article?.content
-            Glide.with(root.context)
-                .load(article?.image)
-                .into(ivArticle)
-        }
-
         val factory = ViewModelFactory.getInstance(this)
         articleViewModel = ViewModelProvider(this, factory).get(ArticleViewModel::class.java)
 
-        isBookmarked(article?.id!!.toInt())
+        val article = getParcelableExtra(intent, KEY_DATA, Article::class.java)
+        if (article != null) {
+            binding.apply {
+                tvArticleTitle.text = article.title
+                tvArticleAuthor.text = article.author
+                tvArticleContent.text = article.content
+                Glide.with(root.context)
+                    .load(article.image)
+                    .into(ivArticle)
+            }
+            isBookmarked(article.id.toInt())
+
+        } else {
+            binding.apply {
+                tvArticleTitle.text = intent.getStringExtra(TITLE)
+                tvArticleAuthor.text = intent.getStringExtra(AUTHOR)
+                tvArticleContent.text = intent.getStringExtra(CONTENT)
+                Glide.with(root.context)
+                    .load(intent.getStringExtra(IMAGE))
+                    .into(ivArticle)
+
+                fabBookmark.visibility = View.GONE
+            }
+            isBookmarked(intent.getStringExtra(ID)!!.toInt())
+        }
 
         binding.fabBookmark.setOnClickListener(this)
     }
 
     companion object {
         const val KEY_DATA = "key_data"
+        const val ID = "id"
+        const val TITLE = "title"
+        const val AUTHOR = "author"
+        const val CONTENT = "cntent"
+        const val IMAGE = "image"
     }
 
     override fun onClick(view: View?) {

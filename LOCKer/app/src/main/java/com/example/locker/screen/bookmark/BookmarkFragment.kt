@@ -1,6 +1,7 @@
 package com.example.locker.screen.bookmark
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -21,6 +22,7 @@ import com.example.locker.databinding.FragmentBookmarkBinding
 import com.example.locker.screen.ViewModelFactory
 import com.example.locker.screen.adapter.ArticleAdapter
 import com.example.locker.screen.adapter.BookmarkAdapter
+import com.example.locker.screen.article.ArticleDetailActivity
 import kotlinx.coroutines.launch
 
 class BookmarkFragment : Fragment() {
@@ -58,7 +60,13 @@ class BookmarkFragment : Fragment() {
 
                 adapter.setOnItemCallback(object : BookmarkAdapter.OnItemClickCallback {
                     override fun onItemClicked(bookmark: BookmarkEntity) {
-                        Toast.makeText(context, bookmark.title, Toast.LENGTH_SHORT).show()
+                        val intent = Intent(context, ArticleDetailActivity::class.java)
+                        intent.putExtra(ArticleDetailActivity.ID, bookmark.id.toString())
+                        intent.putExtra(ArticleDetailActivity.TITLE, bookmark.title)
+                        intent.putExtra(ArticleDetailActivity.AUTHOR, bookmark.author)
+                        intent.putExtra(ArticleDetailActivity.CONTENT, bookmark.content)
+                        intent.putExtra(ArticleDetailActivity.IMAGE, bookmark.image)
+                        startActivity(intent)
                     }
 
                     override fun onBookmarkClicked(bookmark: BookmarkEntity, position: Int) {
