@@ -217,4 +217,17 @@
     <string name="empty_input">Input Text</string>
     <string name="empty_history">Empty History</string>
     <string name="empty_save">Save failed</string>
+    <string name="department">Department</string>
+    <string name="title">Title</string>
+    <string name="company_profile">Company Profile</string>
+    <string name="job_requirements">Job Requirements</string>
+    <string name="telecomuting">Telecomuting</string>
+    <string name="required_experience">Required Experience</string>
+    <string name="job_industry">Industry</string>
+    <string name="company_location">Location</string>
+    <string name="salary_range">Salary Range</string>
+    <string name="description">Description</string>
+    <string name="benefits">Benefits</string>
+    <string name="has_logo">Has Logo?</string>
+    <string name="required_education">Required Education</string>
 </resources>
