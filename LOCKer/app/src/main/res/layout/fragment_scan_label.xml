@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     tools:context=".screen.scan.ScanLabelFragment">
 
     <androidx.core.widget.NestedScrollView
@@ -468,7 +469,6 @@
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingTop="20dp"
                 android:text="@string/result"
                 android:textColor="@color/color_text2"
                 android:textSize="20sp"
@@ -477,11 +477,12 @@
                 app:layout_constraintTop_toBottomOf="@+id/btn_start_scanning" />
 
             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
                 android:backgroundTint="@color/card_color"
                 android:orientation="horizontal"
+                android:layout_marginBottom="80dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textView"
                 app:layout_constraintStart_toStartOf="parent"
@@ -498,10 +499,16 @@
                     android:textColor="@color/text_accent"
                     android:textSize="24sp"
                     android:textStyle="bold"
-                    android:layout_marginBottom="20dp"
                     tools:text="@string/fake" />
 
             </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                app:layout_constraintTop_toBottomOf="@id/cardView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
