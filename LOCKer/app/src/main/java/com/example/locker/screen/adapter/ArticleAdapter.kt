@@ -2,6 +2,7 @@ package com.example.locker.screen.adapter
 
 import android.content.Intent
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -9,7 +10,7 @@ import com.example.locker.data.model.Article
 import com.example.locker.databinding.NewsListBinding
 import com.example.locker.screen.article.ArticleDetailActivity
 
-class ArticleAdapter(private val listNews: ArrayList<Article>, private var dataCount: Int) : RecyclerView.Adapter<ArticleAdapter.NewsViewHolder>() {
+class ArticleAdapter(private val listNews: List<Article>, private var dataCount: Int) : RecyclerView.Adapter<ArticleAdapter.NewsViewHolder>() {
 
     inner class NewsViewHolder(private val binding: NewsListBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(article: Article) {
@@ -18,8 +19,10 @@ class ArticleAdapter(private val listNews: ArrayList<Article>, private var dataC
                 tvNewsDescription.text = article.content
                 Glide.with(itemView.context)
                     .load(article.image)
-                    .into(imgArticle)
+                    .into(imgJob)
                     .clearOnDetach()
+
+                imageButton.visibility = View.GONE
 
                 itemView.setOnClickListener {
                     val intent = Intent(itemView.context, ArticleDetailActivity::class.java)

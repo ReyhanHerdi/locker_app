@@ -16,59 +16,76 @@
         android:layout_height="wrap_content">
 
         <com.makeramen.roundedimageview.RoundedImageView
-            android:id="@+id/img_article"
+            android:id="@+id/img_job"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:contentDescription="@string/article_image"
             android:scaleType="centerCrop"
             android:src="@color/black"
+            android:layout_margin="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:riv_corner_radius="16dp" />
 
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/transparent"
+            android:contentDescription="@string/save_this_job"
+            android:src="@drawable/bookmark"
+            app:layout_constraintBottom_toBottomOf="@+id/img_job"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/img_job"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/tv_articleTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="@string/article"
+            android:textColor="@color/color_text"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/tv_news_description"
+            app:layout_constraintStart_toEndOf="@id/img_job"
+            app:layout_constraintEnd_toStartOf="@id/imageButton"
+            app:layout_constraintTop_toTopOf="@id/img_job" />
+
+        <TextView
+            android:id="@+id/tv_news_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="4"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="@string/news_description"
+            android:textAlignment="textStart"
+            android:textColor="@color/color_sub_text"
+            android:textSize="14sp"
+            android:lines="2"
+            app:layout_constraintBottom_toBottomOf="@id/img_job"
+            app:layout_constraintEnd_toStartOf="@id/imageButton"
+            app:layout_constraintStart_toStartOf="@+id/tv_articleTitle"
+            app:layout_constraintTop_toBottomOf="@id/tv_articleTitle"
+            tools:ignore="TextContrastCheck,VisualLintLongText" />
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="@+id/img_article"
+            app:layout_constraintBottom_toBottomOf="@+id/img_job"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/img_article"
-            app:layout_constraintTop_toTopOf="@+id/img_article">
-
-            <TextView
-                android:id="@+id/tv_articleTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp"
-                android:text="@string/article"
-                android:textColor="@color/color_text"
-                android:maxLines="1"
-                android:ellipsize="end"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@id/tv_news_description"
-                app:layout_constraintStart_toEndOf="@id/img_article"
-                app:layout_constraintTop_toTopOf="@id/img_article" />
-
-            <TextView
-                android:id="@+id/tv_news_description"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:maxLines="2"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp"
-                android:text="@string/news_description"
-                android:textAlignment="textStart"
-                android:textColor="@color/color_sub_text"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="@id/img_article"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/tv_articleTitle"
-                app:layout_constraintTop_toBottomOf="@id/tv_articleTitle"
-                tools:ignore="TextContrastCheck,VisualLintLongText" />
+            app:layout_constraintStart_toEndOf="@+id/img_job"
+            app:layout_constraintTop_toTopOf="@+id/img_job">
 
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

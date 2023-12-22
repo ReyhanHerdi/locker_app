@@ -64,6 +64,10 @@ class RecomendationFragment : Fragment() {
                 Toast.makeText(context, "Not yet implemented", Toast.LENGTH_SHORT).show()
             }
 
+            override fun onBookmarkClicked(article: Article) {
+                TODO("Not yet implemented")
+            }
+
         })
     }
 }

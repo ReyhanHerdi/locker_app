@@ -9,7 +9,7 @@ import kotlinx.parcelize.Parcelize
 @Entity(tableName = "bookmark")
 @Parcelize
 data class BookmarkEntity(
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey
     @ColumnInfo(name = "id")
     var id: Int = 0,
 
@@ -18,6 +18,9 @@ data class BookmarkEntity(
 
     @ColumnInfo(name = "content")
     var content: String? = null,
+
+    @ColumnInfo(name = "author")
+    var author: String? = null,
 
     @ColumnInfo(name = "image")
     var image: String? = null,
