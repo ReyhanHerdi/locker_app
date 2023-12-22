@@ -19,6 +19,9 @@ data class BookmarkEntity(
     @ColumnInfo(name = "content")
     var content: String? = null,
 
+    @ColumnInfo(name = "author")
+    var author: String? = null,
+
     @ColumnInfo(name = "image")
     var image: String? = null,
 

@@ -35,7 +35,7 @@ class RecommendationAdaper(
                 tvJobTitle.text = article.title
                 Glide.with(itemView.context)
                     .load(article.image)
-                    .into(imgJob)
+                    .into(imgArticle)
 
                 binding.imageButton.setOnClickListener {
                     imageButton.setImageResource(R.drawable.bookmarked)
