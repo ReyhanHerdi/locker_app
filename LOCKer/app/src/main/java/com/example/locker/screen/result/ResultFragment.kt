@@ -1,33 +1,34 @@
 package com.example.locker.screen.result
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
-import com.example.locker.R
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.IntentCompat.getParcelableExtra
+import com.example.locker.data.model.History
 import com.example.locker.databinding.FragmentResultBinding
+import com.example.locker.screen.article.ArticleDetailActivity.Companion.KEY_DATA
 
-class ResultFragment : Fragment() {
-    private var _binding: FragmentResultBinding? = null
-    private val binding get() = _binding!!
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        // Inflate the layout for this fragment
-        _binding = FragmentResultBinding.inflate(inflater, container, false)
+class ResultFragment : AppCompatActivity() {
+    private lateinit var binding: FragmentResultBinding
 
-        return binding.root
-    }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = FragmentResultBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        
+        val detail = getParcelableExtra(intent, KEY_DATA, History::class.java)
+
+        binding.edtResult.setText(detail?.jobText)
+        binding.tvResult.text = detail?.resultScan
+
         binding.btnBack.setOnClickListener {
-            findNavController().navigate(R.id.action_resultFragment_to_navigation_scan)
+            navigateToScanActivity()
         }
     }
 
+    private fun navigateToScanActivity() {
+    }
+
+    companion object{
+        const val KEY_DETAIL = "detail"
+    }
 }

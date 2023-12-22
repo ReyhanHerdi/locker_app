@@ -15,12 +15,6 @@ class HistoryViewModel(private val repository: LockerRepository): ViewModel() {
     private val _loading = MutableLiveData<Boolean>()
     val loading: LiveData<Boolean> = _loading
 
-    fun addHistory(history: History){
-        viewModelScope.launch {
-            repository.addScanHistory(history)
-        }
-    }
-
     fun getHistory(){
         viewModelScope.launch {
             val data = repository.getScanHistory()

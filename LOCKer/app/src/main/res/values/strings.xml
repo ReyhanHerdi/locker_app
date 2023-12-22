@@ -23,7 +23,7 @@
     <string name="sign_up">Sign up</string>
     <string name="or">OR</string>
     <string name="next">Next</string>
-    <string name="Success">Login Success</string>
+    <string name="Success">Success</string>
     <string name="SuccessMsg">Welcome to LOCKer!</string>
 
     <string name="company_image">Company Image</string>
@@ -211,4 +211,6 @@
     <string name="fraud">FRAUD</string>
     <string name="real">REAL</string>
     <string name="empty_input">Input Text</string>
+    <string name="empty_history">Empty History</string>
+    <string name="empty_save">Save failed</string>
 </resources>

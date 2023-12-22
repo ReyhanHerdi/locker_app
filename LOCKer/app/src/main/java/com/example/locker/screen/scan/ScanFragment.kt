@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.locker.R
 import com.example.locker.customview.ModalBottomSheet
 import com.example.locker.data.ResultState
+import com.example.locker.data.model.History
 import com.example.locker.databinding.FragmentScanBinding
 import com.example.locker.screen.ViewModelFactory
 import kotlin.math.min
@@ -58,6 +59,18 @@ class ScanFragment : Fragment() {
                         findNavController().navigate(R.id.action_navigation_scan_to_historyScanFragment)
                         true
                     }
+                    R.id.save_menu -> {
+                        val job = binding.edtJobVacancy.text.toString()
+                        val result = binding.tvResult.text.toString()
+                        if (job.isNotEmpty() && result.isNotEmpty()){
+                            save(job, result)
+                            showToast(resources.getString(R.string.Success))
+                        } else {
+                            showToast(resources.getString(R.string.empty_save))
+                        }
+
+                        true
+                    }
 
                     else -> false
                 }
@@ -84,7 +97,6 @@ class ScanFragment : Fragment() {
                         is ResultState.Error -> {
                             showLoading(false)
                             showToast("error ${result.error}")
-                            binding.textView.text = result.error
                         }
 
                         is ResultState.Success -> {
@@ -108,6 +120,10 @@ class ScanFragment : Fragment() {
             showToast(resources.getString(R.string.empty_input))
         }
 
+    }
+
+    private fun save(text: String, result: String){
+        scanViewModel.addHistory(History(text, result))
     }
 
     override fun onDestroyView() {

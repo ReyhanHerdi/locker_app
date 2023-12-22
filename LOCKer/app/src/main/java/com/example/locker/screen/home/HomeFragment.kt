@@ -31,6 +31,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
     private val listRecommendation = ArrayList<Article>()
     private val listNews = ArrayList<Article>()
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

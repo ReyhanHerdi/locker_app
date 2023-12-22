@@ -29,6 +29,9 @@
             android:name=".screen.data_user.DataInputActivity"
             android:exported="false" />
         <activity
+            android:name=".screen.result.ResultFragment"
+            android:exported="false" />
+        <activity
             android:name=".screen.article.ArticleDetailActivity"
             android:exported="false"
             android:label="@string/title_activity_news_detail"
