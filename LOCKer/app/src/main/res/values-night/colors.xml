@@ -9,6 +9,7 @@
     <color name="color_text2">#EBEBEB</color>
     <color name="color_sub_text">#808188</color>
     <color name="text_auth_button">#FF7754</color>
+    <color name="text_fab">#001C2F</color>
 
 
     <!-- color component -->

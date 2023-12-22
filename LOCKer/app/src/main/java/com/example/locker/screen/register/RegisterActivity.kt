@@ -17,6 +17,8 @@ import com.example.locker.screen.ViewModelFactory
 import com.example.locker.screen.login.AuthViewModel
 import com.example.locker.screen.login.LoginActivity
 import com.example.locker.screen.welcome.WelcomeActivity
+import com.example.locker.util.Reference.isEmailValid
+import com.example.locker.util.Reference.isPasswordValid
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -51,38 +53,41 @@ class RegisterActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
 
-        binding.btnBack.setOnClickListener {
-            startActivity(Intent(applicationContext, WelcomeActivity::class.java))
-        }
+        binding.apply {
+            btnBack.setOnClickListener {
+                startActivity(Intent(applicationContext, WelcomeActivity::class.java))
+            }
 
-        binding.tvMoveSignIn.setOnClickListener {
-            startActivity(Intent(applicationContext, LoginActivity::class.java))
-        }
+            tvMoveSignIn.setOnClickListener {
+                startActivity(Intent(applicationContext, LoginActivity::class.java))
+            }
 
-        binding.btnRegister.setOnClickListener {
-            val username = binding.etUsername.text.toString()
-            val email = binding.etEmail.text.toString()
-            val password = binding.etPassword.text.toString()
+            btnRegister.setOnClickListener {
+                val username = etUsername.text.toString()
+                val email = etEmail.text.toString()
+                val password = etPassword.text.toString()
 
-            if (username.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty()) {
-                authViewModel.register(
-                    email = email,
-                    pass = password,
-                    User(username = username, email = email)
-                )
-                authViewModel.loading.observe(this){
-                    showLoading(it)
+                if (username.isNotEmpty() && isEmailValid(applicationContext, email) && isPasswordValid(applicationContext, password)) {
+                    authViewModel.register(
+                        email = email,
+                        pass = password,
+                        User(username = username, email = email)
+                    )
+                    authViewModel.loading.observe(this@RegisterActivity){
+                        showLoading(it)
+                    }
+                    showToast(authViewModel.message.toString())
+                    finish()
+                } else {
+                    showToast(resources.getString(R.string.empty_field))
                 }
-                showToast(authViewModel.message.toString())
-                finish()
-            } else {
-                showToast(resources.getString(R.string.empty_field))
+            }
+
+            btnGoogle.setOnClickListener {
+                signInGoogle()
             }
         }
 
-        binding.btnGoogle.setOnClickListener {
-            signInGoogle()
-        }
     }
 
     override fun onStart() {

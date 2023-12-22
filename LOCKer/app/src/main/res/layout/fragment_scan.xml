@@ -35,7 +35,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:paddingBottom="60dp">
 
             <TextView
                 android:id="@+id/tv_instruction"
@@ -47,7 +48,7 @@
                 android:layout_marginEnd="16dp"
                 android:fontFamily="@font/outfit_medium"
                 android:textStyle="bold"
-                android:text="Please copy the job vacancy text below"
+                android:text="@string/please_copy_the_job_vacancy_text_below"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -74,26 +75,73 @@
                     android:id="@+id/edt_job_vacancy"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="type here"
+                    android:hint="@string/type_here"
                     android:textColorHint="@color/grey"
                     android:inputType="textMultiLine"
                     android:importantForAutofill="no" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_move"
+                android:id="@+id/btn_start_scanning"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/start_scanning"
+                android:textStyle="bold"
                 app:cornerRadius="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/til_job" />
 
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/result"
+                android:textColor="@color/color_text2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_start_scanning"
+                android:paddingTop="32dp"
+                android:textSize="20sp"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:orientation="horizontal"
+                android:backgroundTint="@color/card_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                app:strokeWidth="0dp">
+
+                <TextView
+                    android:id="@+id/tvResult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:letterSpacing="0.05"
+                    tools:text="@string/fake"
+                    android:layout_margin="8dp"
+                    android:textColor="@color/text_accent"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+            </com.google.android.material.card.MaterialCardView>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/text_accent"
+        android:layout_gravity="center"
+        android:indeterminate="true" />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/fab_tutorial"
@@ -101,9 +149,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
-        android:textColor="@color/color_text"
-        app:iconTint="@color/color_text"
+        android:textColor="@color/text_fab"
+        android:textStyle="bold"
+        android:backgroundTint="@color/primary"
         android:text="@string/fab_text"
+        app:iconTint="@color/text_fab"
         app:icon="@drawable/question" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

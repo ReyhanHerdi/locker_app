@@ -339,7 +339,93 @@ object ExamplesData {
                     "Research the company. LinkedIn is a great source. If a company contact is offered, research that individual. Leverage your network to inquire about the company. Glassdoor is an invaluable resource, too. Never \"pay\" for any process. - Britton Bloch, Navy Federal\n",
             "https://raw.githubusercontent.com/cheftz/capstone/main/fake11.png",
             "Forbes Human Resources Council"
-        )
+        ),
+        Article(
+            "11",
+            "HOW TO IDENTIFY FAKE JOB ADVERTISEMENT",
+            "HOW TO IDENTIFY A FAKE JOB AD\n" +
+                    "1.\tIf the job offer requires you to pay something then this is certainly a scam.\n" +
+                    "2.\tA legitimate company will never extend an offer without a personal interview or interaction.\n" +
+                    "3.\tIf you receive an offer for a job you did not apply for, it is fake.\n" +
+                    "4.\tWatch out for badly written emails and be suspicious of any emails not coming from an official company domain for example @gene.com or @roche.com.\n" +
+                    "5.\tAlways check the website addresses to ensure that they are the official urls of the company you are looking at.\n" +
+                    "6.\tIf you found a job on a job board or third-party channel, always check on official company channels (website & social media channels) to ensure that the job exists.\n" +
+                    "7.\tListen to your instincts! If you suspect it to be a scam, it probably is.\n" +
+                    "\n" +
+                    "\n" +
+                    "HOW TO PROTECT YOURSELF IF YOU SUSPECT A SCAM\n" +
+                    "1.\tNever give personal and confidential information.\n" +
+                    "2.\tNever pay for anything.\n" +
+                    "3.\tIgnore it.\n" +
+                    "4.\tReport it on the official company website.\n",
+            "https://raw.githubusercontent.com/cheftz/capstone/main/fake12.jpg",
+            "By GENENTECH.COM"
+        ),
+        Article(
+            "12",
+            "Fake job offer emails: How to avoid job scams",
+            "Job fraud reports almost tripled in the pandemic years from 2020 to 2021, and Bloomberg has reported that numbers will continue to grow in 2023. What makes the situation even more tricky is that job scammers are becoming increasingly sophisticated, sometimes creating emails and even websites that can look like they belong to a real company. Sometimes they manage to slip past legit job sites like Indeed or ZipRecruiter with fake job listings and they have also been known to hack legitimate companies’ LinkedIn accounts to contact potential “employees.”\n" +
+                    "\n" +
+                    "Job offer scam emails: How job scammers target you\n" +
+                    "In many cases, job scams come in the form of an email with an unsolicited job offer. In the scam mail, you’ll be offered a chance to apply or interview for a great-paying job – usually a position with flexible hours that allows you to work from home. Just like in other forms of phishing scams, such emails will often be faked to look like they come from a well-known company or recruitment site.  \n" +
+                    "\n" +
+                    "Here’s a list of five common work-at-home job scams:\n" +
+                    "1. Fake check job scams\n" +
+                    "A company reaches out to you with a great opportunity to work from home – and of course you’ll need a laptop and all the rest of the IT equipment that makes remote work possible. After you have signed your contract, your new employer will send you a cashier’s check and ask you to purchase your supplies from a specific vendor. But once you have made the purchase you learn that their check never cleared, and the equipment never arrives. The vendor was simply a front for the scammer, and you lose all the money you paid them.\n" +
+                    "\n" +
+                    "These remote job scams that send checks are possible because banks are required to make the money from deposited checks available within a day or two. So the amount of the fake employer’s check will initially appear in your bank balance and you’ll feel secure making the purchase. However, when the bank discovers it can’t access the funds after all – a process that can take a week or two – your bank will still expect you to cover the purchase you made. According to the FTC, the median reported loss on fake check job scams is 2,300 US dollars.\n" +
+                    "\n" +
+                    "2. Harvesting personal information\n" +
+                    "When you are hired for a job, at some point you need to give your employer personal information like your social security number or your banking information so they can pay you. Some employment scams hurry people along through a fake hiring process with the goal of obtaining this data– or ask for it early on in the fake application process. Once the scammers have enough information about an individual, they can use it for purposes like identity theft schemes.\n" +
+                    "\n" +
+                    "3. Job ad phishing emails\n" +
+                    "Not only might a job offer scam email be phishing for your personal information, but sometimes they are designed to get you to click on dangerous links. Such emails often look like they come from trusted companies, but clicking the link promising you “more information” about the position or opening an attached file that claims to contain the job description will instead infect your device with malware or take you to a fraudulent website.\n" +
+                    "\n" +
+                    "4. Reshipping jobs\n" +
+                    "Another email job scam that offers easy, flexible hours working from home involves receiving parcels and repackaging and reshipping them. Although these jobs are often advertised as logistics positions or, near the holidays, even as gift-wrapping positions, in fact this postal forwarding usually involves transferring stolen goods. This means that anyone who falls for this employment scam will also unintentionally become involved in a criminal activity. And although they are promised a good wage – and often even pay the shipping charges out of pocket expecting to be reimbursed – their so-called employer will usually break off contact without ever paying them.\n" +
+                    "\n" +
+                    "5. Data entry job scams\n" +
+                    "A company sends you a fraudulent job posting offering work-from-home position doing data entry. Although there are indeed legitimate remote data-entry jobs out there, this scam is different – it offers a much higher wage than would be normal for an entry-level job requiring minimum qualifications. However, the applicant is asked to make an upfront payment for “processing” or “training,” with the promise of reimbursement with the first month’s paycheck. After the online training is completed, no paycheck arrives and the fake employer vanishes.\n" +
+                    "\n" +
+                    "\n" +
+                    "How to know if a job is a scam\n" +
+                    "As we noted above, it can be very hard to tell if a job email is fake. Scammers have gotten very good at imitating the correspondence and websites of legitimate employers and may even hack into a real company’s LinkedIn or other social media accounts. With this in mind, you should always treat an unsolicited job offer with skepticism. Here are ten clues that an email might be a fake job scam.\n" +
+                    "\n" +
+                    "How to identify job scams:\n" +
+                    "1.\tThe offer seems too good to be true, e.g. promising a lot of money for very little work.\n" +
+                    "There is a false sense of urgency – the recruiter places you under pressure, saying that you have to act now. You receive replies to your responses within hours or even minutes, rushing you along to the next step in the hiring process. If you feel unduly pressured, you should trust that feeling and break off contact.\n" +
+                    "\n" +
+                    "2.\tThe job asks you to receive products, repackage them, and send them somewhere else; \n" +
+                    "or to accept funds in your bank account and transfer them to another party. Unfortunately, these are stolen goods trafficking or money laundering schemes.\n" +
+                    "\n" +
+                    "3.\tThe job email looks like it comes from a legitimate company, but it contains spelling or grammar mistakes or the name of the company is slightly off (e.g. Gooogle).\n" +
+                    " Research the company by looking to see if it has a website (but don’t click any links in the post!), and perform an internet search for the company name plus the words “scam” and “fraud”.\n" +
+                    "\n" +
+                    "4.\tThe email sender address is a Gmail, Yahoo, or other private email account. \n" +
+                    "This is a sign of a scam, as a real hiring manager or recruiter would have a company email address. Make sure to hover your mouse curser over the sender’s name to see the actual sender address.\n" +
+                    "\n" +
+                    "5.\tThe hiring process seems too simple or fast. \n" +
+                    "A legit company looking to hire you will normally invite you to at least two in-person or video-conference interviews with multiple people. A solely text-based exchange is unheard of, and even a single remote interview with just one person is unusual enough to arouse suspicions.\n" +
+                    "\n" +
+                    "6.\tThe job requires you to pay for something from your bank account, whether for training or your own equipment. \n" +
+                    "Often you are promised reimbursement with your first paycheck or you even receive a fraudulent check to cover your expenses. Either way, the likelihood of you seeing your money again is slim to none.\n" +
+                    "\n" +
+                    "7.\tYou are asked to provide a lot of personal information, like SSN, pictures of your ID or passports, or your bank account or credit card number very early in the application process, e.g. before the interview.\n" +
+                    "\n" +
+                    "8.\tYou are asked to download a special app or move to a different site (instead of Indeed, LinkedIn, etc.) for further communications.\n" +
+                    "\n" +
+                    "9.\tYou are offered a job without the employer asking for a CV, checking any references, or verifying your experience.\n" +
+                    "\n" +
+                    "\n" +
+                    "How to know if a job offer is legit\n" +
+                    "In general, it’s best to treat any unsolicited job offer as a potential scam, no matter where it comes from! However, if you think there is a chance that the job offer is legit, you can do some research to verify it. Perform your own internet search for the company in question. Check whether they have a website and an active social media presence.\n" +
+                    "1.\tIf you find a legitimate-looking website, check their career page to see if the position you’ve been offered is listed. Try to call someone from the HR department using the contact information on the website and ask about the job opening. Reach out to employees of the company who have profiles on LinkedIn and ask how they like working for the company.\n" +
+                    "2.\tOn the other hand, your internet search may turn up some red flags, like other people complaining about scams or poor reviews. This is a sign that you should look elsewhere for a job!\n" +
+                    "\n" +
+                    "\n",
+            "https://raw.githubusercontent.com/cheftz/capstone/main/fake14.png",
+            "by Alyssa Schmitt"
+        ),
     )
 
 }

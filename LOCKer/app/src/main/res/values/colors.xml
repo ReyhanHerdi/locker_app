@@ -19,6 +19,7 @@
     <color name="color_sub_text">#808188</color>
     <color name="text_accent">#FF7754</color>
     <color name="text_auth_button">#001C2F</color>
+    <color name="text_fab">#F0F0F0</color>
 
     <!-- color component -->
     <color name="bg_custom_itl">#F0F0F0</color>

@@ -23,7 +23,7 @@
     <string name="sign_up">Sign up</string>
     <string name="or">OR</string>
     <string name="next">Next</string>
-    <string name="Success">Login Success</string>
+    <string name="Success">Success</string>
     <string name="SuccessMsg">Welcome to LOCKer!</string>
     <string name="applied">Applied</string>
     <string name="saved">Saved</string>
@@ -204,4 +204,15 @@
     <string name="empty_name">Please fill your profile</string>
     <string name="history">History</string>
     <string name="favorite_this_article">Favorite this Article</string>
+    <string name="password_warning">Password must be at least 6 characters!</string>
+    <string name="email_warning">Enter a valid email address!</string>
+    <string name="type_here">type here</string>
+    <string name="please_copy_the_job_vacancy_text_below">Please copy the job vacancy text below</string>
+    <string name="resultScan">%1$s %</string>
+    <string name="percent">%</string>
+    <string name="fraud">FRAUD</string>
+    <string name="real">REAL</string>
+    <string name="empty_input">Input Text</string>
+    <string name="empty_history">Empty History</string>
+    <string name="empty_save">Save failed</string>
 </resources>

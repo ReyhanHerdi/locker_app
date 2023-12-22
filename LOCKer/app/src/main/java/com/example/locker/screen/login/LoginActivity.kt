@@ -12,6 +12,7 @@ import com.example.locker.screen.AuthActivity
 import com.example.locker.screen.ViewModelFactory
 import com.example.locker.screen.register.RegisterActivity
 import com.example.locker.screen.welcome.WelcomeActivity
+import com.example.locker.util.Reference
 
 class LoginActivity : AppCompatActivity() {
 
@@ -26,29 +27,31 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        binding.btnBack.setOnClickListener {
-            startActivity(Intent(applicationContext, WelcomeActivity::class.java))
-        }
-
-        binding.tvMoveRegister.setOnClickListener {
-            startActivity(Intent(applicationContext, RegisterActivity::class.java))
-        }
-
-        binding.btnLogin.setOnClickListener {
-            val email = binding.etEmail.text.toString()
-            val password = binding.etPassword.text.toString()
-
-            if(email.isNotEmpty() && password.isNotEmpty()){
-                authViewModel.loading.observe(this){
-                    showLoading(it)
-                }
-                authViewModel.login(email, password)
-                showToast(authViewModel.message.toString())
-                navigate()
-
-            } else {
-                showToast(resources.getString(R.string.empty_field))
+        binding.apply {
+            btnBack.setOnClickListener {
+                startActivity(Intent(applicationContext, WelcomeActivity::class.java))
             }
+
+            tvMoveRegister.setOnClickListener {
+                startActivity(Intent(applicationContext, RegisterActivity::class.java))
+            }
+
+            btnLogin.setOnClickListener {
+                val email = binding.etEmail.text.toString()
+                val password = binding.etPassword.text.toString()
+
+                if(Reference.isEmailValid(applicationContext, email) && Reference.isPasswordValid(applicationContext, password)){
+                    authViewModel.loading.observe(this@LoginActivity){
+                        showLoading(it)
+                    }
+                    authViewModel.login(email, password)
+                    showToast(authViewModel.message.toString())
+                    navigate()
+                } else {
+                    showToast(resources.getString(R.string.empty_field))
+                }
+            }
+
         }
 
     }

@@ -23,13 +23,13 @@
             android:background="@color/transparent"
             android:contentDescription="@string/save_this_job"
             android:src="@drawable/bookmark"
-            app:layout_constraintBottom_toBottomOf="@+id/img_job"
+            app:layout_constraintBottom_toBottomOf="@+id/img_article"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/img_job"
+            app:layout_constraintTop_toTopOf="@+id/img_article"
             tools:ignore="TouchTargetSizeCheck" />
 
         <com.makeramen.roundedimageview.RoundedImageView
-            android:id="@+id/img_job"
+            android:id="@+id/img_article"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="12dp"
@@ -55,8 +55,8 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@id/tv_news_description"
             app:layout_constraintEnd_toStartOf="@+id/imageButton"
-            app:layout_constraintStart_toEndOf="@id/img_job"
-            app:layout_constraintTop_toTopOf="@id/img_job" />
+            app:layout_constraintStart_toEndOf="@id/img_article"
+            app:layout_constraintTop_toTopOf="@id/img_article" />
 
         <TextView
             android:id="@+id/tv_news_description"
@@ -66,8 +66,8 @@
             android:layout_marginStart="8dp"
             android:textColor="@color/color_sub_text"
             android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@id/img_job"
-            app:layout_constraintStart_toEndOf="@+id/img_job"
+            app:layout_constraintBottom_toBottomOf="@id/img_article"
+            app:layout_constraintStart_toEndOf="@+id/img_article"
             app:layout_constraintTop_toBottomOf="@id/tv_job_title"
             tools:ignore="TextContrastCheck" />
 
@@ -88,8 +88,8 @@
             android:layout_marginTop="8dp"
             android:contentDescription="@string/icon"
             android:src="@drawable/location"
-            app:layout_constraintStart_toStartOf="@id/img_job"
-            app:layout_constraintTop_toBottomOf="@id/img_job" />
+            app:layout_constraintStart_toStartOf="@id/img_article"
+            app:layout_constraintTop_toBottomOf="@id/img_article" />
 
         <TextView
             android:id="@+id/tv_location"

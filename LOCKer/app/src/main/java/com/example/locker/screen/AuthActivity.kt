@@ -7,7 +7,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.locker.databinding.ActivityAuthBinding
 import com.example.locker.screen.login.AuthViewModel
-import com.example.locker.screen.login.LoginActivity
+import com.example.locker.screen.welcome.WelcomeActivity
 
 class AuthActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAuthBinding
@@ -35,7 +35,7 @@ class AuthActivity : AppCompatActivity() {
                     )
                 })
             } else {
-                startActivity(Intent(this, LoginActivity::class.java).apply {
+                startActivity(Intent(this, WelcomeActivity::class.java).apply {
                     finish()
                 })
             }

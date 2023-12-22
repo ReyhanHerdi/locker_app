@@ -19,7 +19,7 @@ class ArticleAdapter(private val listNews: List<Article>, private var dataCount:
                 tvNewsDescription.text = article.content
                 Glide.with(itemView.context)
                     .load(article.image)
-                    .into(imgJob)
+                    .into(imgArticle)
                     .clearOnDetach()
 
                 imageButton.visibility = View.GONE
