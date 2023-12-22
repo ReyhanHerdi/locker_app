@@ -30,6 +30,8 @@
     <string name="you_have_not">Look like you have not %1$s anything yet!</string>
     <string name="company_image">Company Image</string>
     <string name="requirements">Requirements</string>
+    <string name="tab_scan_text">Scan Text</string>
+    <string name="tab_scan_label">Scan Label</string>
 
     <!--Dummy Job Details-->
     <string name="dummy_requirement">- Minimum 2 years working in experience in programming
