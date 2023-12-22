@@ -38,8 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             app:layout_constraintTop_toBottomOf="@id/appbar_layout"
-            app:layout_constraintStart_toStartOf="parent"
-            android:backgroundTint="@color/material_on_primary_disabled"/>
+            app:layout_constraintStart_toStartOf="parent"/>
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/view_pager"
@@ -49,5 +48,18 @@
             app:layout_constraintStart_toStartOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fab_tutorial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:textColor="@color/text_fab"
+        android:textStyle="bold"
+        android:backgroundTint="@color/primary"
+        android:text="@string/fab_text"
+        app:iconTint="@color/text_fab"
+        app:icon="@drawable/question" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -39,50 +39,33 @@ class ScanTextFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.apply {
-            nestedScrollView.setOnScrollChangeListener(NestedScrollView.OnScrollChangeListener { _, _, scrollY, _, oldScrollY ->
-                if (scrollY > oldScrollY + 10 && fabTutorial.isExtended) {
-                    fabTutorial.shrink()
-                }
-
-                if (scrollY < oldScrollY - 10 && fabTutorial.isExtended) {
-                    fabTutorial.extend()
-                }
-
-                if (scrollY == 0) {
-                    fabTutorial.extend()
-                }
-            })
-
-            topBar.setOnMenuItemClickListener { menuItem ->
-                when (menuItem.itemId) {
-                    R.id.menu_history -> {
-                        findNavController().navigate(R.id.action_navigation_scan_to_historyScanFragment)
-                        true
-                    }
-                    R.id.save_menu -> {
-                        val job = binding.edtJobVacancy.text.toString()
-                        val result = binding.tvResult.text.toString()
-                        if (job.isNotEmpty() && result.isNotEmpty()){
-                            save(job, result)
-                            showToast(resources.getString(R.string.Success))
-                        } else {
-                            showToast(resources.getString(R.string.empty_save))
-                        }
-
-                        true
-                    }
-
-                    else -> false
-                }
-            }
-
-            fabTutorial.setOnClickListener {
-                val modalBottomSheet = ModalBottomSheet()
-                childFragmentManager.let { modalBottomSheet.show(it, ModalBottomSheet.TAG) }
-            }
+//            nestedScrollView.setOnScrollChangeListener(NestedScrollView.OnScrollChangeListener { _, _, scrollY, _, oldScrollY ->
+//                if (scrollY > oldScrollY + 10 && fabTutorial.isExtended) {
+//                    fabTutorial.shrink()
+//                }
+//
+//                if (scrollY < oldScrollY - 10 && fabTutorial.isExtended) {
+//                    fabTutorial.extend()
+//                }
+//
+//                if (scrollY == 0) {
+//                    fabTutorial.extend()
+//                }
+//            })
 
             btnStartScanning.setOnClickListener {
                 scan()
+            }
+
+            tvClickSave.setOnClickListener {
+                val job = binding.edtJobVacancy.text.toString()
+                val result = binding.tvResult.text.toString()
+                if (job.isNotEmpty() && result.isNotEmpty()){
+                    save(job, result)
+                    showToast(resources.getString(R.string.Success))
+                } else {
+                    showToast(resources.getString(R.string.empty_save))
+                }
             }
 
         }

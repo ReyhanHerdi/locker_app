@@ -48,15 +48,36 @@ class ScanFragment : Fragment() {
 
         val tabsScan: TabLayout = binding.tabsScan
         TabLayoutMediator(tabsScan, viewPager) { tab, position ->
-            tab.text = resources.getString(TAB_TITLES[position])
+            tab.text =
+                resources.getString(TAB_TITLES[position])
         }.attach()
+
+        binding.apply {
+
+            fabTutorial.setOnClickListener {
+                val modalBottomSheet = ModalBottomSheet()
+                childFragmentManager.let { modalBottomSheet.show(it, ModalBottomSheet.TAG) }
+            }
+
+            topBar.setOnMenuItemClickListener { menuItem ->
+
+                when (menuItem.itemId) {
+                    R.id.menu_history -> {
+                        findNavController().navigate(R.id.action_navigation_scan_to_historyScanFragment)
+                        true
+                    }
+
+                    else -> false
+                }
+            }
+        }
     }
 
     companion object {
         @StringRes
         private val TAB_TITLES = intArrayOf(
+            R.string.tab_scan_label,
             R.string.tab_scan_text,
-            R.string.tab_scan_label
         )
     }
 

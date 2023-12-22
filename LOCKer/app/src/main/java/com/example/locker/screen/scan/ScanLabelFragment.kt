@@ -59,18 +59,6 @@ class ScanLabelFragment : Fragment() {
                         findNavController().navigate(R.id.action_navigation_scan_to_historyScanFragment)
                         true
                     }
-                    R.id.save_menu -> {
-                        val job = binding.edtJobVacancy.text.toString()
-                        val result = binding.tvResult.text.toString()
-                        if (job.isNotEmpty() && result.isNotEmpty()){
-                            save(job, result)
-                            showToast(resources.getString(R.string.Success))
-                        } else {
-                            showToast(resources.getString(R.string.empty_save))
-                        }
-
-                        true
-                    }
 
                     else -> false
                 }
